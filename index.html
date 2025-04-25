@@ -5,12 +5,89 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Дом Офицеров</title>
   <link rel="stylesheet" href="styles/styles.css">
+  <script src="scripts/main.js"></script>
 </head>
 <body>
-  <xai-header></xai-header>
+  <!-- Header -->
+  <header class="header">
+    <div class="header__desktop">
+      <div class="header__container">
+        <a href="index.html">
+          <img src="assets/images/logo_dom_oficerov.png" alt="Логотип Дома Офицеров" class="header__logo">
+        </a>
+        <nav class="header__nav">
+          <ul class="header__nav-list">
+            <li><a href="afisha.html" class="header__nav-link">Афиша</a></li>
+            <li><a href="zaly.html" class="header__nav-link">Залы</a></li>
+            <li><a href="istoriya.html" class="header__nav-link">История</a></li>
+            <li><a href="muzei.html" class="header__nav-link">Музей</a></li>
+            <li><a href="biblioteka.html" class="header__nav-link">Библиотека</a></li>
+            <li><a href="pushkinskaya-karta.html" class="header__nav-link">Пушкинская карта</a></li>
+            <li><a href="kontakty.html" class="header__nav-link">Контакты</a></li>
+          </ul>
+        </nav>
+        <div class="header__right">
+          <a href="https://vk.com" class="header__news" target="_blank">новости</a>
+          <button class="header__burger">
+            <img src="assets/svg icons/burger_icon.svg" alt="Burger Icon" class="burger-icon" />
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="menu-overlay"></div>
+    <div class="header__mobile">
+      <div class="header__mobile-page">
+        <div class="header__mobile-menu">
+          <div class="mobile-menu__top">
+            <div class="mobile-menu__title">ДОМ ОФИЦЕРОВ</div>
+            <button class="mobile-menu__close">
+              <img src="assets/svg icons/close_icon.svg" alt="Close Icon" class="close-icon" />
+            </button>
+          </div>
+          <ul class="header__mobile-nav-list">
+            <li><a href="afisha.html" class="header__mobile-nav-link">Афиша</a></li>
+            <li><a href="zaly.html" class="header__mobile-nav-link">Залы</a></li>
+            <li><a href="istoriya.html" class="header__mobile-nav-link">История</a></li>
+            <li><a href="muzei.html" class="header__mobile-nav-link">Музей</a></li>
+            <li><a href="biblioteka.html" class="header__mobile-nav-link">Библиотека</a></li>
+            <li><a href="pushkinskaya-karta.html" class="header__mobile-nav-link">Пушкинская карта</a></li>
+            <li><a href="kontakty.html" class="header__mobile-nav-link">Контакты</a></li>
+            <li><a href="https://vk.com" class="header__mobile-nav-link" target="_blank">Новости</a></li>
+          </ul>
+        </div>
+        <div class="mobile-menu__footer">
+          <div class="mobile-menu__contact">
+            <div class="mobile-menu__contact-line">
+              <span class="mobile-menu__phone">+7 (343) 350-15-88,</span>
+              <span class="mobile-menu__phone-label">билетные кассы</span>
+            </div>
+            <div class="mobile-menu__address">Екатеринбург, ул. Первомайская 27</div>
+          </div>
+          <div class="mobile-menu__social">
+            <div class="mobile-menu__social-icons">
+              <a href="https://vk.com" target="_blank">
+                <img src="assets/svg icons/vk_icon.svg" alt="VK Icon" class="social-icon" />
+              </a>
+              <a href="https://vk.com" target="_blank">
+                <img src="assets/svg icons/vk_icon.svg" alt="VK Icon" class="social-icon" />
+              </a>
+              <a href="https://vk.com" target="_blank">
+                <img src="assets/svg icons/vk_icon.svg" alt="VK Icon" class="social-icon" />
+              </a>
+            </div>
+            <img class="mobile-menu__footer-logo" src="assets/images/GP_studio_mobile.png" alt="Логотип GP Studio" />
+          </div>
+          <div class="mobile-menu__org">
+            ФГБУ “Дом офицеров Центрального военного округа”<br/>Министерства обороны Российской Федерации
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
   <main>
-    <h1>Добро пожаловать в Дом Офицеров</h1>
+    <!-- Контент -->
   </main>
-  <script src="scripts/main.js"></script>
+
 </body>
 </html>
