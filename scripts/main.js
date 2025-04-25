@@ -24,21 +24,29 @@ document.addEventListener('DOMContentLoaded', () => {
     const burger = document.querySelector('.header__burger');
     const close = document.querySelector('.mobile-menu__close');
     const mobileMenu = document.querySelector('.header__mobile-menu');
-    if (burger && close && mobileMenu) {
+    const overlay = document.querySelector('.menu-overlay');
+    if (burger && close && mobileMenu && overlay) {
       burger.addEventListener('click', () => {
-        mobileMenu.classList.add('active');
+        mobileMenu.classList.toggle('active');
+        overlay.classList.toggle('active');
       });
       close.addEventListener('click', () => {
         mobileMenu.classList.remove('active');
+        overlay.classList.remove('active');
+      });
+      overlay.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+        overlay.classList.remove('active');
       });
       const mobileLinks = document.querySelectorAll('.header__mobile-nav-link');
       mobileLinks.forEach(link => {
         link.addEventListener('click', () => {
           mobileMenu.classList.remove('active');
+          overlay.classList.remove('active');
         });
       });
     } else {
-      console.warn('Burger menu, close button, or mobile menu not found');
+      console.warn('Burger menu, close button, mobile menu, or overlay not found');
     }
   }
 });
