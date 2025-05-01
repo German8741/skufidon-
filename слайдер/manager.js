@@ -8,7 +8,7 @@ function initSlider() {
   let slideWidth = window.innerWidth <= 767 ? 375 : 1201 + 40;
   let totalSlides = slides.length;
   let autoSlideInterval;
-  let isTransitioning = false; // Флаг для предотвращения наложения переходов
+  let isTransitioning = false;
 
   function createPagination() {
     pagination.innerHTML = ''; // Clear existing dots
@@ -32,7 +32,7 @@ function initSlider() {
   }
 
   function updateSlider() {
-    if (isTransitioning) return; // Предотвращаем наложение переходов
+    if (isTransitioning) return;
     isTransitioning = true;
 
     slideWidth = window.innerWidth <= 767 ? 375 : 1201 + 40;
@@ -43,10 +43,9 @@ function initSlider() {
       dot.classList.toggle('active', index === currentIndex);
     });
 
-    // Разрешаем следующий переход после завершения текущего
     setTimeout(() => {
       isTransitioning = false;
-    }, 500); // Длительность перехода (соответствует transition: 0.5s)
+    }, 500);
   }
 
   function addSlide({ imageUrl, title, date, venue, price, age, link, pushkinCard }) {
@@ -55,7 +54,6 @@ function initSlider() {
     newSlide.style.backgroundImage = `url(${imageUrl})`;
     newSlide.setAttribute('data-link', link);
 
-    // Добавляем div.price-icon всегда, но с классом hidden, если pushkinCard === false
     const priceIconClass = pushkinCard ? '' : 'hidden';
 
     newSlide.innerHTML = `
@@ -76,27 +74,36 @@ function initSlider() {
     slider.appendChild(newSlide);
   }
 
-  // Auto-slide functionality
   function startAutoSlide() {
-    if (autoSlideInterval) clearInterval(autoSlideInterval); // Очищаем существующий интервал
+    if (autoSlideInterval) clearInterval(autoSlideInterval);
     autoSlideInterval = setInterval(() => {
       if (!isTransitioning) {
         currentIndex = currentIndex < totalSlides - 1 ? currentIndex + 1 : 0;
         updateSlider();
       }
-    }, 7000); // 7 seconds
+    }, 7000);
   }
 
   function resetAutoSlide() {
-    clearInterval(autoSlideInterval); // Останавливаем автопрокрутку
-    startAutoSlide(); // Перезапускаем с новым интервалом
+    clearInterval(autoSlideInterval);
+    startAutoSlide();
   }
 
-  // Load slides from slidesData
-  slidesData.forEach(slide => addSlide(slide));
+  // Очищаем слайдер перед добавлением новых слайдов
+  slider.innerHTML = '';
+
+  // Проверяем, существует ли window.slidesData
+  if (window.slidesData && Array.isArray(window.slidesData)) {
+    const filteredSlides = window.slidesData.filter(slide => slide.watchSlider === true);
+    console.log('Filtered slides:', filteredSlides); // Для отладки
+    filteredSlides.forEach(slide => addSlide(slide));
+  } else {
+    console.error('slidesData is not defined or not an array');
+  }
+
   createPagination();
   updateSlider();
-  startAutoSlide(); // Start auto-slide on page load
+  startAutoSlide();
 
   prevButton.addEventListener('click', () => {
     if (!isTransitioning) {
@@ -139,7 +146,7 @@ function initSlider() {
   });
 
   function handleSwipe() {
-    if (isTransitioning) return; // Предотвращаем наложение переходов
+    if (isTransitioning) return;
     const swipeDistance = touchEndX - touchStartX;
     const minSwipeDistance = 50;
 
