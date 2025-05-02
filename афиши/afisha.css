@@ -105,7 +105,8 @@ body {
 .price-badge {
   background: #C40005;
   border-radius: 9.61px;
-  height: 32.27px;
+  height: 32px;
+  width: 82px;
   position: absolute;
   bottom: 9.53px;
   left: 9.53px;
@@ -114,7 +115,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 7.33px 13.2px;
   box-sizing: border-box;
   font-weight: 500;
 }
@@ -225,10 +225,10 @@ body {
   }
   .price-badge {
     height: 24.93px;
+    width: 63.34px;
     bottom: 7.37px;
     left: 7.37px;
     font-size: 13.03px;
-    padding: 5.67px 10.2px;
     border-radius: 7.43px;
   }
   .pushkin-badge {

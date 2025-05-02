@@ -52,7 +52,7 @@ body {
 .zaly-header-icon {
     width: 12px;
     height: 22px;
-    background: url('assets/svg_icons/Vector.png') no-repeat center;
+    background: url('assets/svg_icons/Vector.png') no-repeat center; 
     background-size: contain;
     transition: transform 0.3s ease, filter 0.3s ease;
 }

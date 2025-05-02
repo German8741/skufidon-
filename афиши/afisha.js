@@ -5,14 +5,14 @@ window.slidesData = [
         title: 'Любовь, танго',
         date: '27 апреля, 17:00',
         venue: 'Малый зал',
-        price: 'от 4 000 р',
+        price: 'от 500 р',
         age: '16+',
         link: 'https://vk.com',
         pushkinCard: true,
         watchSlider: true
     },
     {
-        imageUrl: 'https://i.postimg.cc/02b8jS2W/image.png',
+        imageUrl: 'https://i.postimg.cc/ZqpXG4Fm/image.png',
         imageAfisha: 'https://i.postimg.cc/k5PW2SHr/afisha-zaglushka.jpg',
         title: 'Егор Крид',
         date: '27 апреля, 17:00',
@@ -45,7 +45,19 @@ window.slidesData = [
         age: '16+',
         link: 'https://vk.com',
         pushkinCard: false,
-        watchSlider: false
+        watchSlider: true
+    },
+    {
+        imageUrl: 'https://i.postimg.cc/02b8jS2W/image.png',
+        imageAfisha: 'https://i.postimg.cc/k5PW2SHr/afisha-zaglushka.jpg',
+        title: 'Егор Крид клоун ебать меня',
+        date: '27 апреля, 17:00',
+        venue: 'Малый зал',
+        price: 'от 4 000 р',
+        age: '16+',
+        link: 'https://vk.com',
+        pushkinCard: false,
+        watchSlider: true 
     },
     {
         imageUrl: 'https://i.postimg.cc/02b8jS2W/image.png',
@@ -57,7 +69,7 @@ window.slidesData = [
         age: '16+',
         link: 'https://vk.com',
         pushkinCard: true,
-        watchSlider: true
+        watchSlider: false 
     }
 ];
 
