@@ -21,7 +21,7 @@ window.slidesData = [
         age: '16+',
         link: 'https://vk.com',
         pushkinCard: false,
-        watchSlider:  true
+        watchSlider: true
     },
     {
         imageUrl: 'https://i.postimg.cc/02b8jS2W/image.png',
@@ -57,7 +57,7 @@ window.slidesData = [
         age: '16+',
         link: 'https://vk.com',
         pushkinCard: false,
-        watchSlider: true 
+        watchSlider: true
     },
     {
         imageUrl: 'https://i.postimg.cc/02b8jS2W/image.png',
@@ -69,7 +69,7 @@ window.slidesData = [
         age: '16+',
         link: 'https://vk.com',
         pushkinCard: true,
-        watchSlider: false 
+        watchSlider: false
     }
 ];
 
@@ -82,10 +82,9 @@ function getDayOfWeek(dateStr) {
     return days[date.getDay()];
 }
 
-// Функция для рендеринга карточек афиш
 function renderAfishaCards() {
     const cardsContainer = document.getElementById('cards');
-    if (!cardsContainer) return; // Если контейнера нет - выходим
+    if (!cardsContainer) return;
     
     window.slidesData.forEach(slide => {
         const [dayMonth, time] = slide.date.split(', ');
@@ -117,14 +116,70 @@ function renderAfishaCards() {
     });
 }
 
-// Функция для рендеринга слайдера
-function renderSlider() {
-    const sliderContainer = document.getElementById('slider');
-    if (!sliderContainer) return; // Если контейнера нет - выходим
-    // Удаляем добавление слайдов, так как это делает initSlider()
+function initSlider() {
+    const cardsContainer = document.querySelector('.cards');
+    let isDragging = false;
+    let startPos = 0;
+    let currentTranslate = 0;
+    let prevTranslate = 0;
+    let animationID = 0;
+
+    cardsContainer.addEventListener('mousedown', startDragging);
+    cardsContainer.addEventListener('mouseup', stopDragging);
+    cardsContainer.addEventListener('mouseleave', stopDragging);
+    cardsContainer.addEventListener('mousemove', drag);
+    
+    cardsContainer.addEventListener('touchstart', touchStart, { passive: false });
+    cardsContainer.addEventListener('touchend', stopDragging, { passive: true });
+    cardsContainer.addEventListener('touchmove', touchMove, { passive: false });
+
+    function startDragging(event) {
+        isDragging = true;
+        startPos = getPositionX(event);
+        animationID = requestAnimationFrame(animation);
+        cardsContainer.style.cursor = 'grabbing';
+        cardsContainer.style.scrollBehavior = 'auto';
+    }
+    
+    function touchStart(event) {
+        startDragging(event);
+        event.preventDefault();
+    }
+
+    function stopDragging() {
+        isDragging = false;
+        prevTranslate = currentTranslate;
+        cancelAnimationFrame(animationID);
+        cardsContainer.style.cursor = 'grab';
+        cardsContainer.style.scrollBehavior = 'smooth';
+    }
+
+    function drag(event) {
+        if (isDragging) {
+            const currentPosition = getPositionX(event);
+            currentTranslate = prevTranslate + currentPosition - startPos;
+        }
+    }
+    
+    function touchMove(event) {
+        if (isDragging) {
+            const currentPosition = getPositionX(event);
+            currentTranslate = prevTranslate + currentPosition - startPos;
+            event.preventDefault();
+        }
+    }
+
+    function getPositionX(event) {
+        return event.type.includes('mouse') ? event.pageX : event.touches[0].clientX;
+    }
+
+    function animation() {
+        cardsContainer.scrollLeft = -currentTranslate;
+        if (isDragging) requestAnimationFrame(animation);
+    }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
     renderAfishaCards();
-    renderSlider();
+    initSlider();
 });

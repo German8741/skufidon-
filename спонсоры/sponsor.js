@@ -1,59 +1,38 @@
-// sponsors/sponsor.js
+// Объединенный и оптимизированный код для спонсоров
 document.addEventListener('DOMContentLoaded', function() {
-    const sponsorsSection = document.getElementById('sponsors-section');
-    
-    // Массив спонсоров (можно заменить на загрузку из API)
-    const sponsors = [
-      { image: 'https://i.postimg.cc/ncv6m252/image.png', alt: 'Sponsor 1' },
-      { image: 'https://i.postimg.cc/C56G9GB2/Sponsor2.png', alt: 'Sponsor 2' },
-      { image: 'https://i.postimg.cc/ncv6m252/image.png', alt: 'Sponsor 3' },
-      { image: 'https://i.postimg.cc/C56G9GB2/Sponsor2.png', alt: 'Sponsor 4' },
-      { image: 'https://i.postimg.cc/ncv6m252/image.png', alt: 'Sponsor 5' },
-      { image: 'https://i.postimg.cc/C56G9GB2/Sponsor2.png', alt: 'Sponsor 6' }
-    ];
-  
-    // Создаем HTML для спонсоров
-    let sponsorsHTML = `
-      <div class="sponsors-container">
-        <div class="sponsors-track" id="sponsors-track">
-    `;
-  
-    // Добавляем спонсоров дважды для бесконечной анимации
-    sponsors.forEach(sponsor => {
-      sponsorsHTML += `
-        <div class="sponsor-item">
+  class SponsorsManager {
+    constructor() {
+      this.sponsors = [
+        { image: 'https://i.postimg.cc/gk12HgjL/sponsor1.png', alt: 'Sponsor 1' },
+        { image: 'https://i.postimg.cc/C56G9GB2/Sponsor2.png', alt: 'Sponsor 2' },
+        { image: 'https://i.postimg.cc/gk12HgjL/sponsor1.png', alt: 'Sponsor 3' },
+        { image: 'https://i.postimg.cc/C56G9GB2/Sponsor2.png', alt: 'Sponsor 4' },
+        { image: 'https://i.postimg.cc/gk12HgjL/sponsor1.png', alt: 'Sponsor 5' },
+        { image: 'https://i.postimg.cc/C56G9GB2/Sponsor2.png', alt: 'Sponsor 6' }
+      ];
+      this.trackElement = document.getElementById('sponsors-track');
+      this.animation = null;
+    }
+
+    init() {
+      this.renderSponsors();
+      this.initAnimation();
+    }
+
+    renderSponsors() {
+      let html = '';
+      const sponsorsHTML = this.sponsors.map(sponsor => 
+        `<div class="sponsor-item">
           <img src="${sponsor.image}" alt="${sponsor.alt}" class="sponsor-logo">
-        </div>
-      `;
-    });
-  
-    // Дублируем для бесшовной анимации
-    sponsors.forEach(sponsor => {
-      sponsorsHTML += `
-        <div class="sponsor-item">
-          <img src="${sponsor.image}" alt="${sponsor.alt}" class="sponsor-logo">
-        </div>
-      `;
-    });
-  
-    sponsorsHTML += `
-        </div>
-      </div>
-    `;
-  
-    // Вставляем HTML в секцию
-    sponsorsSection.innerHTML = sponsorsHTML;
-  
-    // Инициализируем анимацию
-    initSponsorsAnimation();
-  });
-  
-  function initSponsorsAnimation() {
-    const track = document.getElementById('sponsors-track');
-    let animation;
-  
-    function startAnimation() {
-      animation = track.animate(
+        </div>`
+      ).join('');
+      
+      // Дублируем для бесшовной анимации
+      this.trackElement.innerHTML = sponsorsHTML + sponsorsHTML;
+    }
+
+    initAnimation() {
+      this.animation = this.trackElement.animate(
         [
           { transform: 'translateX(0)' },
           { transform: 'translateX(-50%)' }
@@ -63,18 +42,37 @@ document.addEventListener('DOMContentLoaded', function() {
           iterations: Infinity
         }
       );
+
+      // Останавливаем при наведении
+      this.trackElement.addEventListener('mouseenter', () => {
+        this.animation.pause();
+      });
+
+      // Возобновляем при уходе курсора
+      this.trackElement.addEventListener('mouseleave', () => {
+        this.animation.play();
+      });
     }
-  
-    // Запускаем анимацию
-    startAnimation();
-  
-    // Останавливаем при наведении
-    track.addEventListener('mouseenter', () => {
-      animation.pause();
-    });
-  
-    // Возобновляем при уходе курсора
-    track.addEventListener('mouseleave', () => {
-      animation.play();
-    });
+
+    addSponsor(sponsorData) {
+      this.sponsors.push(sponsorData);
+      this.renderSponsors();
+    }
+
+    removeSponsor(index) {
+      this.sponsors.splice(index, 1);
+      this.renderSponsors();
+    }
   }
+
+  // Инициализация
+  const sponsorsSection = document.getElementById('sponsors-section');
+  sponsorsSection.innerHTML = `
+    <div class="sponsors-container">
+      <div class="sponsors-track" id="sponsors-track"></div>
+    </div>
+  `;
+
+  const sponsorsManager = new SponsorsManager();
+  sponsorsManager.init();
+});

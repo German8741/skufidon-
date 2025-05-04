@@ -1,79 +1,79 @@
 /* sponsors/sponsor.css */
 .sponsors-section {
-    max-width: 1920px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 40px 0;
-    background: #f8f9fa;
-  }
-  
-  .sponsors-container {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-  }
-  
-  .sponsors-track {
-    display: flex;
-    align-items: center;
-    gap: 60px;
-    width: max-content;
-  }
-  
-  .sponsor-item {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
-    transition: transform 0.3s;
-  }
-  
-  .sponsor-item:hover {
-    transform: scale(1.05);
-  }
-  
+  max-width: 1920px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 40px 0;
+  background: #f8f9fa;
+}
+
+.sponsors-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.sponsors-track {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  width: max-content;
+}
+
+.sponsor-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  transition: transform 0.3s;
+}
+
+.sponsor-item:hover {
+  transform: scale(1.05);
+}
+
+.sponsor-logo {
+  object-fit: contain;
+  filter: grayscale(100%) opacity(0.8);
+  transition: filter 0.3s;
+  width: 160px;
+  height: 236px;
+}
+
+.sponsor-item:hover .sponsor-logo {
+  filter: grayscale(0) opacity(1);
+}
+
+/* Градиентные маски по краям */
+.sponsors-container::before,
+.sponsors-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100px;
+  z-index: 2;
+}
+
+.sponsors-container::before {
+  left: 0;
+  background: linear-gradient(90deg, #f8f9fa, rgba(248, 249, 250, 0));
+}
+
+.sponsors-container::after {
+  right: 0;
+  background: linear-gradient(90deg, rgba(248, 249, 250, 0), #f8f9fa);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
   .sponsor-logo {
-    object-fit: contain;
-    filter: grayscale(100%) opacity(0.8);
-    transition: filter 0.3s;
-    width: 160px;
-    height: 236px;
+    width: 115px;
+    height: 78px;
   }
   
-  .sponsor-item:hover .sponsor-logo {
-    filter: grayscale(0) opacity(1);
-  }
-  
-  /* Градиентные маски по краям */
   .sponsors-container::before,
   .sponsors-container::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 100px;
-    z-index: 2;
+    width: 50px;
   }
-  
-  .sponsors-container::before {
-    left: 0;
-    background: linear-gradient(90deg, #f8f9fa, rgba(248, 249, 250, 0));
-  }
-  
-  .sponsors-container::after {
-    right: 0;
-    background: linear-gradient(90deg, rgba(248, 249, 250, 0), #f8f9fa);
-  }
-  
-  /* Адаптивность */
-  @media (max-width: 768px) {
-    .sponsor-logo {
-      width: 115px;
-      height: 78px;
-    }
-    
-    .sponsors-container::before,
-    .sponsors-container::after {
-      width: 50px;
-    }
-  }
+}
