@@ -3,94 +3,111 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Залы</title>
+  <title>Дом Офицеров</title>
   <link rel="stylesheet" href="styles/styles.css">
+  <link rel="stylesheet" href="слайдер/slides.css">
+  <link rel="stylesheet" href="афиши/afisha.css">
+  <link rel="stylesheet" href="залы/zaly.css">
+  <link rel="stylesheet" href="спонсоры/sponsor.css">
+
 </head>
 <body>
   <!-- хедер -->
   <header class="header">
-    <div class="header__desktop">
-      <div class="header__container">
-        <a href="index.html">
-          <img src="assets/images/logo_dom_oficerov.png" alt="Логотип Дома Офицеров" class="header__logo">
-        </a>
-        <nav class="header__nav">
-          <ul class="header__nav-list">
-            <li><a href="afisha.html" class="header__nav-link">Афиша</a></li>
-            <li><a href="zaly.html" class="header__nav-link">Залы</a></li>
-            <li><a href="istoriya.html" class="header__nav-link">История</a></li>
-            <li><a href="muzei.html" class="header__nav-link">Музей</a></li>
-            <li><a href="biblioteka.html" class="header__nav-link">Библиотека</a></li>
-            <li><a href="pushkinskaya-karta.html" class="header__nav-link">Пушкинская карта</a></li>
-            <li><a href="kontakty.html" class="header__nav-link">Контакты</a></li>
-          </ul>
-        </nav>
-        <div class="header__right">
-          <a href="https://vk.com" class="header__news" target="_blank">новости</a>
-          <button class="header__burger">
-            <img src="assets/svg_icons/burger_icon.svg" alt="Burger Icon" class="burger-icon" />
-          </button>
-        </div>
+    <div class="header__container">
+      <a href="index.html">
+        <img src="assets/images/logo_dom_oficerov.png" alt="Логотип Дома Офицеров" class="header__logo">
+      </a>
+      <nav class="header__nav">
+        <ul class="header__nav-list">
+          <li><a href="afisha.html" class="header__nav-link">Афиша</a></li>
+          <li><a href="zaly.html" class="header__nav-link">Залы</a></li>
+          <li><a href="istoriya.html" class="header__nav-link">История</a></li>
+          <li><a href="muzei.html" class="header__nav-link">Музей</a></li>
+          <li><a href="biblioteka.html" class="header__nav-link">Библиотека</a></li>
+          <li><a href="pushkinskaya-karta.html" class="header__nav-link">Пушкинская карта</a></li>
+          <li><a href="kontakty.html" class="header__nav-link">Контакты</a></li>
+        </ul>
+      </nav>
+      <div class="header__right">
+        <a href="https://vk.com" class="header__news" target="_blank">новости</a>
+        <button class="header__burger">
+          <img src="assets/svg_icons/burger_icon.svg" alt="Menu" class="burger-icon">
+        </button>
       </div>
     </div>
-    <div class="menu-overlay"></div>
     <div class="header__mobile">
       <div class="header__mobile-page">
-        <div class="header__mobile-menu">
-          <div class="mobile-menu__top">
-            <div class="mobile-menu__title">ДОМ ОФИЦЕРОВ</div>
-            <button class="mobile-menu__close">
-              <img src="assets/svg_icons/close_icon.svg" alt="Close Icon" class="close-icon" />
+        <div style="width: 375px; height: 812px; position: relative; background: black; overflow: hidden;">
+          <!-- Заголовок и кнопка закрытия -->
+          <div style="width: 100%; padding: 20px; position: absolute; top: 0; left: 0; display: flex; justify-content: space-between; align-items: center; box-sizing: border-box;">
+            <div style="color: white; font-size: 31px; font-family: 'Academy Condensed', sans-serif; font-weight: 500;">
+              ДОМ ОФИЦЕРОВ
+            </div>
+            <button class="mobile-menu__close" style="background: none; border: none; cursor: pointer;">
+              <img src="assets/svg_icons/close_icon.svg" alt="Close" style="width: 32px; height: 32px;">
             </button>
           </div>
-          <ul class="header__mobile-nav-list">
-            <li><a href="afisha.html" class="header__mobile-nav-link">Афиша</a></li>
-            <li><a href="zaly.html" class="header__mobile-nav-link">Залы</a></li>
-            <li><a href="istoriya.html" class="header__mobile-nav-link">История</a></li>
-            <li><a href="muzei.html" class="header__mobile-nav-link">Музей</a></li>
-            <li><a href="biblioteka.html" class="header__mobile-nav-link">Библиотека</a></li>
-            <li><a href="pushkinskaya-karta.html" class="header__mobile-nav-link">Пушкинская карта</a></li>
-            <li><a href="kontakty.html" class="header__mobile-nav-link">Контакты</a></li>
-            <li><a href="https://vk.com" class="header__mobile-nav-link" target="_blank">Новости</a></li>
-          </ul>
-        </div>
-        <div class="mobile-menu__footer">
-          <div class="mobile-menu__contact">
-            <div class="mobile-menu__contact-line">
-              <span class="mobile-menu__phone">+7 (343) 350-15-88,</span>
-              <span class="mobile-menu__phone-label">билетные кассы</span>
-            </div>
-            <div class="mobile-menu__address">Екатеринбург, ул. Первомайская 27</div>
+          
+          <!-- Навигация --> 
+          <div style="left: 20px; top: 103px; position: absolute; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 20px; display: inline-flex;">
+            <a href="afisha.html" style="justify-content: center; display: flex; flex-direction: column; color: #878787; font-size: 28px; font-family: 'Academy Condensed', sans-serif; font-weight: 500; word-wrap: break-word; text-decoration: none;">Афиша</a>
+            <a href="zaly.html" style="justify-content: center; display: flex; flex-direction: column; color: #878787; font-size: 28px; font-family: 'Academy Condensed', sans-serif; font-weight: 500; word-wrap: break-word; text-decoration: none;">Залы</a>
+            <a href="istoriya.html" style="justify-content: center; display: flex; flex-direction: column; color: #878787; font-size: 28px; font-family: 'Academy Condensed', sans-serif; font-weight: 500; word-wrap: break-word; text-decoration: none;">История</a>
+            <a href="muzei.html" style="justify-content: center; display: flex; flex-direction: column; color: #878787; font-size: 28px; font-family: 'Academy Condensed', sans-serif; font-weight: 500; word-wrap: break-word; text-decoration: none;">Музей</a>
+            <a href="biblioteka.html" style="justify-content: center; display: flex; flex-direction: column; color: #878787; font-size: 28px; font-family: 'Academy Condensed', sans-serif; font-weight: 500; word-wrap: break-word; text-decoration: none;">Библиотека</a>
+            <a href="pushkinskaya-karta.html" style="justify-content: center; display: flex; flex-direction: column; color: #878787; font-size: 28px; font-family: 'Academy Condensed', sans-serif; font-weight: 500; word-wrap: break-word; text-decoration: none;">Пушкинская карта</a>
+            <a href="kontakty.html" style="justify-content: center; display: flex; flex-direction: column; color: #878787; font-size: 28px; font-family: 'Academy Condensed', sans-serif; font-weight: 500; word-wrap: break-word; text-decoration: none;">Контакты</a>
           </div>
-          <div class="mobile-menu__social">
-            <div class="mobile-menu__social-icons">
-              <a href="https://vk.com" target="_blank">
-                <img src="assets/svg_icons/vk_icon.svg" alt="VK Icon" class="social-icon" />
-              </a>
-              <a href="https://vk.com" target="_blank">
-                <img src="assets/svg_icons/vk_icon.svg" alt="VK Icon" class="social-icon" />
-              </a>
-              <a href="https://vk.com" target="_blank">
-                <img src="assets/svg_icons/vk_icon.svg" alt="VK Icon" class="social-icon" />
-              </a>
+          
+          <!-- Футер меню -->
+          <div style="padding-left: 20px; padding-right: 9px; left: 0px; top: 547px; position: absolute; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 14px; display: inline-flex;">
+            <div style="flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 7px; display: flex;">
+              <div style="align-self: stretch; justify-content: flex-start; align-items: center; gap: 4px; display: inline-flex;">
+                <div style="justify-content: center; display: flex; flex-direction: column; color: white; font-size: 21px; font-family: 'Myriad Pro Condensed', sans-serif; font-style: italic; font-weight: 400; word-wrap: break-word;">+7 (343) 350-15-88,</div>
+                <div styleb style="justify-content: center; display: flex; flex-direction: column; color: #878787; font-size: 21px; font-family: 'Academy Condensed', sans-serif; font-weight: 500; word-wrap: break-word;">билетные кассы</div>
+              </div>
+              <div style="justify-content: center; display: flex; flex-direction: column; color: #878787; font-size: 21px; font-family: 'Academy Condensed', sans-serif; font-weight: 500; word-wrap: break-word;">Екатеринбург, ул. Первомайская 27</div>
             </div>
-            <img class="mobile-menu__footer-logo" src="assets/images/GP_studio_mobile.png" alt="Логотип GP Studio" />
-          </div>
-          <div class="mobile-menu__org">
-            © 2025 ФГБУ “Дом офицеров Центрального военного округа” Министерства обороны РФ
+            <div style="width: 317px; justify-content: space-between; align-items: center; display: inline-flex;">
+              <div style="justify-content: flex-start; align-items: center; gap: 26px; display: flex;">
+                <a href="https://vk.com" target="_blank">
+                  <div style="width: 30px; height: 30px; position: relative;">
+                    <img src="assets/svg_icons/vk_icon.svg" alt="VK" style="width: 100%; height: 100%;">
+                  </div>
+                </a>
+                <a href="https://vk.com" target="_blank">
+                  <div style="width: 30px; height: 30px; position: relative;">
+                    <img src="assets/svg_icons/vk_icon.svg" alt="VK" style="width: 100%; height: 100%;">
+                  </div>
+                </a>
+                <a href="https://vk.com" target="_blank">
+                  <div style="width: 30px; height: 30px; position: relative;">
+                    <img src="assets/svg_icons/vk_icon.svg" alt="VK" style="width: 100%; height: 100%;">
+                  </div>
+                </a>
+              </div>
+              <img style="width: 96px; height: 54px;" src="assets/images/GP_studio_mobile.png" alt="Footer Logo" />
+            </div>
+            <div style="justify-content: center; display: flex; flex-direction: column; color: #878787; font-size: 21px; font-family: 'Academy Condensed', sans-serif; font-weight: 500; word-wrap: break-word;">ФГБУ "Дом офицеров Центрального военного округа"<br/>Министерства обороны Российской Федерации</div>
           </div>
         </div>
       </div>
     </div>
   </header>
   <!-- хедер -->
-  <main class="main">
-    <!-- КОНТЕНТ -->
-<h1>Залы</h1>
-<!-- КОНТЕНТ -->
    
-<script src="scripts/main.js"></script>
-  </main>
+  <main class="main">
+   
+    <!-- Залы -->
+    <div class="zaly-container">
+      <a href="https://example.com/zaly" class="zaly-header">
+          <div class="zaly-header-title">Залы в аренду</div>
+          <img src="assets/svg_icons/Vector.png" class="zaly-header-icon" alt="Arrow">
+      </a>
+      <div class="zaly-cards" id="zaly-cards"></div>
+  </div>
+  
   <!-- футер -->
   <div class="footer" style="width: 1440px; height: 785px; position: relative; background: white">
     <!-- Группа 1 -->
@@ -230,11 +247,22 @@
     <!-- Копирайт -->
     <div class="footer__group footer__group--copyright">
       <div class="footer__copyright" style="left: 60px; top: 700px; position: absolute; color: black; font-size: 18px; font-family: Academy Condensed; font-weight: 500; word-wrap: break-word">
-        © 2025 ФГБУ “Дом офицеров Центрального военного округа„ Министерства обороны РФ
+        © 2025 ФГБУ “Дом офицеров Центрального военного округа„ Министерства обороны РФ
       </div>
     </div>
   </div>
   <!-- футер -->
+  <script src="афиши/afisha.js"></script>
+  <script src="афиши/new.js"></script>
   <script src="scripts/main.js"></script>
+  <script src="слайдер/slides.js"></script>
+  <script src="слайдер/manager.js"></script>
+  <script src="залы/zaly.js"></script>
+  <script src="спонсоры/sponsor.js"></script>
+  <script src="scripts/header.js"></script>
+  <script>
+    manager.initSlider();
+    zalyManager.initZaly();
+  </script>
 </body>
 </html>
