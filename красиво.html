@@ -3,166 +3,211 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Слайдер Пушкинской карты</title>
+    <title>Контакты</title>
     <style>
-        /* Скрываем радиокнопки */
-        .slider input[type="radio"] {
-            display: none;
+        body {
+            font-family: 'Myriad Pro', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
         }
-
-        /* Контейнер слайдера */
-        .slider {
-            width: 926px;
-            height: 590px;
-            padding: 251.55px 17.5px;
-            border-radius: 14.58px;
-            background: url('https://placehold.co/926x590');
+        
+        .contacts-container {
             display: flex;
             flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: 10px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .tabs {
+            align-self: stretch;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 32px;
+        }
+        
+        .tab {
+            font-family: 'Myriad Pro';
+            font-style: italic;
+            font-weight: 400;
+            font-size: 38px;
+            cursor: pointer;
+        }
+        
+        .tab.active {
+            color: #C40005;
+        }
+        
+        .content-wrapper {
+            display: flex;
             justify-content: center;
             align-items: center;
-            gap: 7.29px;
-            position: relative;
-            overflow: hidden;
+            gap: 24px;
         }
-
-        /* Контейнер для слайдов */
-        .slides {
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
+        
+        .left-column {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
         }
-
-        /* Стили для каждого слайда */
-        .slide {
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            opacity: 0;
-            transition: opacity 0.5s ease-in-out;
+        
+        .info-block {
+            background: white;
+            border-radius: 20px;
+            padding: 20px;
         }
-
-        .slide img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            border-radius: 14.58px;
+        
+        .institution-name {
+            font-family: 'Academy Condensed';
+            font-size: 24px;
+            font-weight: 500;
+            color: black;
         }
-
-        /* Показываем активный слайд */
-        #slide1:checked ~ .slides .slide:nth-child(1),
-        #slide2:checked ~ .slides .slide:nth-child(2),
-        #slide3:checked ~ .slides .slide:nth-child(3),
-        #slide4:checked ~ .slides .slide:nth-child(4) {
-            opacity: 1;
-        }
-
-        /* Навигационные кнопки */
-        .navigation {
-            width: 878px;
+        
+        .address-block {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            position: relative;
-            z-index: 10;
+            width: 100%;
         }
-
-        .nav-btn {
-            padding: 20px;
-            background: #F9F9F9;
-            border-radius: 100px;
+        
+        .address-info {
             display: flex;
-            justify-content: center;
-            align-items: center;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .section-title {
+            font-family: 'Myriad Pro';
+            font-weight: 700;
+            font-size: 22px;
+            color: black;
+        }
+        
+        .section-text {
+            font-family: 'Academy Condensed';
+            font-weight: 500;
+            font-size: 22px;
+            color: black;
+        }
+        
+        .highlight-red {
+            color: #C40005;
+        }
+        
+        .map-button {
+            background: #C40005;
+            border-radius: 13px;
+            padding: 15px 40px;
+            color: white;
+            font-family: 'Myriad Pro';
+            font-weight: 600;
+            font-size: 18px;
             cursor: pointer;
+            border: none;
         }
-
-        .nav-btn img {
-            width: 24px;
-            height: 24px;
-        }
-
-        /* Контейнер для центрирования кнопок с отступом */
-        .nav-container {
+        
+        .transport-item {
             display: flex;
-            justify-content: center;
-            gap: 24px;
+            align-items: center;
+            gap: 10px;
         }
-
-        /* Переключение слайдов через метки */
-        label[for="slide1"] { order: 1; }
-        label[for="slide2"] { order: 2; }
-        label[for="slide3"] { order: 3; }
-        label[for="slide4"] { order: 4; }
-
-        /* Адаптивность для мобильных устройств */
-        @media (max-width: 950px) {
-            .slider {
+        
+        .transport-type {
+            font-family: 'Myriad Pro';
+            font-style: italic;
+            font-weight: 700;
+            font-size: 17px;
+            color: black;
+        }
+        
+        .transport-routes {
+            font-family: 'Academy Condensed';
+            font-weight: 500;
+            font-size: 22px;
+            color: black;
+        }
+        
+        .map-image {
+            width: 648px;
+            height: 608px;
+            border-radius: 20px;
+            object-fit: cover;
+        }
+        
+        @media (max-width: 1200px) {
+            .content-wrapper {
+                flex-direction: column;
+            }
+            
+            .map-image {
                 width: 100%;
                 height: auto;
-                padding: 20px;
-                background: none;
-            }
-
-            .navigation {
-                width: 100%;
-            }
-
-            .nav-btn {
-                padding: 15px;
-            }
-
-            .nav-btn img {
-                width: 20px;
-                height: 20px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="slider">
-        <!-- Радиокнопки для управления слайдами -->
-        <input type="radio" name="slide" id="slide1" checked>
-        <input type="radio" name="slide" id="slide2">
-        <input type="radio" name="slide" id="slide3">
-        <input type="radio" name="slide" id="slide4">
-
-        <!-- Слайды -->
-        <div class="slides">
-            <div class="slide">
-                <img src="https://i.postimg.cc/Bb1DFd2Y/image.png" alt="Страница 1">
-            </div>
-            <div class="slide">
-                <img src="https://i.postimg.cc/3wsDTts2/image.png" alt="Страница 2">
-            </div>
-            <div class="slide">
-                <img src="https://i.postimg.cc/15dm28hq/image.png" alt="Страница 3">
-            </div>
-            <div class="slide">
-                <img src="https://i.postimg.cc/GtZfJwVH/image.png" alt="Страница 4">
-            </div>
+    <div class="contacts-container">
+        <div class="tabs">
+            <div class="tab active">Адрес</div>
+            <div class="tab">Контакты</div>
+            <div class="tab">Уставы</div>
         </div>
-
-        <!-- Навигация -->
-        <div class="navigation">
-            <div class="nav-container">
-                <label for="slide1" class="nav-btn">
-                    <img src="assets/svg_icons/arrow_left.png" alt="Предыдущий слайд">
-                </label>
-                <label for="slide2" class="nav-btn">
-                    <img src="assets/svg_icons/arrow_left.png" alt="Предыдущий слайд">
-                </label>
-                <label for="slide3" class="nav-btn">
-                    <img src="assets/svg_icons/arrow_right.png" alt="Следующий слайд">
-                </label>
-                <label for="slide4" class="nav-btn">
-                    <img src="assets/svg_icons/arrow_right.png" alt="Следующий слайд">
-                </label>
+        
+        <div class="content-wrapper">
+            <div class="left-column">
+                <div class="info-block" style="padding-right: 232px;">
+                    <div class="institution-name">
+                        ФГБУ "Дом офицеров Центрального военного округа"<br>
+                        Министерства обороны Российской Федерации
+                    </div>
+                </div>
+                
+                <div class="info-block address-block" style="padding-right: 30px;">
+                    <div class="address-info">
+                        <div class="section-title">Адрес</div>
+                        <div class="section-text">Екатеринбург, проспект Ленина, 46а</div>
+                    </div>
+                    <button class="map-button">Показать на карте</button>
+                </div>
+                
+                <div class="info-block" style="height: 131px; padding-right: 199px;">
+                    <div class="section-title">Театральные кассы</div>
+                    <div class="section-text">
+                        Касса находится <span class="highlight-red">в здании театра</span> слева от входа <br>
+                        Работает <span class="highlight-red">ежедневно с 10:00 до 20:00</span>, перерыв с 14:00 до 15:00.
+                    </div>
+                </div>
+                
+                <div class="info-block" style="padding-right: 27px;">
+                    <div class="section-title">Как добраться</div>
+                    <div style="display: flex; flex-direction: column; gap: 16px; margin-top: 10px;">
+                        <div class="transport-item">
+                            <div class="transport-type">Автобус:</div>
+                            <div class="transport-routes">маршруты № 27, 28, 31, 32, 40, 50, 50а, 60а, 61. Остановка "Оперный театр".</div>
+                        </div>
+                        <div class="transport-item">
+                            <div class="transport-type">Трамвай:</div>
+                            <div class="transport-routes">маршруты № 27, 28, 31, 32, 40, 50, 50а, 60а, 61. Остановка "Оперный театр".</div>
+                        </div>
+                        <div class="transport-item">
+                            <div class="transport-type">Маршрутное такси:</div>
+                            <div class="transport-routes">маршруты № 27, 28, 28, 31, 32, 40, 50. Остановка "Оперный театр".</div>
+                        </div>
+                        <div class="transport-item">
+                            <div class="transport-type">Метро:</div>
+                            <div class="transport-routes">станция метро "Площадь 1905 года".</div>
+                        </div>
+                    </div>
+                </div>
             </div>
+            
+            <img class="map-image" src="https://maps.googleapis.com/maps/api/staticmap?center=Екатеринбург,проспект+Ленина,46а&zoom=15&size=648x608&maptype=roadmap&markers=color:red%7CЕкатеринбург,проспект+Ленина,46а&key=YOUR_API_KEY" alt="Карта">
         </div>
     </div>
 </body>

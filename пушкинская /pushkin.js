@@ -1,16 +1,4 @@
-// Открытие меню
-document.querySelector('.header__burger').addEventListener('click', function() {
-    document.querySelector('.header__mobile-page').classList.add('active');
-    document.body.style.overflow = 'hidden'; // Блокируем скролл страницы
-  });
-  
-  // Закрытие меню
-  document.querySelector('.mobile-menu__close').addEventListener('click', function() {
-    document.querySelector('.header__mobile-page').classList.remove('active');
-    document.body.style.overflow = '';
-  });
-
-  document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function() {
     const slider = document.querySelector('.slider');
     const prevButton = document.querySelector('.prev');
     const nextButton = document.querySelector('.next');

@@ -4,7 +4,7 @@ const zalyData = [
         title: 'Концертный зал',
         area: '700',
         capacity: 'до 800 человек',
-        link: 'https://example.com/zal1',
+        link: 'bluehell.html',
         minArea: 700
     },
     {
@@ -12,7 +12,7 @@ const zalyData = [
         title: 'Фойе концертного зала',
         area: '500',
         capacity: 'до 600 человек',
-        link: 'https://example.com/zal2',
+        link: 'bluehell.html',
         minArea: 500
     },
     {
@@ -20,7 +20,7 @@ const zalyData = [
         title: 'Жуковский зал',
         area: '300',
         capacity: 'до 400 человек',
-        link: 'https://example.com/zal3',
+        link: 'bluehell.html',
         minArea: 300
     },
     {
@@ -28,7 +28,7 @@ const zalyData = [
         title: 'Малый зал',
         area: '200',
         capacity: 'до 200 человек',
-        link: 'https://example.com/zal4',
+        link: 'bluehell.html',
         minArea: 200
     },
     {
@@ -36,7 +36,7 @@ const zalyData = [
         title: 'Гусарская баллада',
         area: '150',
         capacity: 'до 150 человек',
-        link: 'https://example.com/zal5',
+        link: 'bluehell.html',
         minArea: 150
     }
 ];

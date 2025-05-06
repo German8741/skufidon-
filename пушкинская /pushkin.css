@@ -1,0 +1,136 @@
+/* Slider Styles */
+.slider-section {
+    width: 100%;
+    padding: 40px 0;
+    margin: 0 auto;
+    max-width: 1440px;
+  }
+  
+  .slider-container {
+    position: relative;
+    width: 100%;
+    max-width: 926px;
+    aspect-ratio: 1285 / 765;
+    overflow: hidden;
+    border-radius: 15px;
+    margin: 0 auto;
+    box-shadow: 0 4px 44px rgba(0, 0, 0, 0.1);
+  }
+  
+  .slider {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+    touch-action: pan-y;
+  }
+  
+  .slide {
+    min-width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+  }
+  
+  .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+    user-select: none;
+    -webkit-user-drag: none;
+    touch-action: none;
+  }
+  
+  .nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    background-color: white;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+    transition: all 0.3s ease;
+  }
+  
+  .nav-button:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .nav-button.prev {
+    left: 12px;
+  }
+  
+  .nav-button.next {
+    right: 12px;
+  }
+  
+  .nav-button svg {
+    width: 24px;
+    height: 24px;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 1024px) {
+    .slider-container {
+      max-width: 800px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .slider-section {
+      padding: 30px 20px;
+    }
+    
+    .slider-container {
+      border-radius: 10px;
+    }
+    
+    .slide img {
+      border-radius: 10px;
+    }
+    
+    .nav-button {
+      width: 40px;
+      height: 40px;
+    }
+    
+    .nav-button svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .slider-section {
+      padding: 20px 15px;
+    }
+    
+    .nav-button {
+      width: 36px;
+      height: 36px;
+    }
+    
+    .nav-button svg {
+      width: 18px;
+      height: 18px;
+    }
+    
+    .nav-button.prev {
+      left: 8px;
+    }
+    
+    .nav-button.next {
+      right: 8px;
+    }
+  }
+  /* слайдер пушкинская */

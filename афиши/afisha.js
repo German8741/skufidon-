@@ -8,7 +8,7 @@ window.slidesData = [
         price: 'от 500 р',
         age: '16+',
         link: 'https://vk.com',
-        pushkinCard: true,
+        pushkinCard: false,
         watchSlider: true
     },
     {
@@ -21,7 +21,7 @@ window.slidesData = [
         age: '16+',
         link: 'https://vk.com',
         pushkinCard: false,
-        watchSlider: true
+        watchSlider: false
     },
     {
         imageUrl: 'https://i.postimg.cc/02b8jS2W/image.png',
