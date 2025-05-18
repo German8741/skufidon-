@@ -1,3 +1,5 @@
+import events, { sortEventsByDate } from '../афиши/afisha.js';
+
 function initSlider() {
   const slider = document.getElementById('slider');
   const prevButton = document.getElementById('prev');
@@ -11,8 +13,8 @@ function initSlider() {
   let isTransitioning = false;
 
   function createPagination() {
-    pagination.innerHTML = ''; // Clear existing dots
-    slides = document.querySelectorAll('.slide'); // Update slides
+    pagination.innerHTML = '';
+    slides = document.querySelectorAll('.slide');
     totalSlides = slides.length;
     for (let i = 0; i < totalSlides; i++) {
       const dot = document.createElement('div');
@@ -58,7 +60,7 @@ function initSlider() {
 
     newSlide.innerHTML = `
       <div class="price-container">
-        <div class="price-icon ${priceIconClass}"><img src="../assets/svg_icons/pushkin.png" /></div>
+        <div class="price-icon ${priceIconClass}"><img src="../assets/svg_icons/pushkin.png" alt="Pushkin Card" /></div>
         <div class="price-box"><div class="price-text">${price}</div></div>
       </div>
       <div class="event-info">
@@ -92,14 +94,11 @@ function initSlider() {
   // Очищаем слайдер перед добавлением новых слайдов
   slider.innerHTML = '';
 
-  // Проверяем, существует ли window.slidesData
-  if (window.slidesData && Array.isArray(window.slidesData)) {
-    const filteredSlides = window.slidesData.filter(slide => slide.watchSlider === true);
-    console.log('Filtered slides:', filteredSlides); // Для отладки
-    filteredSlides.forEach(slide => addSlide(slide));
-  } else {
-    console.error('slidesData is not defined or not an array');
-  }
+  // Фильтруем и сортируем события для слайдера
+  const filteredSlides = events.filter(slide => slide.watchSlider === true);
+  const sortedSlides = sortEventsByDate(filteredSlides);
+  console.log('Sorted slides:', sortedSlides);
+  sortedSlides.forEach(slide => addSlide(slide));
 
   createPagination();
   updateSlider();
@@ -164,13 +163,15 @@ function initSlider() {
   });
 }
 
-// Функция для управления афишами (заглушка для будущего расширения)
 function initPosters() {
   console.log('Инициализация афиш...');
 }
 
-// Экспорт функций для управления различными блоками
 const manager = {
   initSlider,
   initPosters
 };
+
+document.addEventListener('DOMContentLoaded', () => {
+  manager.initSlider();
+});

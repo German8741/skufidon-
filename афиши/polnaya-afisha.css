@@ -1,0 +1,276 @@
+.events-detail-section {
+    background-color: #f5f5f5;
+    padding: 40px 0;
+}
+
+.events-detail-section * {
+    box-sizing: border-box;
+}
+
+.events-detail-section .container {
+    width: 1320px;
+    margin: 0 auto;
+}
+
+.events-detail-section .event-content {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+}
+
+.events-detail-section .event-image-wrapper {
+    position: relative;
+}
+
+.events-detail-section .event-image {
+    width: 398px;
+    height: 560px;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+.events-detail-section .age-badge {
+    width: 52px;
+    height: 52px;
+    background: white;
+    border-radius: 14.7px;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 23.7px;
+    color: black;
+    font-family: 'Academy Condensed', sans-serif;
+    font-weight: 500;
+}
+
+.events-detail-section .event-info {
+    width: 612px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.events-detail-section .event-header {
+    background: white;
+    border-radius: 24px;
+    padding: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.events-detail-section .event-title {
+    font-size: 39px;
+    font-family: 'Academy Condensed', sans-serif;
+    font-weight: 500;
+    color: black;
+}
+
+.events-detail-section .event-button {
+    width: 214px;
+    background: #C40005;
+    color: white;
+    padding: 15px 64.25px;
+    border-radius: 9.98px;
+    font-size: 16.68px;
+    font-family: 'Myriad Pro', sans-serif;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+}
+
+.events-detail-section .event-details {
+    display: flex;
+    gap: 24px;
+}
+
+.events-detail-section .details-card {
+    width: 241px;
+    background: white;
+    border-radius: 24px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 13.65px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.events-detail-section .details-item {
+    font-size: 25.7px;
+    font-family: 'Academy Condensed', sans-serif;
+    font-weight: 500;
+    color: black;
+}
+
+.events-detail-section .details-label {
+    font-weight: 700;
+}
+
+.events-detail-section .details-link {
+    color: #C40005;
+    text-decoration: underline;
+}
+
+.events-detail-section .ticket-card {
+    width: 347px;
+    background: white;
+    border-radius: 24px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 36px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.events-detail-section .ticket-text {
+    font-size: 33px;
+    font-family: 'Academy Condensed', sans-serif;
+    font-weight: 500;
+    color: black;
+    text-align: center;
+}
+
+.events-detail-section .ticket-button {
+    width: 100%;
+    background: #BC2A8F;
+    color: white;
+    padding: 15px 83px;
+    border-radius: 9.98px;
+    font-size: 16.68px;
+    font-family: 'Myriad Pro', sans-serif;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+}
+
+.events-detail-section .event-description {
+    background: white;
+    border-radius: 24px;
+    padding: 32px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.events-detail-section .event-description p {
+    font-size: 24px;
+    font-family: 'Academy Condensed', sans-serif;
+    font-weight: 500;
+    color: black;
+    line-height: 38.49px;
+}
+
+@media (max-width: 767px) {
+    .events-detail-section {
+        padding: 20px 0;
+    }
+
+    .events-detail-section .container {
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    .events-detail-section .event-content {
+        flex-direction: column;
+        gap: 12px;
+        justify-content: center;
+    }
+
+    .events-detail-section .event-image {
+        width: 100%;
+        height: 440px;
+        border-radius: 15.76px;
+    }
+
+    .events-detail-section .age-badge {
+        width: 40.2px;
+        height: 40.2px;
+        border-radius: 11.4px;
+        top: 12.4px;
+        right: 12.4px;
+        font-size: 18.3px;
+    }
+
+    .events-detail-section .event-info {
+        width: 100%;
+        gap: 12px;
+    }
+
+    .events-detail-section .event-header {
+        padding: 16px;
+        border-radius: 12px;
+        box-shadow: none;
+    }
+
+    .events-detail-section .event-title {
+        font-size: 19.98px;
+    }
+
+    .events-detail-section .event-button {
+        width: 109.63px;
+        padding: 7.68px 32.91px;
+        border-radius: 5.11px;
+        font-size: 8.54px;
+    }
+
+    .events-detail-section .event-details {
+        gap: 12px;
+    }
+
+    .events-detail-section .details-card {
+        width: 100%;
+        height: auto;
+        padding: 16px;
+        border-radius: 12px;
+        gap: 6.99px;
+        box-shadow: none;
+    }
+
+    .events-detail-section .details-item {
+        font-size: 13.17px;
+    }
+
+    .events-detail-section .ticket-card {
+        width: 100%;
+        height: auto;
+        padding: 16px;
+        border-radius: 12px;
+        gap: 18px;
+        box-shadow: none;
+    }
+
+    .events-detail-section .ticket-text {
+        font-size: 16.70px;
+    }
+
+    .events-detail-section .ticket-button {
+        width: 100%;
+        padding: 7.68px 42.52px;
+        border-radius: 5.11px;
+        font-size: 8.54px;
+    }
+
+    .events-detail-section .event-description {
+        padding: 16px;
+        border-radius: 12px;
+        box-shadow: none;
+    }
+
+    .events-detail-section .event-description p {
+        font-size: 12.30px;
+        line-height: 19.72px;
+    }
+}
+
+@media (max-width: 374px) {
+    .events-detail-section .container {
+        padding: 0 15px;
+    }
+
+    .events-detail-section .event-image {
+        height: 350px;
+    }
+}

@@ -1,0 +1,403 @@
+@font-face {
+    font-family: 'Myriad Pro';
+    src: url('https://fonts.cdnfonts.com/css/myriad-pro') format('truetype');
+    font-style: italic;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Myriad Pro';
+    src: url('https://fonts.cdnfonts.com/css/myriad-pro') format('truetype');
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'Academy Condensed';
+    src: url('https://db.onlinewebfonts.com/c/0b51833ff62e4af8acb5fd3e2bf59e97?family=Academy+Engraved+LET+Plain:1.0') format('truetype');
+    font-weight: 500;
+}
+
+.kontakts-contacts-container {
+    width: 100%;
+    max-width: 1320px;
+    margin: 40px auto;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-family: 'Myriad Pro', sans-serif;
+    background-color: #F9F9F9;
+}
+
+.kontakts-tabs {
+    width: 100%;
+    height: 38px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 24px;
+    padding: 0 10px;
+}
+
+.kontakts-tab {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 32px;
+    font-family: 'Myriad Pro';
+    font-style: italic;
+    font-weight: 400;
+    word-wrap: break-word;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.kontakts-tab.kontakts-active {
+    color: #C40005;
+}
+
+.kontakts-tab.kontakts-inactive {
+    color: black;
+}
+
+.kontakts-tab:hover {
+    color: #C40005;
+    transform: scale(1.05);
+}
+
+.kontakts-tab a {
+    color: inherit;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.kontakts-content {
+    width: 1320px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 24px;
+    padding: 0 10px;
+}
+
+.kontakts-left-column {
+    width: 648px;
+    height: 600px;
+    position: relative;
+}
+
+.kontakts-right-column {
+    width: 648px;
+    height: 600px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.kontakts-card {
+    position: absolute;
+    background: white;
+    border-radius: 20px;
+}
+
+.kontakts-card-1 {
+    width: 648px;
+    height: 90px;
+    left: 0;
+    top: 0;
+}
+
+.kontakts-card-1-text {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: black;
+    font-size: 24px;
+    font-family: 'Academy Condensed';
+    font-weight: 500;
+    word-wrap: break-word;
+}
+
+.kontakts-card-2 {
+    width: 648px;
+    height: 99px;
+    left: 0;
+    top: 114px;
+}
+
+.kontakts-card-2-content {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.kontakts-card-2-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: black;
+    font-size: 22px;
+    font-family: 'Myriad Pro';
+    font-weight: 700;
+    word-wrap: break-word;
+}
+
+.kontakts-card-2-text {
+    color: black;
+    font-size: 22px;
+    font-family: 'Academy Condensed';
+    font-weight: 500;
+    word-wrap: break-word;
+}
+
+.kontakts-card-2-button {
+    padding: 15.5px 40px;
+    position: absolute;
+    left: 397px;
+    top: 23px;
+    background: #C40005;
+    border-radius: 13.13px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.kontakts-card-2-button:hover {
+    background: #A00004;
+    transform: scale(1.05);
+}
+
+.kontakts-card-2-button-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+    font-size: 18px;
+    font-family: 'Myriad Pro';
+    font-weight: 600;
+    word-wrap: break-word;
+}
+
+.kontakts-card-3 {
+    width: 648px;
+    height: 123px;
+    left: 0;
+    top: 237px;
+}
+
+.kontakts-card-3-title {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    color: black;
+    font-size: 22.22px;
+    font-family: 'Myriad Pro';
+    font-weight: 700;
+    word-wrap: break-word;
+}
+
+.kontakts-card-3-text {
+    position: absolute;
+    left: 20px;
+    top: 57px;
+}
+
+.kontakts-card-3-text span {
+    font-size: 22px;
+    font-family: 'Academy Condensed';
+    font-weight: 500;
+    line-height: 22.94px;
+    word-wrap: break-word;
+}
+
+.kontakts-card-4 {
+    width: 648px;
+    height: 216px;
+    left: 0;
+    top: 384px;
+}
+
+.kontakts-card-4-title {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: black;
+    font-size: 22px;
+    font-family: 'Myriad Pro';
+    font-weight: 700;
+    word-wrap: break-word;
+}
+
+.kontakts-card-4-content {
+    position: absolute;
+    left: 20px;
+    top: 56px;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.kontakts-transport-item {
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+}
+
+.kontakts-transport-type {
+    color: black;
+    font-size: 17px;
+    font-family: 'Myriad Pro';
+    font-style: italic;
+    font-weight: 700;
+    white-space: nowrap;
+    margin-right: 10px;
+}
+
+.kontakts-transport-routes {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: black;
+    font-size: 22px;
+    font-family: 'Academy Condensed';
+    font-weight: 500;
+    word-wrap: break-word;
+}
+
+@media (max-width: 767px) {
+    .kontakts-contacts-container {
+        max-width: 375px;
+        gap: 5.79px;
+        margin: 40px auto;
+    }
+    
+    .kontakts-tabs {
+        height: 21.99px;
+        gap: 13.89px;
+    }
+    
+    .kontakts-tab {
+        font-size: 18.52px;
+    }
+    
+    .kontakts-content {
+        width: 100%;
+        flex-direction: column;
+        gap: 13.89px;
+        padding: 0;
+    }
+    
+    .kontakts-left-column, .kontakts-right-column {
+        width: 375px;
+        height: 347.22px;
+    }
+    
+    .kontakts-card-1, .kontakts-card-2, .kontakts-card-3, .kontakts-card-4 {
+        width: 375px;
+        border-radius: 11.57px;
+    }
+    
+    .kontakts-card-1 {
+        height: 52.08px;
+    }
+    
+    .kontakts-card-1-text {
+        left: 11.57px;
+        top: 11.57px;
+        font-size: 13.89px;
+    }
+    
+    .kontakts-card-2 {
+        height: 57.29px;
+        top: 65.97px;
+    }
+    
+    .kontakts-card-2-content {
+        left: 11.57px;
+        top: 11.57px;
+        gap: 5.79px;
+    }
+    
+    .kontakts-card-2-title, .kontakts-card-2-text {
+        font-size: 12.73px;
+    }
+    
+    .kontakts-card-2-button {
+        padding: 8.97px 23.15px;
+        left: 229.75px;
+        top: 13.31px;
+        border-radius: 7.60px;
+        gap: 5.79px;
+    }
+    
+    .kontakts-card-2-button-text {
+        font-size: 10.42px;
+    }
+    
+    .kontakts-card-3 {
+        height: 71.18px;
+        top: 137.15px;
+    }
+    
+    .kontakts-card-3-title {
+        left: 11.57px;
+        top: 11.57px;
+        font-size: 12.86px;
+    }
+    
+    .kontakts-card-3-text {
+        left: 11.57px;
+        top: 32.99px;
+    }
+    
+    .kontakts-card-3-text span {
+        font-size: 12.73px;
+        line-height: 13.27px;
+    }
+    
+    .kontakts-card-4 {
+        height: 125px;
+        top: 222.22px;
+    }
+    
+    .kontakts-card-4-title {
+        left: 11.57px;
+        top: 11.57px;
+        font-size: 12.73px;
+    }
+    
+    .kontakts-card-4-content {
+        left: 11.57px;
+        top: 32.41px;
+        gap: 9.26px;
+    }
+    
+    .kontakts-transport-type {
+        font-size: 9.84px;
+    }
+    
+    .kontakts-transport-routes {
+        font-size: 12.73px;
+    }
+}

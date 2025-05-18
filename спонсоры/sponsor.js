@@ -2,14 +2,15 @@
 document.addEventListener('DOMContentLoaded', function() {
   class SponsorsManager {
     constructor() {
-      this.sponsors = [
-        { image: 'https://i.postimg.cc/gk12HgjL/sponsor1.png', alt: 'Sponsor 1' },
-        { image: 'https://i.postimg.cc/C56G9GB2/Sponsor2.png', alt: 'Sponsor 2' },
-        { image: 'https://i.postimg.cc/gk12HgjL/sponsor1.png', alt: 'Sponsor 3' },
-        { image: 'https://i.postimg.cc/C56G9GB2/Sponsor2.png', alt: 'Sponsor 4' },
-        { image: 'https://i.postimg.cc/gk12HgjL/sponsor1.png', alt: 'Sponsor 5' },
-        { image: 'https://i.postimg.cc/C56G9GB2/Sponsor2.png', alt: 'Sponsor 6' }
-      ];
+   this.sponsors = [
+    { image: 'https://i.postimg.cc/KYLgVhGv/image.png', alt: 'Sponsor 1' },
+    { image: 'https://i.postimg.cc/d1jZsRZb/1.png', alt: 'Sponsor 2' },
+    { image: 'https://i.postimg.cc/Yq9L7WrP/2.png', alt: 'Sponsor 3' },
+    { image: 'https://i.postimg.cc/HxzjDpfH/3.png', alt: 'Sponsor 4' },
+    { image: 'https://i.postimg.cc/y8Rd6hwL/4.png', alt: 'Sponsor 5' },
+    { image: 'https://i.postimg.cc/nzSZGMys/5.png', alt: 'Sponsor 6' },
+    { image: 'https://i.postimg.cc/jSYTXpFh/6.png', alt: 'Sponsor 7' }
+];
       this.trackElement = document.getElementById('sponsors-track');
       this.animation = null;
     }

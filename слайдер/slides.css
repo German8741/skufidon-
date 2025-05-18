@@ -7,7 +7,7 @@
 
 .slider-container {
   width: 1440px;
-  height: 667px;
+  height: 590px;
   position: relative;
   background: #F9F9F9;
   overflow: hidden;
@@ -24,7 +24,7 @@
 #slider {
   position: absolute;
   left: 119px;
-  top: 60px;
+  top: 1px;
   display: flex;
   gap: 40px;
   transition: transform 0.5s ease-in-out;
@@ -178,7 +178,7 @@
 
 #pagination {
   left: 703px;
-  top: 633px;
+  top: 573px;
   position: absolute;
   display: flex;
   align-items: center;
@@ -328,7 +328,7 @@
   }
 }
 
-/* Добавляем стиль для скрытия элемента, сохраняя его место */
+/* Р”РѕР±Р°РІР»СЏРµРј СЃС‚РёР»СЊ РґР»СЏ СЃРєСЂС‹С‚РёСЏ СЌР»РµРјРµРЅС‚Р°, СЃРѕС…СЂР°РЅСЏСЏ РµРіРѕ РјРµСЃС‚Рѕ */
 .hidden {
   visibility: hidden;
 }

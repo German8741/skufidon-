@@ -16,7 +16,7 @@
 .sponsors-track {
   display: flex;
   align-items: center;
-  gap: 60px;
+  gap: 24px;
   width: max-content;
 }
 
@@ -36,7 +36,7 @@
   object-fit: contain;
   filter: grayscale(100%) opacity(0.8);
   transition: filter 0.3s;
-  width: 160px;
+  width: 255px;
   height: 236px;
 }
 

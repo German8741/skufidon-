@@ -88,12 +88,16 @@ body {
     text-decoration: none;
     border-radius: 13px;
     overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease;
+    -webkit-transition: transform 0.3s ease; /* Для совместимости */
+    pointer-events: auto; /* Гарантирует реакцию на события */
+    z-index: 1; /* Предотвращает перекрытие */
 }
 
-.zaly-card:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+.zaly-cards .zaly-card:hover {
+    transform: translateY(-10px) scale(1.02); /* Эффект поднятия, как у афиши */
+    -webkit-transform: translateY(-10px) scale(1.02); /* Для совместимости */
+    /* background: rgba(0, 255, 0, 0.1); /* Временный фон для диагностики, удалите после проверки */
 }
 
 .zaly-image {
@@ -114,6 +118,7 @@ body {
     flex-direction: column;
     border-bottom-left-radius: 13px;
     border-bottom-right-radius: 13px;
+    background: transparent; /* Прозрачный фон, как у афиши */
 }
 
 .zaly-title {
@@ -194,9 +199,10 @@ body {
         height: 148px;
         border-radius: 7px;
     }
-    .zaly-card:hover {
-        transform: translateY(-8px) scale(1.02);
-        box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    .zaly-cards .zaly-card:hover {
+        transform: translateY(-8px) scale(1.02); /* Эффект для мобильных, как у афиши */
+        -webkit-transform: translateY(-8px) scale(1.02);
+        /* background: rgba(0, 255, 0, 0.1); /* Временный фон для диагностики, удалите после проверки */
     }
     .zaly-image {
         width: 183.44px;
@@ -209,6 +215,7 @@ body {
         padding: 3.13px;
         border-bottom-left-radius: 7px;
         border-bottom-right-radius: 7px;
+        background: transparent;
     }
     .zaly-title {
         font-size: 18px;

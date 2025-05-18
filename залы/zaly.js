@@ -1,42 +1,42 @@
 const zalyData = [
     {
-        imageUrl: 'https://i.postimg.cc/7P7kdyxq/image.png',
+        imageUrl: 'https://i.postimg.cc/XvbqSkHn/image.jpg',
         title: 'Концертный зал',
         area: '700',
         capacity: 'до 800 человек',
-        link: 'bluehell.html',
+        link: 'концертный.html',
         minArea: 700
     },
     {
-        imageUrl: 'https://i.postimg.cc/7P7kdyxq/image.png',
+        imageUrl: 'https://i.postimg.cc/bN1d65gm/telegram-cloud-photo-size-2-5474224569859565552-y.jpg',
         title: 'Фойе концертного зала',
-        area: '500',
-        capacity: 'до 600 человек',
-        link: 'bluehell.html',
+        area: '290',
+        capacity: 'до 400 человек',
+        link: 'фойе.html',
         minArea: 500
     },
     {
-        imageUrl: 'https://i.postimg.cc/7P7kdyxq/image.png',
+        imageUrl: 'https://i.postimg.cc/fy9kQqNT/telegram-cloud-photo-size-2-5474224569859565652-y.jpg',
         title: 'Жуковский зал',
-        area: '300',
-        capacity: 'до 400 человек',
-        link: 'bluehell.html',
+        area: '120',
+        capacity: 'до 80 человек',
+        link: 'жуковский.html',
         minArea: 300
     },
     {
-        imageUrl: 'https://i.postimg.cc/7P7kdyxq/image.png',
+        imageUrl: 'https://i.postimg.cc/J0qv0MmT/telegram-cloud-photo-size-2-5474224569859565604-y.jpg',
         title: 'Малый зал',
-        area: '200',
-        capacity: 'до 200 человек',
-        link: 'bluehell.html',
+        area: '240',
+        capacity: 'до 220 человек',
+        link: 'малый.html',
         minArea: 200
     },
     {
-        imageUrl: 'https://i.postimg.cc/7P7kdyxq/image.png',
+        imageUrl: 'https://i.postimg.cc/wvbyW8P3/telegram-cloud-photo-size-2-5469643549151719184-y.jpg',
         title: 'Гусарская баллада',
-        area: '150',
-        capacity: 'до 150 человек',
-        link: 'bluehell.html',
+        area: '60',
+        capacity: 'до 50 человек',
+        link: 'баллада.html',
         minArea: 150
     }
 ];

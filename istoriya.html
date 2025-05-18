@@ -3,13 +3,106 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Дом Офицеров</title>
+  <title>История</title>
   <link rel="stylesheet" href="styles/styles.css">
   <link rel="stylesheet" href="styles/muzei.css">
+  <style>
+/* Добавляем новые стили для статьи */
+.article-content {
+    margin-top: 30px;
+    line-height: 1.6;
+}
+
+.article-paragraph {
+    font-size: 22px;
+    margin-bottom: 25px;
+    font-family: 'Myriad Pro', sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+.highlight {
+    color: #C40005;
+    font-weight: 600;
+}
+
+.article-subtitle {
+    font-size: 32px;
+    font-family: 'Academy Condensed', sans-serif;
+    margin: 40px 0 20px;
+    color: #000;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.article-image {
+    margin: 30px 0;
+    text-align: center;
+}
+
+.article-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.article-image figcaption {
+    font-size: 16px;
+    color: #666;
+    margin-top: 10px;
+    font-family: 'Myriad Pro', sans-serif;
+    font-style: italic;
+}
+
+.article-link {
+    color: #C40005;
+    text-decoration: none;
+    border-bottom: 1px solid #C40005;
+    transition: all 0.2s ease;
+}
+
+.article-link:hover {
+    color: #a30004;
+    border-bottom-color: #a30004;
+}
+
+/* Адаптивные стили */
+@media (max-width: 768px) {
+    .article-paragraph {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+    
+    .article-subtitle {
+        font-size: 26px;
+        margin: 30px 0 15px;
+    }
+    
+    .article-image {
+        margin: 20px 0;
+    }
+    
+    .article-image figcaption {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .article-paragraph {
+        font-size: 16px;
+    }
+    
+    .article-subtitle {
+        font-size: 22px;
+    }
+}
+
+  </style>
 </head>
 <body>
   <!-- хедер -->
-  <header class="header">
+ <header class="header">
     <div class="header__container">
       <a href="index.html">
         <img src="assets/images/logo_dom_oficerov.png" alt="Логотип Дома Офицеров" class="header__logo">
@@ -22,7 +115,7 @@
           <li><a href="muzei.html" class="header__nav-link">Музей</a></li>
           <li><a href="biblioteka.html" class="header__nav-link">Библиотека</a></li>
           <li><a href="pushkinskaya-karta.html" class="header__nav-link">Пушкинская карта</a></li>
-          <li><a href="kontakty.html" class="header__nav-link">Контакты</a></li>
+          <li><a href="adres.html" class="header__nav-link">Контакты</a></li>
         </ul>
       </nav>
       <div class="header__right">
@@ -53,7 +146,7 @@
             <a href="muzei.html" style="justify-content: center; display: flex; flex-direction: column; color: #878787; font-size: 28px; font-family: 'Academy Condensed', sans-serif; font-weight: 500; word-wrap: break-word; text-decoration: none;">Музей</a>
             <a href="biblioteka.html" style="justify-content: center; display: flex; flex-direction: column; color: #878787; font-size: 28px; font-family: 'Academy Condensed', sans-serif; font-weight: 500; word-wrap: break-word; text-decoration: none;">Библиотека</a>
             <a href="pushkinskaya-karta.html" style="justify-content: center; display: flex; flex-direction: column; color: #878787; font-size: 28px; font-family: 'Academy Condensed', sans-serif; font-weight: 500; word-wrap: break-word; text-decoration: none;">Пушкинская карта</a>
-            <a href="kontakty.html" style="justify-content: center; display: flex; flex-direction: column; color: #878787; font-size: 28px; font-family: 'Academy Condensed', sans-serif; font-weight: 500; word-wrap: break-word; text-decoration: none;">Контакты</a>
+            <a href="adres.html" style="justify-content: center; display: flex; flex-direction: column; color: #878787; font-size: 28px; font-family: 'Academy Condensed', sans-serif; font-weight: 500; word-wrap: break-word; text-decoration: none;">Контакты</a>
           </div>
           
           <!-- Футер меню -->
@@ -67,23 +160,25 @@
             </div>
             <div style="width: 317px; justify-content: space-between; align-items: center; display: inline-flex;">
               <div style="justify-content: flex-start; align-items: center; gap: 26px; display: flex;">
-                <a href="https://vk.com" target="_blank">
+                <a href="https://vk.com/odoural" target="_blank">
                   <div style="width: 30px; height: 30px; position: relative;">
-                    <img src="assets/svg_icons/vk_icon.svg" alt="VK" style="width: 100%; height: 100%;">
+                    <img src="assets/svg_icons/вк.png" alt="VK" style="width: 100%; height: 100%;">
                   </div>
                 </a>
-                <a href="https://vk.com" target="_blank">
+                <a href="https://rutube.ru/channel/54245019/" target="_blank">
                   <div style="width: 30px; height: 30px; position: relative;">
-                    <img src="assets/svg_icons/vk_icon.svg" alt="VK" style="width: 100%; height: 100%;">
+                    <img src="assets/svg_icons/рутуб.png" alt="VK" style="width: 100%; height: 100%;">
                   </div>
                 </a>
-                <a href="https://vk.com" target="_blank">
+                <a href="https://t.me/odoural" target="_blank">
                   <div style="width: 30px; height: 30px; position: relative;">
-                    <img src="assets/svg_icons/vk_icon.svg" alt="VK" style="width: 100%; height: 100%;">
+                    <img src="assets/svg_icons/тг.png" alt="VK" style="width: 100%; height: 100%;">
                   </div>
                 </a>
               </div>
-              <img style="width: 96px; height: 54px;" src="assets/images/GP_studio_mobile.png" alt="Footer Logo" />
+             <a href="https://t.me/GermanYusupov">
+  <img style="width: 96px; height: 54px;" src="assets/images/GP_studio_mobile.png" alt="Footer Logo" />
+</a>
             </div>
             <div style="justify-content: center; display: flex; flex-direction: column; color: #878787; font-size: 21px; font-family: 'Academy Condensed', sans-serif; font-weight: 500; word-wrap: break-word;">ФГБУ "Дом офицеров Центрального военного округа"<br/>Министерства обороны Российской Федерации</div>
           </div>
@@ -97,279 +192,300 @@
 
 
     <!-- инфа -->
-    <div class="container">
-      <div class="left-column">
-          <div class="left-sidebar">
-              <div class="schedule-title">Режим работы</div>
-              <div class="schedule-items">
-                  <div class="schedule-item monday">
-                      <span class="day">Понедельник</span>
-                      <span class="time">выходной</span>
-                  </div>
-                  <div class="schedule-item">
-                      <span class="day">Вторник</span>
-                      <span class="time">10:00 - 17:00</span>
-                  </div>
-                  <div class="schedule-item">
-                      <span class="day">Среда</span>
-                      <span class="time">10:00 - 17:00</span>
-                  </div>
-                  <div class="schedule-item">
-                      <span class="day">Четверг</span>
-                      <span class="time">10:00 - 17:00</span>
-                  </div>
-                  <div class="schedule-item">
-                      <span class="day">Пятница</span>
-                      <span class="time">10:00 - 17:00</span>
-                  </div>
-                  <div class="schedule-item">
-                      <span class="day">Суббота</span>
-                      <span class="time">10:00 - 17:00</span>
-                  </div>
-                  <div class="schedule-item sunday">
-                      <span class="day">Воскресенье</span>
-                      <span class="time">10:00 - 17:00</span>
-                  </div>
-              </div>
-              <a href="pokupka.html" class="buy-ticket">
-                  <div class="buy-ticket-text">Купить билет</div>
-              </a>
-          </div>
-          
-          <div class="staff-card">
-              <div class="staff-card-content">
-                  <img class="staff-photo" src="assets/images/card_zaglushka.png" alt="Фото Бажова Алексея Владимировича" />
-                  <div class="staff-info">
-                      <div>
-                          <div class="staff-name">Бажов Алексей<br/>Владимирович</div>
-                          <div class="staff-position">Заведующий библиотекой</div>
-                      </div>
-                      <div class="staff-contacts">
-                          <div class="staff-phone" onclick="window.location.href='tel:+73433501588'">
-                              <div class="contact-text">8(343) 350-15-88</div>
-                          </div>
-                          <div class="staff-email" onclick="window.location.href='mailto:odoural@mail.ru'">
-                              <div class="email-text">odoural@mail.ru</div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
+   <div class="container">
+    <div class="left-column">
+        <div class="left-sidebar">
+            <div class="schedule-title">Режим работы</div>
+            <div class="schedule-items">
+                <div class="schedule-item monday">
+                    <span class="day">Понедельник</span>
+                    <span class="time">выходной</span>
+                </div>
+                <div class="schedule-item">
+                    <span class="day">Вторник</span>
+                    <span class="time">10:00 - 17:00</span>
+                </div>
+                <div class="schedule-item">
+                    <span class="day">Среда</span>
+                    <span class="time">10:00 - 17:00</span>
+                </div>
+                <div class="schedule-item">
+                    <span class="day">Четверг</span>
+                    <span class="time">10:00 - 17:00</span>
+                </div>
+                <div class="schedule-item">
+                    <span class="day">Пятница</span>
+                    <span class="time">10:00 - 17:00</span>
+                </div>
+                <div class="schedule-item">
+                    <span class="day">Суббота</span>
+                    <span class="time">10:00 - 17:00</span>
+                </div>
+                <div class="schedule-item sunday">
+                    <span class="day">Воскресенье</span>
+                    <span class="time">10:00 - 17:00</span>
+                </div>
+            </div>
+            <a href="pokupka.html" class="buy-ticket">
+                <div class="buy-ticket-text">Купить билет</div>
+            </a>
+        </div>
+    </div>
 
-      <div class="content">
-          <div class="article-header">
-              <div class="article-meta">
-                  <span>Дайджест законов</span>
-                  <span>30.04.25</span>
-                  <span>7K</span>
-              </div>
-              <h1 class="article-title">
-                  Реестр должников по алиментам<br>
-                  и правила единого детского<br>
-                  пособия: что изменится в мае<br>
-                  2025 года
-              </h1>
-          </div>
+    <div class="content">
+        <div class="article-header">
+            
+            <h1 class="article-title">
+                Дом офицеров Центрального<br>
+                военного округа: архитектурная<br>
+                жемчужина и символ воинской славы<br>
+                Екатеринбурга
+            </h1>
+        </div>
 
-          <div class="article-actions">
-              <!-- Здесь могут быть кнопки действий (лайк, сохранить, поделиться) -->
-          </div>
+        <div class="article-content">
+            <figure class="article-image">
+                <img src="https://avatars.mds.yandex.net/get-altay/2056672/2a0000016c85c9efc0149228cc8ce673b316/XXXL" alt="Здание ОДО">
+                <figcaption>Здание Дома офицеров ЦВО на Первомайской, 27</figcaption>
+            </figure>
 
-          <div class="article-author">
-              <div class="author-avatar">
-                  <img src="https://placehold.co/50x50" alt="Автор">
-              </div>
-              <div class="author-info">
-                  <div class="author-name">Марина Суховская</div>
-                  <div class="author-title">юрист</div>
-              </div>
-          </div>
+            <p class="article-paragraph highlight">
+                Дом офицеров Центрального военного округа (ОДО ЦВО) расположен в центре Екатеринбурга по адресу ул. Первомайская, 27. Это здание с колоннами, башней и архитектурой сталинского ампира — символ культурной и военной истории города.
+            </p>
 
-          <p class="article-excerpt">
-              Заработает реестр неплательщиков алиментов, поменяются<br>
-              правила для единого детского пособия, запретят переводить<br>
-              Заработает реестр неплательщиков алиментов, поменяются<br>
-              правила для единого детского пособия, запретят переводить<br>
-              Заработает реестр неплательщиков алиментов, поменяются<br>
-              правила для единого детского пособия, запретят переводить<br>
-              Заработает реестр неплательщиков алиментов, поменяются<br>
-              правила для единого детского пособия, запретят переводить<br>
-              Заработает реестр неплательщиков алиментов, поменяются<br>
-              правила для единого детского пособия, запретят переводить<br>
-              Заработает реестр неплательщиков алиментов, поменяются<br>
-              правила для единого детского пособия, запретят переводить<br>
-              Заработает реестр неплательщиков алиментов, поменяются<br>
-              правила для единого детского пособия, запретят переводить<br>
-              Заработает реестр неплательщиков алиментов, поменяются<br>
-              правила для единого детского пособия, запретят переводить<br>
-              Заработает реестр неплательщиков алиментов, поменяются<br>
-              правила для единого детского пособия, запретят переводить<br>
-              Заработает реестр неплательщиков алиментов, поменяются<br>
-              правила для единого детского пособия, запретят переводить<br>
-              Заработает реестр неплательщиков алиментов, поменяются<br>
-              правила для единого детского пособия, запретят переводить<br>
-              Заработает реестр неплательщиков алиментов, поменяются<br>
-              правила для единого детского пособия, запретят переводить<br>
-              Заработает реестр неплательщиков алиментов, поменяются<br>
-              правила для единого детского пособия, запретят переводить<br>
-              Заработает реестр неплательщиков алиментов, поменяются<br>
-              правила для единого детского пособия, запретят переводить<br>
-              Заработает реестр неплательщиков алиментов, поменяются<br>
-              правила для единого детского пособия, запретят переводить<br>
+            <h2 class="article-subtitle">Исторические корни</h2>
+            
+            <p class="article-paragraph">
+                История учреждения начинается в <span class="highlight">1919 году</span> с основания Дома просвещения Красной Армии. Он находился в кинотеатре «Колизей». В 1929 году по приказу Реввоенсовета СССР учреждение стало <span class="highlight">Свердловским окружным Домом Красной Армии</span>.
+            </p>
 
-          </p>
+            <figure class="article-image">
+                <img src="https://i.postimg.cc/9MgH60z8/1.jpg" alt="Дом Красной Армии">
+                <figcaption>Дом Красной Армии в 1930-е годы</figcaption>
+            </figure>
 
-          <p class="article-excerpt">
-              Главные изменения мая — в ежемесячном дайджесте законов.
-          </p>
-      </div>
-  </div>
+            <p class="article-paragraph">
+                До 1941 года Дом менял адреса: здание Городского собрания, Ново-Тихвинский монастырь. В 1937 году началось строительство нынешнего здания, завершённое в <span class="highlight">1941 году</span> по проекту архитектора Владимира Емельянова.
+            </p>
+
+            <figure class="article-image">
+                <img src="https://pastvu.com/_p/a/6/w/7/6w7a0cojvu27lsvp6j.jpg" alt="Строительство Дома офицеров">
+                <figcaption>Строительство здания Дома офицеров, 1940 год</figcaption>
+            </figure>
+
+            <h2 class="article-subtitle">Архитектура и символика</h2>
+            
+            <p class="article-paragraph">
+                Здание выполнено в стиле <span class="highlight">советской неоклассики и сталинского ампира</span>. Прямоугольная башня венчает фасад. В 1953 году с неё сняли барельеф Сталина, но в 2021 году он был возвращён в рамках восстановления исторического облика.
+            </p>
+
+            <figure class="article-image">
+                <img src="https://perm.veved.ru/uploads/posts/2022-05/thumbs/1652626217_04-sravnenie-barelefov-stalinu-vv.jpg" alt="Барельеф Сталина">
+                <figcaption>Барельеф Сталина на фасаде здания</figcaption>
+            </figure>
+
+            <h2 class="article-subtitle">Военная история и роль в годы войны</h2>
+            
+            <p class="article-paragraph">
+                В годы Великой Отечественной войны здесь проводились лекции, концерты и патриотические мероприятия. Учреждение стало центром духовного воспитания бойцов. После войны — переименование в <span class="highlight">Свердловский окружной Дом офицеров</span>.
+            </p>
+
+            <figure class="article-image">
+                <img src="https://i.postimg.cc/GtTV6jWt/image.jpg" alt="ОДО в послевоенные годы">
+                <figcaption>Дом офицеров в послевоенные годы</figcaption>
+            </figure>
+
+            <h2 class="article-subtitle">Музей и культурное наследие</h2>
+            
+            <p class="article-paragraph">
+                В 1980-х было достроено крыло для <a href="https://xn----8sbk4albpx.xn--p1ai/museum/" target="_blank" class="article-link">военно-исторического музея</a>. В нём представлено более 16 000 экспонатов: личные вещи, документы, обломки подлодки «Курск», U-2, охотничье ружьё Жукова и др.
+            </p>
+
+            <figure class="article-image">
+                <img src="https://sun1-89.userapi.com/impg/yenW68pCuCj9KMZ13UyUpIgcI3DseRDNHfe39Q/BFGWlFpfzSc.jpg?quality=96&amp;as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1200x800&amp;sign=33fad47fe1b1a4e94451ac8c2f2d183e&amp;from=bu&amp;u=1ulN-huvnxhYRneDpRE1Y00mcvti1Wamc_ppWQf-AcQ&amp;cs=807x538" alt="Экспозиция музея">
+                <figcaption>Экспозиция военно-исторического музея</figcaption>
+            </figure>
+
+            <h2 class="article-subtitle">Современная жизнь ОДО</h2>
+            
+            <p class="article-paragraph">
+                Сегодня здесь проходят концерты, театры, выставки, чтения и образовательные программы. В здании — большой концертный зал на более чем 800 мест, малые залы, библиотека, творческие студии, культурный отдел, секции для детей и молодёжи.
+            </p>
+
+            <figure class="article-image">
+                <img src="https://i.postimg.cc/Fs705BCD/image.jpg" alt="Современное использование здания">
+                <figcaption>Концерт в большом зале Дома офицеров</figcaption>
+            </figure>
+
+            <h2 class="article-subtitle">Памятник архитектуры</h2>
+            
+            <p class="article-paragraph highlight">
+                Дом офицеров — <span class="highlight">памятник архитектуры федерального значения</span>, сохраняющий традиции и объединяющий поколения. Это живой символ армейской чести и культурного наследия Урала.
+            </p>
+
+            <figure class="article-image">
+                <img src="https://static.wixstatic.com/media/a53ecc_f590ad5cc343400ebd86e2bec60bb7c2~mv2.jpg" alt="Дом офицеров сегодня">
+                <figcaption>Современный вид Дома офицеров ЦВО</figcaption>
+            </figure>
+        </div>
+    </div>
+</div>
    <!-- инфа -->
     
   
   <div class="footer" style="width: 1440px; height: 785px; position: relative; background: white">
-    <!-- Группа 1 -->
-    <div class="footer__group footer__group--1">
-      <!-- Афиша -->
-      <div class="footer__section" style="width: 180px; left: 60px; top: 60px; position: absolute; justify-content: flex-start; align-items: flex-start; gap: 11px; display: inline-flex">
-        <div style="justify-content: center; display: flex; flex-direction: column; color: black; font-size: 26px; font-family: Academy Condensed; font-weight: 500; word-wrap: break-word">
-          <a href="#" style="text-decoration: none; color: black;">Афиша</a>
-        </div>
-      </div>
-  
-      <!-- Залы -->
-      <div class="footer__section" style="width: 180px; left: 445px; top: 60px; position: absolute; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 11px; display: inline-flex">
-        <div style="align-self: stretch; justify-content: flex-start; align-items: center; gap: 10.91px; display: inline-flex">
+      <!-- Группа 1 -->
+      <div class="footer__group footer__group--1">
+        <!-- Афиша -->
+        <div class="footer__section" style="width: 180px; left: 60px; top: 60px; position: absolute; justify-content: flex-start; align-items: flex-start; gap: 11px; display: inline-flex">
           <div style="justify-content: center; display: flex; flex-direction: column; color: black; font-size: 26px; font-family: Academy Condensed; font-weight: 500; word-wrap: break-word">
-            <a href="#" style="text-decoration: none; color: black;">Залы</a>
+            <a href="afisha.html" style="text-decoration: none; color: black;">Афиша</a>
           </div>
         </div>
-        <div class="footer__sublinks" style="align-self: stretch; height: 107px; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 4.36px; display: flex">
-          <div style="justify-content: center; display: flex; flex-direction: column; color: rgba(0, 0, 0, 0.60); font-size: 16px; font-family: Myriad Pro; font-weight: 400; word-wrap: break-word">Концертный зал</div>
-          <div style="justify-content: center; display: flex; flex-direction: column; color: rgba(0, 0, 0, 0.60); font-size: 16px; font-family: Myriad Pro; font-weight: 400; word-wrap: break-word">Фойе концертного зала</div>
-          <div style="justify-content: center; display: flex; flex-direction: column; color: rgba(0, 0, 0, 0.60); font-size: 16px; font-family: Myriad Pro; font-weight: 400; word-wrap: break-word">Жуковский зал</div>
-          <div style="justify-content: center; display: flex; flex-direction: column; color: rgba(0, 0, 0, 0.60); font-size: 16px; font-family: Myriad Pro; font-weight: 400; word-wrap: break-word">Малый зал</div>
-          <div style="justify-content: center; display: flex; flex-direction: column; color: rgba(0, 0, 0, 0.60); font-size: 16px; font-family: Myriad Pro; font-weight: 400; word-wrap: break-word">Гусарская баллада</div>
-        </div>
-      </div>
-  
-      <!-- История -->
-      <div class="footer__section" style="width: 180px; left: 830px; top: 60px; position: absolute; justify-content: flex-start; align-items: flex-start; gap: 11px; display: inline-flex">
-        <div style="justify-content: center; display: flex; flex-direction: column; color: black; font-size: 26px; font-family: Academy Condensed; font-weight: 500; word-wrap: break-word">
-          <a href="#" style="text-decoration: none; color: black;">История</a>
-        </div>
-      </div>
-  
-      <!-- Музей -->
-      <div class="footer__section" style="width: 180px; left: 1215px; top: 60px; position: absolute; justify-content: flex-start; align-items: flex-start; gap: 11px; display: inline-flex">
-        <div style="justify-content: center; display: flex; flex-direction: column; color: black; font-size: 26px; font-family: Academy Condensed; font-weight: 500; word-wrap: break-word">
-          <a href="#" style="text-decoration: none; color: black;">Музей</a>
-        </div>
-      </div>
-    </div>
-  
-    <!-- Группа 2 -->
-    <div class="footer__group footer__group--2">
-      <!-- Библиотека -->
-      <div class="footer__section" style="width: 180px; left: 60px; top: 265px; position: absolute; justify-content: flex-start; align-items: flex-start; gap: 11px; display: inline-flex">
-        <div style="justify-content: center; display: flex; flex-direction: column; color: black; font-size: 26px; font-family: Academy Condensed; font-weight: 500; word-wrap: break-word">
-          <a href="#" style="text-decoration: none; color: black;">Библиотека</a>
-        </div>
-      </div>
-  
-      <!-- Пушкинская карта -->
-      <div class="footer__section" style="width: 180px; left: 445px; top: 265px; position: absolute; justify-content: flex-start; align-items: flex-start; gap: 11px; display: inline-flex">
-        <div style="justify-content: center; display: flex; flex-direction: column; color: black; font-size: 26px; font-family: Academy Condensed; font-weight: 500; word-wrap: break-word">
-          <a href="#" style="text-decoration: none; color: black;">Пушкинская карта</a>
-        </div>
-      </div>
-  
-      <!-- Контакты -->
-      <div class="footer__section" style="width: 180px; left: 830px; top: 265px; position: absolute; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 11px; display: inline-flex">
-        <div style="align-self: stretch; justify-content: flex-start; align-items: center; gap: 10.91px; display: inline-flex">
-          <div style="justify-content: center; display: flex; flex-direction: column; color: black; font-size: 26px; font-family: Academy Condensed; font-weight: 500; word-wrap: break-word">
-            <a href="#" style="text-decoration: none; color: black;">Контакты</a>
-          </div>
-        </div>
-        <div class="footer__sublinks" style="align-self: stretch; height: 63px; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 4.36px; display: flex">
-          <div style="justify-content: center; display: flex; flex-direction: column; color: rgba(0, 0, 0, 0.60); font-size: 16px; font-family: Myriad Pro; font-weight: 400; word-wrap: break-word">
-            <a href="#" style="text-decoration: none; color: rgba(0, 0, 0, 0.60);">Адрес</a>
-          </div>
-          <div style="justify-content: center; display: flex; flex-direction: column; color: rgba(0, 0, 0, 0.60); font-size: 16px; font-family: Myriad Pro; font-weight: 400; word-wrap: break-word">
-            <a href="#" style="text-decoration: none; color: rgba(0, 0, 0, 0.60);">Контакты</a>
-          </div>
-          <div style="justify-content: center; display: flex; flex-direction: column; color: rgba(0, 0, 0, 0.60); font-size: 16px; font-family: Myriad Pro; font-weight: 400; word-wrap: break-word">
-            <a href="#" style="text-decoration: none; color: rgba(0, 0, 0, 0.60);">Уставы</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  
-    <!-- Группа 3 (Логотип) -->
-    <div class="footer__group footer__group--logo">
-      <a href="#" class="footer__logo" style="width: 190px; height: 107px; left: 1080px; top: 479.50px; position: absolute;">
-        <img style="width: 100%; height: 100%;" src="assets/images/GP_studio.png" alt="Logo">
-      </a>
-    </div>
-  
-    <!-- Группа 4 (Контакты и соцсети) -->
-    <div class="footer__group footer__group--contacts">
-      <!-- Контактная информация -->
-      <div class="footer__section" style="width: 330px; left: 60px; top: 426px; position: absolute; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 5px; display: inline-flex">
-        <div style="align-self: stretch; justify-content: center; display: flex; flex-direction: column; color: #4C4C4C; font-size: 26px; font-family: Academy Condensed; font-weight: 500; word-wrap: break-word">Екатеринбург, улица Первомайская, 27</div>
-        <div style="align-self: stretch; justify-content: center; display: flex; flex-direction: column; color: #C40005; font-size: 26px; font-family: Academy Condensed; font-weight: 500; word-wrap: break-word">
-          <a href="https://maps.google.com" target="_blank" style="text-decoration: none; color: #C40005;">найти на карте</a>
-        </div>
-      </div>
-  
-      <div class="footer__section" style="width: 330px; left: 450px; top: 426px; position: absolute; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 5px; display: inline-flex">
-        <div style="align-self: stretch; justify-content: center; display: flex; flex-direction: column; color: black; font-size: 26px; font-family: Academy Condensed; font-weight: 500; word-wrap: break-word">
-          <a href="tel:+73433500961" style="text-decoration: none; color: black;">+7 (343) 350-09-61</a>
-        </div>
-        <div style="justify-content: center; display: flex; flex-direction: column; color: #4C4C4C; font-size: 20px; font-family: Academy Condensed; font-weight: 500; word-wrap: break-word; text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)">
-          <a href="mailto:odoural@mail.ru" style="text-decoration: none; color: #4C4C4C;">odoural@mail.ru</a>
-        </div>
-        <div style="justify-content: center; display: flex; flex-direction: column; color: #4C4C4C; font-size: 16px; font-family: Myriad Pro; font-weight: 400; word-wrap: break-word">билетные кассы</div>
-      </div>
-  
-      <div class="footer__section" style="width: 330px; left: 60px; top: 563px; position: absolute; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 5px; display: inline-flex">
-        <div style="align-self: stretch; justify-content: center; display: flex; flex-direction: column; color: black; font-size: 26px; font-family: Academy Condensed; font-weight: 500; word-wrap: break-word">
-          <a href="tel:+73433503561" style="text-decoration: none; color: black;">+7 (343) 350-35-61</a>
-        </div>
-        <div style="justify-content: center; display: flex; flex-direction: column; color: #4C4C4C; font-size: 20px; font-family: Academy Condensed; font-weight: 500; word-wrap: break-word; text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)">
-          <a href="mailto:odoural@mail.ru" style="text-decoration: none; color: #4C4C4C;">odoural@mail.ru</a>
-        </div>
-        <div style="justify-content: center; display: flex; flex-direction: column; color: #4C4C4C; font-size: 16px; font-family: Myriad Pro; font-weight: 400; word-wrap: break-word">приемная ОДО</div>
-      </div>
-  
-      <!-- Соцсети -->
-      <div class="footer__social" style="width: 330px; padding-left: 2px; padding-right: 2px; left: 450px; top: 563px; position: absolute; justify-content: flex-start; align-items: flex-start; gap: 25px; display: inline-flex">
-        <div style="width: 40px; height: 40px; position: relative; overflow: hidden">
-          <a href="https://vk.com/yourpage" style="width: 33.33px; height: 33.33px; left: 3.33px; top: 3.33px; position: absolute;">
-            <img src="assets/svg_icons/vk_icon.svg" alt="VK Icon" style="width: 100%; height: 100%;">
-          </a>
-        </div>
-        <div style="width: 40px; height: 40px; position: relative; overflow: hidden">
-          <a href="https://vk.com/yourpage" style="width: 33.33px; height: 33.33px; left: 3.33px; top: 3.33px; position: absolute;">
-            <img src="assets/svg_icons/vk_icon.svg" alt="VK Icon" style="width: 100%; height: 100%;">
-          </a>
-        </div>
-        <div style="width: 40px; height: 40px; position: relative; overflow: hidden">
-          <a href="https://vk.com/yourpage" style="width: 33.33px; height: 33.33px; left: 3.33px; top: 3.33px; position: absolute;">
-            <img src="assets/svg_icons/vk_icon.svg" alt="VK Icon" style="width: 100%; height: 100%;">
-          </a>
-        </div>
-      </div>
-    </div>
-  
-    <!-- Копирайт -->
-    <div class="footer__group footer__group--copyright">
-      <div class="footer__copyright" style="left: 60px; top: 700px; position: absolute; color: black; font-size: 18px; font-family: Academy Condensed; font-weight: 500; word-wrap: break-word">
-        © 2025 ФГБУ “Дом офицеров Центрального военного округа„ Министерства обороны РФ
-      </div>
+    
+        <!-- Залы -->
+       <div class="footer__section" style="width: 180px; left: 445px; top: 60px; position: absolute; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 11px; display: inline-flex">
+  <div style="align-self: stretch; justify-content: flex-start; align-items: center; gap: 10.91px; display: inline-flex">
+    <div style="justify-content: center; display: flex; flex-direction: column; color: black; font-size: 26px; font-family: Academy Condensed; font-weight: 500; word-wrap: break-word">
+      <a href="zaly.html" style="text-decoration: none; color: black;">Залы</a>
     </div>
   </div>
+  <div class="footer__sublinks" style="align-self: stretch; height: 107px; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 4.36px; display: flex">
+    <div style="justify-content: center; display: flex; flex-direction: column; color: rgba(0, 0, 0, 0.60); font-size: 16px; font-family: Myriad Pro; font-weight: 400; word-wrap: break-word">
+      <a href="концертный.html" style="text-decoration: none; color: rgba(0, 0, 0, 0.60);">Концертный зал</a>
+    </div>
+    <div style="justify-content: center; display: flex; flex-direction: column; color: rgba(0, 0, 0, 0.60); font-size: 16px; font-family: Myriad Pro; font-weight: 400; word-wrap: break-word">
+      <a href="фойе.html" style="text-decoration: none; color: rgba(0, 0, 0, 0.60);">Фойе концертного зала</a>
+    </div>
+    <div style="justify-content: center; display: flex; flex-direction: column; color: rgba(0, 0, 0, 0.60); font-size: 16px; font-family: Myriad Pro; font-weight: 400; word-wrap: break-word">
+      <a href="жуковский.html" style="text-decoration: none; color: rgba(0, 0, 0, 0.60);">Жуковский зал</a>
+    </div>
+    <div style="justify-content: center; display: flex; flex-direction: column; color: rgba(0, 0, 0, 0.60); font-size: 16px; font-family: Myriad Pro; font-weight: 400; word-wrap: break-word">
+      <a href="малый.html" style="text-decoration: none; color: rgba(0, 0, 0, 0.60);">Малый зал</a>
+    </div>
+    <div style="justify-content: center; display: flex; flex-direction: column; color: rgba(0, 0, 0, 0.60); font-size: 16px; font-family: Myriad Pro; font-weight: 400; word-wrap: break-word">
+      <a href="баллада.html" style="text-decoration: none; color: rgba(0, 0, 0, 0.60);">Гусарская баллада</a>
+    </div>
+  </div>
+</div>
+    
+        <!-- История -->
+        <div class="footer__section" style="width: 180px; left: 830px; top: 60px; position: absolute; justify-content: flex-start; align-items: flex-start; gap: 11px; display: inline-flex">
+          <div style="justify-content: center; display: flex; flex-direction: column; color: black; font-size: 26px; font-family: Academy Condensed; font-weight: 500; word-wrap: break-word">
+            <a href="istoriya.html" style="text-decoration: none; color: black;">История</a>
+          </div>
+        </div>
+    
+        <!-- Музей -->
+        <div class="footer__section" style="width: 180px; left: 1215px; top: 60px; position: absolute; justify-content: flex-start; align-items: flex-start; gap: 11px; display: inline-flex">
+          <div style="justify-content: center; display: flex; flex-direction: column; color: black; font-size: 26px; font-family: Academy Condensed; font-weight: 500; word-wrap: break-word">
+            <a href="muzei.html" style="text-decoration: none; color: black;">Музей</a>
+          </div>
+        </div>
+      </div>
+    
+      <!-- Группа 2 -->
+      <div class="footer__group footer__group--2">
+        <!-- Библиотека -->
+        <div class="footer__section" style="width: 180px; left: 60px; top: 265px; position: absolute; justify-content: flex-start; align-items: flex-start; gap: 11px; display: inline-flex">
+          <div style="justify-content: center; display: flex; flex-direction: column; color: black; font-size: 26px; font-family: Academy Condensed; font-weight: 500; word-wrap: break-word">
+            <a href="biblioteka.html" style="text-decoration: none; color: black;">Библиотека</a>
+          </div>
+        </div>
+    
+        <!-- Пушкинская карта -->
+        <div class="footer__section" style="width: 180px; left: 445px; top: 265px; position: absolute; justify-content: flex-start; align-items: flex-start; gap: 11px; display: inline-flex">
+          <div style="justify-content: center; display: flex; flex-direction: column; color: black; font-size: 26px; font-family: Academy Condensed; font-weight: 500; word-wrap: break-word">
+            <a href="pushkinskaya-karta.html" style="text-decoration: none; color: black;">Пушкинская карта</a>
+          </div>
+        </div>
+    
+        <!-- Контакты -->
+        <div class="footer__section" style="width: 180px; left: 830px; top: 265px; position: absolute; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 11px; display: inline-flex">
+          <div style="align-self: stretch; justify-content: flex-start; align-items: center; gap: 10.91px; display: inline-flex">
+            <div style="justify-content: center; display: flex; flex-direction: column; color: black; font-size: 26px; font-family: Academy Condensed; font-weight: 500; word-wrap: break-word">
+              <a href="adres.html" style="text-decoration: none; color: black;">Контакты</a>
+            </div>
+          </div>
+          <div class="footer__sublinks" style="align-self: stretch; height: 63px; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 4.36px; display: flex">
+            <div style="justify-content: center; display: flex; flex-direction: column; color: rgba(0, 0, 0, 0.60); font-size: 16px; font-family: Myriad Pro; font-weight: 400; word-wrap: break-word">
+              <a href="adres.html" style="text-decoration: none; color: rgba(0, 0, 0, 0.60);">Адрес</a>
+            </div>
+            <div style="justify-content: center; display: flex; flex-direction: column; color: rgba(0, 0, 0, 0.60); font-size: 16px; font-family: Myriad Pro; font-weight: 400; word-wrap: break-word">
+              <a href="kontakty.html" style="text-decoration: none; color: rgba(0, 0, 0, 0.60);">Контакты</a>
+            </div>
+            <div style="justify-content: center; display: flex; flex-direction: column; color: rgba(0, 0, 0, 0.60); font-size: 16px; font-family: Myriad Pro; font-weight: 400; word-wrap: break-word">
+              <a href="ystavs.html" style="text-decoration: none; color: rgba(0, 0, 0, 0.60);">Уставы</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <!-- Группа 3 (Логотип) -->
+      <div class="footer__group footer__group--logo">
+        <a href="https://t.me/GermanYusupov" class="footer__logo" style="width: 190px; height: 107px; left: 1080px; top: 479.50px; position: absolute;">
+          <img style="width: 100%; height: 100%;" src="assets/images/GP_studio.png" alt="Logo">
+        </a>
+      </div>
+    
+      <!-- Группа 4 (Контакты и соцсети) -->
+      <div class="footer__group footer__group--contacts">
+        <!-- Контактная информация -->
+        <div class="footer__section" style="width: 330px; left: 60px; top: 426px; position: absolute; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 5px; display: inline-flex">
+          <div style="align-self: stretch; justify-content: center; display: flex; flex-direction: column; color: #4C4C4C; font-size: 26px; font-family: Academy Condensed; font-weight: 500; word-wrap: break-word">Екатеринбург, улица Первомайская, 27</div>
+          <div style="align-self: stretch; justify-content: center; display: flex; flex-direction: column; color: #C40005; font-size: 26px; font-family: Academy Condensed; font-weight: 500; word-wrap: break-word">
+            <a href="https://yandex.ru/maps/org/dom_ofitserov_tsentralnogo_voyennogo_okruga_ministerstva_oborony_rossii/1075579811/?ll=60.604079%2C56.841228&mode=search&sctx=ZAAAAAgBEAAaKAoSCZjArbt5TE5AERlYx%2FFDa0xAEhIJ%2BkLIef8f3D8RL9y5MNKLxD8iBgABAgMEBSgKOABA3ZwGSAFqAnJ1nQHNzMw9oAEAqAEAvQHqYFK7wgEFo5fwgASCAhfQtNC%2B0Lwg0L7RhNC40YbQtdGA0L7QsooCAJICAJoCDGRlc2t0b3AtbWFwc6oCGDQ2OTA5OTc5NDI4LDIzMTE5NDA1NTMyNrACAQ%3D%3D&sll=60.603513%2C56.837944&sspn=0.073495%2C0.026845&text=%D0%B4%D0%BE%D0%BC%20%D0%BE%D1%84%D0%B8%D1%86%D0%B5%D1%80%D0%BE%D0%B2&utm_source=share&z=15" target="_blank" style="text-decoration: none; color: #C40005;">найти на карте</a>
+          </div>
+        </div>
+    
+        <div class="footer__section" style="width: 330px; left: 450px; top: 426px; position: absolute; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 5px; display: inline-flex">
+          <div style="align-self: stretch; justify-content: center; display: flex; flex-direction: column; color: black; font-size: 26px; font-family: Academy Condensed; font-weight: 500; word-wrap: break-word">
+            <a href="tel:+73433500961" style="text-decoration: none; color: black;">+7 (343) 350-09-61</a>
+          </div>
+          <div style="justify-content: center; display: flex; flex-direction: column; color: #4C4C4C; font-size: 20px; font-family: Academy Condensed; font-weight: 500; word-wrap: break-word; text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)">
+            <a href="mailto:odoural@mail.ru" style="text-decoration: none; color: #4C4C4C;">odoural@mail.ru</a>
+          </div>
+          <div style="justify-content: center; display: flex; flex-direction: column; color: #4C4C4C; font-size: 16px; font-family: Myriad Pro; font-weight: 400; word-wrap: break-word">билетные кассы</div>
+        </div>
+    
+        <div class="footer__section" style="width: 330px; left: 60px; top: 563px; position: absolute; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 5px; display: inline-flex">
+          <div style="align-self: stretch; justify-content: center; display: flex; flex-direction: column; color: black; font-size: 26px; font-family: Academy Condensed; font-weight: 500; word-wrap: break-word">
+            <a href="tel:+73433503561" style="text-decoration: none; color: black;">+7 (343) 350-35-61</a>
+          </div>
+          <div style="justify-content: center; display: flex; flex-direction: column; color: #4C4C4C; font-size: 20px; font-family: Academy Condensed; font-weight: 500; word-wrap: break-word; text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)">
+            <a href="mailto:odoural@mail.ru" style="text-decoration: none; color: #4C4C4C;">odoural@mail.ru</a>
+          </div>
+          <div style="justify-content: center; display: flex; flex-direction: column; color: #4C4C4C; font-size: 16px; font-family: Myriad Pro; font-weight: 400; word-wrap: break-word">приемная ОДО</div>
+        </div>
+    
+        <!-- Соцсети -->
+        <div class="footer__social" style="width: 330px; padding-left: 2px; padding-right: 2px; left: 450px; top: 563px; position: absolute; justify-content: flex-start; align-items: flex-start; gap: 25px; display: inline-flex">
+          <div style="width: 40px; height: 40px; position: relative; overflow: hidden">
+  <a href="https://vk.com/odoural" target="_blank" style="width: 33.33px; height: 33.33px; left: 3.33px; top: 3.33px; position: absolute;">
+    <img src="assets/svg_icons/вк.png" alt="VK Icon" style="width: 100%; height: 100%;">
+  </a>
+</div>
+          <div style="width: 40px; height: 40px; position: relative; overflow: hidden">
+  <a href="https://rutube.ru/channel/54245019/" target="_blank" style="width: 33.33px; height: 33.33px; left: 3.33px; top: 3.33px; position: absolute;">
+    <img src="assets/svg_icons/рутуб.png" alt="VK Icon" style="width: 100%; height: 100%;">
+  </a>
+</div>
+<div style="width: 40px; height: 40px; position: relative; overflow: hidden">
+  <a href="https://t.me/odoural" target="_blank" style="width: 33.33px; height: 33.33px; left: 3.33px; top: 3.33px; position: absolute;">
+    <img src="assets/svg_icons/тг.png" alt="VK Icon" style="width: 100%; height: 100%;">
+  </a>
+</div>
+         
+        </div>
+      </div>
+    
+      <!-- Копирайт -->
+      <div class="footer__group footer__group--copyright">
+        <div class="footer__copyright" style="left: 60px; top: 700px; position: absolute; color: black; font-size: 18px; font-family: Academy Condensed; font-weight: 500; word-wrap: break-word">
+          © 2025 ФГБУ “Дом офицеров Центрального военного округа„ Министерства обороны России
+        </div>
+      </div>
+    </div>
   <script src="scripts/main.js"></script>
   <script src="scripts/header.js"></script>
 </body>

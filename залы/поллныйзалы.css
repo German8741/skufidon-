@@ -1,0 +1,263 @@
+@font-face {
+    font-family: 'Academy Condensed';
+    src: url('assets/fonts/Academy Condensed.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Myriad Pro';
+    src: url('assets/fonts/MYRIADPRO-CONDIT.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Onest';
+    src: url('assets/fonts/Onest-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    margin: 0;
+    font-family: 'Academy Condensed', sans-serif;
+    background: #F9F9F9;
+}
+
+.zaly-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding-top: 40px;
+}
+
+.zaly-header {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    padding-left: 60px;
+    padding-top: 5px;
+    text-decoration: none;
+}
+
+.zaly-header-title {
+    font-family: 'Myriad Pro', sans-serif;
+    font-size: 38px;
+    font-style: italic;
+    color: black;
+    transition: color 0.3s ease;
+}
+
+.zaly-header-icon {
+    width: 12px;
+    height: 22px;
+    background: url('assets/svg_icons/Vector.png') no-repeat center;
+    background-size: contain;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.zaly-header:hover .zaly-header-title {
+    color: #C40005;
+}
+
+.zaly-header:hover .zaly-header-icon {
+    transform: translateX(8px);
+    filter: invert(22%) sepia(84%) saturate(3616%) hue-rotate(349deg) brightness(88%) contrast(88%);
+}
+
+.zaly-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    padding: 30px 60px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+
+.zaly-cards::-webkit-scrollbar {
+    display: none;
+}
+
+.zaly-card {
+    flex: 0 0 413px;
+    width: 413px;
+    height: 332.85px; /* 295.8px * (413/367) ≈ 332.85px */
+    position: relative;
+    text-decoration: none;
+    border-radius: 13px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    -webkit-transition: transform 0.3s ease;
+    pointer-events: auto;
+    z-index: 1;
+}
+
+.zaly-cards .zaly-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    -webkit-transform: translateY(-10px) scale(1.02);
+}
+
+.zaly-image {
+    width: 413px;
+    height: 239.72px; /* 212.86px * (413/367) ≈ 239.72px */
+    border-top-left-radius: 13px;
+    border-top-right-radius: 13px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.zaly-info {
+    width: 413px;
+    padding: 7.44px; /* 6.61px * (413/367) ≈ 7.44px */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    border-bottom-left-radius: 13px;
+    border-bottom-right-radius: 13px;
+    background: transparent;
+}
+
+.zaly-title {
+    font-size: 39.63px; /* 35.23px * (413/367) ≈ 39.63px */
+    color: black;
+    line-height: 39.37px; /* 35px * (413/367) ≈ 39.37px */
+    margin-bottom: 7.88px; /* 7px * (413/367) ≈ 7.88px */
+    font-family: 'Academy Condensed', sans-serif;
+    font-weight: 500;
+}
+
+.zaly-details {
+    display: flex;
+    align-items: center;
+    gap: 9.08px; /* 8.07px * (413/367) ≈ 9.08px */
+    font-size: 22.5px; /* 20px * (413/367) ≈ 22.5px */
+    color: black;
+    opacity: 0.5;
+    font-family: 'Academy Condensed', sans-serif;
+    font-weight: 500;
+}
+
+.zaly-details .area {
+    display: flex;
+    align-items: center;
+    gap: 3.38px; /* 3px * (413/367) ≈ 3.38px */
+}
+
+.zaly-details .area .number {
+    font-size: 22.5px; /* 20px * (413/367) ≈ 22.5px */
+    font-family: 'Academy Condensed', sans-serif;
+    font-weight: 500;
+}
+
+.zaly-details .area .unit {
+    display: flex;
+    align-items: baseline;
+}
+
+.zaly-details .area .unit .meter {
+    font-size: 19.13px; /* 17px * (413/367) ≈ 19.13px */
+    font-family: 'Myriad Pro', sans-serif;
+    font-weight: 300;
+}
+
+.zaly-details .area .unit .square {
+    font-size: 19.13px; /* 17px * (413/367) ≈ 19.13px */
+    font-family: 'Onest', sans-serif;
+    font-weight: 100;
+}
+
+.zaly-details-dot {
+    width: 4.13px; /* 3.67px * (413/367) ≈ 4.13px */
+    height: 4.13px;
+    background: black;
+    border-radius: 50%;
+    opacity: 0.5;
+}
+
+/* Mobile optimization */
+@media (max-width: 767px) {
+    .zaly-container {
+        padding-top: 40px;
+    }
+
+    .zaly-header {
+        padding-left: 20px;
+    }
+
+    .zaly-header-title {
+        font-size: 28px;
+    }
+
+    .zaly-cards {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        padding: 15px 20px;
+    }
+
+    .zaly-card {
+        flex: 0 0 206.5px; /* 413px / 2 = 206.5px */
+        width: 206.5px;
+        height: 166.42px; /* 332.85px / 2 ≈ 166.42px */
+        border-radius: 7px;
+    }
+
+    .zaly-cards .zaly-card:hover {
+        transform: translateY(-8px) scale(1.02);
+        -webkit-transform: translateY(-8px) scale(1.02);
+    }
+
+    .zaly-image {
+        width: 206.5px;
+        height: 119.86px; /* 239.72px / 2 ≈ 119.86px */
+        border-top-left-radius: 7px;
+        border-top-right-radius: 7px;
+    }
+
+    .zaly-info {
+        width: 206.5px;
+        padding: 3.72px; /* 7.44px / 2 ≈ 3.72px */
+        border-bottom-left-radius: 7px;
+        border-bottom-right-radius: 7px;
+        background: transparent;
+    }
+
+    .zaly-title {
+        font-size: 20.25px; /* 39.63px / 2 ≈ 20.25px (adjusted for readability) */
+        line-height: 20px; /* 39.37px / 2 ≈ 20px (adjusted) */
+        margin-bottom: 3.94px; /* 7.88px / 2 ≈ 3.94px */
+    }
+
+    .zaly-details {
+        gap: 4.54px; /* 9.08px / 2 ≈ 4.54px */
+        font-size: 11.25px; /* 22.5px / 2 ≈ 11.25px */
+    }
+
+    .zaly-details .area {
+        gap: 1.69px; /* 3.38px / 2 ≈ 1.69px */
+    }
+
+    .zaly-details .area .number {
+        font-size: 11.25px; /* 22.5px / 2 ≈ 11.25px */
+    }
+
+    .zaly-details .area .unit .meter {
+        font-size: 9.56px; /* 19.13px / 2 ≈ 9.56px */
+    }
+
+    .zaly-details .area .unit .square {
+        font-size: 9.56px; /* 19.13px / 2 ≈ 9.56px */
+    }
+
+    .zaly-details-dot {
+        width: 2.06px; /* 4.13px / 2 ≈ 2.06px */
+        height: 2.06px;
+    }
+}
