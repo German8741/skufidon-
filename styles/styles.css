@@ -1,7 +1,7 @@
 /* Font Imports */
 @font-face {
   font-family: 'Academy Condensed';
-  src: url('../assets/fonts/AcademyCondensed.ttf') format('truetype');
+  src: url('../assets/fonts/AcademyCondensed.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
   font-display: swap; /* Улучшает загрузку шрифта */
