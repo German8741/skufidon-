@@ -1,7 +1,8 @@
 /* Font Imports */
 @font-face {
   font-family: 'Academy Condensed';
-  src: url('../assets/fonts/AcademyCondensed.woff2') format('woff2');
+  src: url('../assets/fonts/AcademyCondensed.woff2') format('woff2'),
+       url('../assets/fonts/AcademyCondensed.ttf') format('truetype'); /* Запасной TTF, если есть */
   font-weight: normal;
   font-style: normal;
   font-display: swap; /* Улучшает загрузку шрифта */
@@ -31,7 +32,7 @@
 }
 
 body {
-  font-family: 'Academy Condensed', Arial, sans-serif; /* Добавлен Arial как запасной */
+  font-family: 'Academy Condensed', Arial, sans-serif !important; /* Усиленная специфичность */
   color: #000;
   background-color: #F9F9F9;
 }
@@ -187,7 +188,7 @@ body {
   .header__mobile-nav-link {
     font-family: 'Academy Condensed', Arial, sans-serif !important; /* Явно задаём шрифт */
     color: #878787;
-    font-size: clamp(18px, 5vw, 22px);
+    font-size: clamp  clamp(18px, 5vw, 22px);
     text-decoration: none;
     transition: color 0.3s ease;
     display: block;
