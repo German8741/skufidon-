@@ -4,6 +4,7 @@
   src: url('../assets/fonts/AcademyCondensed.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
+  font-display: swap; /* Улучшает загрузку шрифта */
 }
 
 @font-face {
@@ -11,6 +12,7 @@
   src: url('../assets/fonts/MYRIADPRO-CONDIT.woff2') format('woff2');
   font-weight: normal;
   font-style: italic;
+  font-display: swap;
 }
 
 @font-face {
@@ -18,6 +20,7 @@
   src: url('../assets/fonts/MYRIADPRO-REGULAR.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 /* Base Styles */
@@ -28,13 +31,14 @@
 }
 
 body {
-  font-family: 'Academy Condensed', sans-serif;
+  font-family: 'Academy Condensed', Arial, sans-serif; /* Добавлен Arial как запасной */
   color: #000;
   background-color: #F9F9F9;
 }
 
 /* Header Styles */
 .header {
+  font-family: 'Academy Condensed', Arial, sans-serif !important; /* Явно задаём шрифт */
   background: #ffffff;
   box-shadow: 0 4px 44px rgba(0, 0, 0, 0.1);
   border-bottom: 1px solid #4C4C4C;
@@ -70,6 +74,7 @@ body {
 }
 
 .header__nav-link {
+  font-family: 'Academy Condensed', Arial, sans-serif !important; /* Явно задаём шрифт */
   color: #000;
   font-size: 26px;
   text-decoration: none;
@@ -87,6 +92,7 @@ body {
 }
 
 .header__news {
+  font-family: 'Academy Condensed', Arial, sans-serif !important; /* Явно задаём шрифт */
   color: #000;
   font-size: 28px;
   text-decoration: underline;
@@ -162,6 +168,7 @@ body {
   }
 
   .mobile-menu__title {
+    font-family: 'Academy Condensed', Arial, sans-serif !important; /* Явно задаём шрифт */
     color: white;
     font-size: clamp(24px, 6vw, 28px);
     text-align: left;
@@ -178,6 +185,7 @@ body {
   }
 
   .header__mobile-nav-link {
+    font-family: 'Academy Condensed', Arial, sans-serif !important; /* Явно задаём шрифт */
     color: #878787;
     font-size: clamp(18px, 5vw, 22px);
     text-decoration: none;
@@ -329,7 +337,6 @@ body {
   border-radius: 20px;
 }
 
-
 @media (max-width: 768px) {
   .footer {
     width: 100% !important;
@@ -398,14 +405,14 @@ body {
   .footer a,
   .footer div {
     font-size: 26px !important;
-    font-family: Academy Condensed !important;
+    font-family: 'Academy Condensed', Arial, sans-serif !important;
     font-weight: 500 !important;
   }
 
   .footer__sublinks div,
   .footer__sublinks a {
     font-size: 16px !important;
-    font-family: Myriad Pro !important;
+    font-family: 'Myriad Pro', Arial, sans-serif !important;
     font-weight: 400 !important;
     color: rgba(0, 0, 0, 0.60) !important;
   }
@@ -427,4 +434,3 @@ body {
     height: 40px !important;
   }
 }
-
