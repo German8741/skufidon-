@@ -26,7 +26,7 @@ const events = [
     age: '16+',
     link: './polnaya-afisha.html?id=11',
     pushkinCard: false,
-    watchSlider: true,
+    watchSlider: false,
     kassyLink: 'https://ekb.kassy.ru/events/koncerty-i-shou/2-64654/',
     odoLink: 'https://ekb.kassy.ru/events/koncerty-i-shou/2-64654/',
     description: '✨Живые инструменты: Виртуозная скрипка Александра Рассказова (лидер группы Красная скрипка) 🎻 и нежный рояль 🎹 Светланы Смирновой, художественное оформление в виде песочной анимации 🌪️от Елены Кадыровой, вокал Ольги Семенищевой (солистки УралОпераБалет) ✨и непременные приятные сюрпризы в программе.💥 Все это концертная программа под названием "Душа".🌺 Человеческая душа - самое нежное и хрупкое чудо на свете. Такая ранимая, но такая сильная. Полная загадок и секретов, а иногда очень чуткая и понятная.'
@@ -241,6 +241,11 @@ function getEventById(id) {
 }
 
 function renderEventDetails() {
+  // Вызываем только на странице polnaya-afisha.html
+  if (!window.location.pathname.includes('polnaya-afisha.html')) {
+    return;
+  }
+
   const urlParams = new URLSearchParams(window.location.search);
   const eventId = urlParams.get('id');
   const event = getEventById(eventId);
@@ -249,7 +254,10 @@ function renderEventDetails() {
   console.log('Found event:', event);
 
   if (!event) {
-    document.querySelector('.events-detail-section').innerHTML = '<p>Событие не найдено</p>';
+    const section = document.querySelector('.events-detail-section');
+    if (section) {
+      section.innerHTML = '<p>Событие не найдено</p>';
+    }
     return;
   }
 
@@ -265,10 +273,24 @@ function renderEventDetails() {
   document.querySelector('.event-description p').textContent = event.description;
 }
 
+// Заглушка для zalyManager
+const zalyManager = {
+  initZaly: () => {
+    console.log('zalyManager.initZaly() called (placeholder)');
+  }
+};
+
+// Заглушка для manager (слайдер обрабатывается в slider/manager.js)
+const manager = {
+  initSlider: () => {
+    console.log('manager.initSlider() called (placeholder)');
+  }
+};
+
 document.addEventListener('DOMContentLoaded', () => {
   renderAfishaCards();
   initSlider();
   renderEventDetails();
 });
 
-export { events, sortEventsByDate };
+export { events, sortEventsByDate, renderAfishaCards, manager, zalyManager };

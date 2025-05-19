@@ -74,9 +74,9 @@ body {
 .cards {
   display: flex;
   gap: 40px;
+  padding: 30px 60px;
   overflow-x: auto;
   scroll-behavior: smooth;
-  padding: 30px 60px;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
 }
@@ -94,10 +94,14 @@ body {
   border-radius: 16.13px;
   overflow: hidden;
   transition: transform 0.3s ease;
+  -webkit-transition: transform 0.3s ease;
+  pointer-events: auto;
+  z-index: 1;
 }
 
-.card:hover {
+.cards .card:hover {
   transform: translateY(-10px) scale(1.02);
+  -webkit-transform: translateY(-10px) scale(1.02);
 }
 
 .card-image {
@@ -225,6 +229,19 @@ body {
   }
   .afisha-header-title {
     font-size: 28px;
+    transition: none; /* Отключаем анимацию цвета */
+  }
+  .afisha-header-icon {
+    transition: none; /* Отключаем анимацию сдвига и фильтра */
+  }
+  .afisha-header:hover .afisha-header-title,
+  .afisha-header:active .afisha-header-title {
+    color: black; /* Предотвращаем изменение цвета */
+  }
+  .afisha-header:hover .afisha-header-icon,
+  .afisha-header:active .afisha-header-icon {
+    transform: none; /* Предотвращаем сдвиг */
+    filter: none; /* Предотвращаем изменение цвета */
   }
   .cards {
     gap: 20px;
@@ -236,14 +253,9 @@ body {
     height: 344px;
     border-radius: 12.47px;
   }
-  .afisha-page .card {
-    transition: none; /* Отключаем анимацию для afisha.html */
-  }
-  .afisha-page .card:hover, .afisha-page .card:active {
-    transform: none; /* Убираем transform при наведении и нажатии */
-  }
-  .card:hover {
-    transform: translateY(-8px) scale(1.02); /* Сохраняем для index.html */
+  .cards .card:hover {
+    transform: translateY(-8px) scale(1.02);
+    -webkit-transform: translateY(-8px) scale(1.02);
   }
   .card-image {
     width: 170px;
