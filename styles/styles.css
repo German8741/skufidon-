@@ -103,8 +103,6 @@ img {
 .header__news {
   color: #000;
   font-size: 28px !important;
-   top: -3px;
-   left: -5px;
   text-decoration: underline;
   transition: color 0.3s ease;
   font-family: 'Academy Condensed', sans-serif;
@@ -169,6 +167,7 @@ img {
   
   .header__news {
     font-size: 24px;
+    
   }
 }
 
@@ -188,6 +187,8 @@ img {
   }
   
   .header__news {
+     top: -4px;
+   left: -5px;
     font-size: 22px;
   }
 }
@@ -213,6 +214,8 @@ img {
   }
   
   .header__news {
+     top: -4px;
+   left: -5px;
     font-size: 20px;
     margin-right: 0;
     order: 1; /* Ссылка перед бургером */
