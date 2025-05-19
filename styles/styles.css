@@ -332,6 +332,8 @@ img {
   }
   
   .header__news {
+     top: -2px;
+   left: -5px;
     font-size: 22px;
   }
 }
@@ -357,6 +359,8 @@ img {
   }
   
   .header__news {
+     top: -2px;
+   left: -5px;
     font-size: 20px;
     margin-right: 0;
     order: 1;
