@@ -131,18 +131,17 @@ body {
   background: #C40005;
   border-radius: 9.61px;
   height: 32px;
-  width: 82px; /* Увеличено с 82px для размещения текста */
+  width: 82px;
   position: absolute;
   bottom: 9.53px;
   left: 9.53px;
   color: white;
-  font-size:  16.87px; /* Уменьшено с 16.87px для лучшей читаемости */
+  font-size: 16.87px;
   display: flex;
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
   font-weight: 500;
- 
 }
 
 .pushkin-badge {
@@ -237,8 +236,14 @@ body {
     height: 344px;
     border-radius: 12.47px;
   }
+  .afisha-page .card {
+    transition: none; /* Отключаем анимацию для afisha.html */
+  }
+  .afisha-page .card:hover, .afisha-page .card:active {
+    transform: none; /* Убираем transform при наведении и нажатии */
+  }
   .card:hover {
-    transform: translateY(-8px) scale(1.02);
+    transform: translateY(-8px) scale(1.02); /* Сохраняем для index.html */
   }
   .card-image {
     width: 170px;
@@ -262,7 +267,7 @@ body {
     left: 7.37px;
     font-size: 13.03px;
     border-radius: 7.43px;
-    padding: 0 6px; /* Добавлено для мобильной версии */
+    padding: 0 6px;
   }
   .pushkin-badge {
     width: 26.07px;
