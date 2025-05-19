@@ -199,52 +199,51 @@ body {
         padding: 15px 20px;
     }
     .zaly-card {
-        flex: 0 0 183.44px;
-        width: 183.44px;
-        height: 148px;
-        border-radius: 7px;
+        flex: 0 0 275.16px;
+        width: 275.16px;
+        height: 222px;
+        border-radius: 10.5px;
     }
     .zaly-cards .zaly-card:hover {
-        transform: translateY(-8px) scale(1.02); /* Эффект для мобильных, как у афиши */
-        -webkit-transform: translateY(-8px) scale(1.02);
-        /* background: rgba(0, 255, 0, 0.1); /* Временный фон для диагностики, удалите после проверки */
+        transform: translateY(-12px) scale(1.02); /* Увеличенный эффект для мобильных */
+        -webkit-transform: translateY(-12px) scale(1.02);
     }
     .zaly-image {
-        width: 183.44px;
-        height: 106.39px;
-        border-top-left-radius: 7px;
-        border-top-right-radius: 7px;
+        width: 275.16px;
+        height: 159.59px;
+        border-top-left-radius: 10.5px;
+        border-top-right-radius: 10.5px;
     }
     .zaly-info {
-        width: 183.44px;
-        padding: 3.13px;
-        border-bottom-left-radius: 7px;
-        border-bottom-right-radius: 7px;
+        width: 275.16px;
+        padding: 4.7px;
+        border-bottom-left-radius: 10.5px;
+        border-bottom-right-radius: 10.5px;
         background: transparent;
     }
     .zaly-title {
-        font-size: 18px;
-        line-height: 18px;
-        margin-bottom: 3.13px;
+        font-size: 27px;
+        line-height: 27px;
+        margin-bottom: 4.7px;
     }
     .zaly-details {
-        gap: 4.04px;
-        font-size: 10px;
+        gap: 6.06px;
+        font-size: 15px;
     }
     .zaly-details .area {
-        gap: 1.5px;
+        gap: 2.25px;
     }
     .zaly-details .area .number {
-        font-size: 10px;
+        font-size: 15px;
     }
     .zaly-details .area .unit .meter {
-        font-size: 8.5px;
+        font-size: 12.75px;
     }
     .zaly-details .area .unit .square {
-        font-size: 8.5px;
+        font-size: 12.75px;
     }
     .zaly-details-dot {
-        width: 1.84px;
-        height: 1.84px;
+        width: 2.76px;
+        height: 2.76px;
     }
 }
