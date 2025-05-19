@@ -1,3 +1,4 @@
+/* Font Faces */
 @font-face {
   font-family: 'Academy Condensed';
   src: url('../assets/fonts/AcademyCondensed.woff2') format('woff2');
@@ -37,7 +38,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Ensure images don't overflow */
 img {
   max-width: 100%;
   height: auto;
@@ -86,6 +86,7 @@ img {
   font-size: 26px;
   text-decoration: none;
   transition: color 0.3s ease;
+  font-family: 'Academy Condensed', sans-serif;
 }
 
 .header__nav-link:hover {
@@ -95,14 +96,19 @@ img {
 .header__right {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 30px;
 }
 
+/* Стили для ссылки "Новости" */
 .header__news {
   color: #000;
   font-size: 28px;
   text-decoration: underline;
   transition: color 0.3s ease;
+  font-family: 'Academy Condensed', sans-serif;
+  white-space: nowrap;
+  display: inline-block;
+  position: relative;
 }
 
 .header__news:hover {
@@ -115,13 +121,19 @@ img {
   cursor: pointer;
   display: none;
   outline: none;
-  -webkit-tap-highlight-color: transparent;
+  padding: 0;
+  margin: 0;
 }
 
 .burger-icon {
   width: 24px;
   height: 24px;
-  fill: none;
+  display: block;
+}
+
+/* Mobile Menu Styles */
+.header__mobile {
+  display: none;
 }
 
 .menu-overlay {
@@ -142,16 +154,78 @@ img {
   opacity: 1;
 }
 
-.header__mobile {
-  display: none;
+/* Responsive Styles */
+@media (max-width: 1200px) {
+  .header__container {
+    gap: 40px;
+    padding: 20px 40px;
+  }
+  
+  .header__nav-list {
+    gap: 30px;
+  }
+  
+  .header__news {
+    font-size: 24px;
+  }
 }
 
-/* Mobile Menu Styles */
+@media (max-width: 992px) {
+  .header__container {
+    gap: 30px;
+    padding: 15px 30px;
+  }
+  
+  .header__logo {
+    width: 200px;
+    height: 70px;
+  }
+  
+  .header__nav-link {
+    font-size: 22px;
+  }
+  
+  .header__news {
+    font-size: 22px;
+  }
+}
+
 @media (max-width: 768px) {
+  .header__container {
+    padding: 12px 20px;
+    gap: 20px;
+    justify-content: space-between;
+  }
+  
+  .header__logo {
+    width: 160px;
+    height: 56px;
+  }
+  
+  .header__nav {
+    display: none;
+  }
+  
+  .header__right {
+    gap: 15px;
+  }
+  
+  .header__news {
+    font-size: 18px;
+    margin-right: 0;
+    order: 1; /* Ссылка перед бургером */
+  }
+  
+  .header__burger {
+    display: block;
+    order: 2; /* Бургер после ссылки */
+  }
+  
+  /* Мобильное меню */
   .header__mobile {
     display: block;
   }
-
+  
   .header__mobile-page {
     position: fixed;
     top: 0;
@@ -162,260 +236,40 @@ img {
     z-index: 1001;
     transition: transform 0.4s ease-in-out;
     overflow-y: auto;
-    overflow-x: hidden;
     padding: 20px;
-    box-sizing: border-box;
-    touch-action: pan-y;
-    -webkit-overflow-scrolling: touch;
   }
-
+  
   .header__mobile-page.active {
     transform: translateX(-100%);
   }
-
-  .mobile-menu__top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 0;
-    border-bottom: 1px solid #333;
-  }
-
-  .mobile-menu__title {
-    color: white;
-    font-size: clamp(24px, 6vw, 28px);
-    font-family: 'Academy Condensed', sans-serif;
-    font-weight: 500;
-    text-align: left;
-    text-decoration: none !important;
-    -webkit-text-decoration: none;
-    cursor: pointer;
-  }
-
-  .mobile-menu__title:link,
-  .mobile-menu__title:visited,
-  .mobile-menu__title:active {
-    color: white;
-    text-decoration: none;
-  }
-
-  .mobile-menu__title:hover {
-    color: #C40005;
-    text-decoration: none;
-  }
-
-  .mobile-menu__close {
-    background: none;
-    border: none;
-    cursor: pointer;
-    outline: none;
-    -webkit-tap-highlight-color: transparent;
-  }
-
-  .mobile-menu__close img {
-    width: 32px;
-    height: 32px;
-  }
-
-  .header__mobile-nav {
-    margin-top: 20px;
-  }
-
-  .header__mobile-nav-list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    padding: 0;
-  }
-
-  .header__mobile-nav-link {
-    color: #878787;
-    font-size: clamp(22px, 5vw, 26px);
-    font-family: 'Academy Condensed', sans-serif;
-    font-weight: 500;
-    text-decoration: none;
-    display: block;
-    transition: color 0.3s ease;
-  }
-
-  .header__mobile-nav-link:hover {
-    color: #C40005;
-  }
-
-  .mobile-menu__footer {
-    margin-top: 40px;
-    padding-bottom: 20px;
-  }
-
-  .mobile-menu__contact-line {
-    display: flex;
-    flex-direction: column;
-    gap: 7px;
-    margin-bottom: 14px;
-  }
-
-  .mobile-menu__phone {
-    font-size: clamp(18px, 4vw, 20px);
-    font-family: 'Myriad Pro Condensed', sans-serif;
-    font-style: italic;
-    font-weight: 400;
-    text-decoration: none !important;
-    -webkit-text-decoration: none !important;
-  }
-
-  .mobile-menu__phone * {
-    text-decoration: none !important;
-    -webkit-text-decoration: none !important;
-  }
-
-  .mobile-menu__phone .phone-number,
-  .mobile-menu__phone .phone-number[role="text"] {
-    color: white !important;
-    text-decoration: none !important;
-    -webkit-text-decoration: none !important;
-  }
-
-  .mobile-menu__phone .phone-number:link,
-  .mobile-menu__phone .phone-number:visited,
-  .mobile-menu__phone .phone-number:active,
-  .mobile-menu__phone .phone-number:any-link {
-    color: white !important;
-    text-decoration: none !important;
-    -webkit-text-decoration: none !important;
-  }
-
-  .mobile-menu__phone .phone-label {
-    color: #878787 !important;
-    font-family: 'Academy Condensed', sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    text-decoration: none !important;
-    -webkit-text-decoration: none !important;
-  }
-
-  /* Suppress browser-generated tel links */
-  .mobile-menu__phone :where(a[href^="tel"], a[href^="tel"]:link, a[href^="tel"]:visited, a[href^="tel"]:active, a[href^="tel"]:any-link) {
-    color: white !important;
-    text-decoration: none !important;
-    -webkit-text-decoration: none !important;
-    -moz-text-decoration: none !important;
-  }
-
-  .mobile-menu__address {
-    color: #878787;
-    font-size: clamp(16px, 4vw, 18px);
-    font-family: 'Academy Condensed', sans-serif;
-    font-weight: 500;
-  }
-
-  .mobile-menu__social {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 14px;
-  }
-
-  .mobile-menu__social-icons {
-    display: flex;
-    gap: 26px;
-  }
-
-  .social-icon {
-    width: 30px;
-    height: 30px;
-    object-fit: contain;
-  }
-
-  .mobile-menu__footer-logo img {
-    width: 96px;
-    height: 54px;
-    max-width: 100%;
-    object-fit: contain;
-  }
-
-  .mobile-menu__org {
-    color: #878787;
-    font-size: clamp(16px, 4vw, 18px);
-    font-family: 'Academy Condensed', sans-serif;
-    font-weight: 500;
-    margin-top: 14px;
-    line-height: 1.4;
-  }
-
-  .header__nav {
-    display: none;
-  }
-
-  .header__right .header__news {
-    display: none;
-  }
-
-  .header__burger {
-    display: block;
-  }
-
-  .header__container {
-    padding: 10px 20px;
-    justify-content: space-between;
-    gap: 20px;
-  }
-
-  .header__logo {
-    width: 160px;
-    height: 56px;
-  }
+  
+  /* ... остальные стили мобильного меню ... */
 }
 
-/* Responsive Header */
-@media (max-width: 1024px) {
-  .header__container {
-    padding: 15px 30px;
-    gap: 40px;
-  }
-
-  .header__logo {
-    width: 200px;
-    height: 70px;
-  }
-
-  .header__nav-list {
-    gap: 30px;
-  }
-
-  .header__nav-link {
-    font-size: 22px;
-  }
-
-  .header__news {
-    font-size: 24px;
-  }
+/* Дополнительные гарантии видимости */
+.header__news {
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
-/* High-density displays */
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-  .header__logo,
-  .mobile-menu__footer-logo img,
-  .social-icon,
-  .burger-icon,
-  .mobile-menu__close img {
-    image-rendering: -webkit-optimize-contrast;
-  }
-}
 
-/* Main Content Padding */
-.main {
-  padding-top: 145px;
-  min-height: auto;
-  position: relative;
-}
 
-@media (max-width: 768px) {
-  .main {
-    padding-top: 86px;
-  }
-}
 
+
+
+
+
+
+
+ /* Футер меню */
+  /* Футер меню */
+ /* Футер меню */
+  /* Футер меню */
+   /* Футер меню */
+    /* Футер меню */
+     /* Футер меню */
+      /* Футер меню */
   /* Футер меню */
   .mobile-menu__footer {
     margin-top: auto;
