@@ -269,7 +269,8 @@ img {
     -webkit-text-decoration: none !important;
   }
 
-  .mobile-menu__phone .phone-number {
+  .mobile-menu__phone .phone-number,
+  .mobile-menu__phone .phone-number[role="text"] {
     color: white !important;
     text-decoration: none !important;
     -webkit-text-decoration: none !important;
@@ -277,7 +278,8 @@ img {
 
   .mobile-menu__phone .phone-number:link,
   .mobile-menu__phone .phone-number:visited,
-  .mobile-menu__phone .phone-number:active {
+  .mobile-menu__phone .phone-number:active,
+  .mobile-menu__phone .phone-number:any-link {
     color: white !important;
     text-decoration: none !important;
     -webkit-text-decoration: none !important;
@@ -293,10 +295,11 @@ img {
   }
 
   /* Suppress browser-generated tel links */
-  .mobile-menu__phone :where(a[href^="tel"], a[href^="tel"]:link, a[href^="tel"]:visited, a[href^="tel"]:active) {
+  .mobile-menu__phone :where(a[href^="tel"], a[href^="tel"]:link, a[href^="tel"]:visited, a[href^="tel"]:active, a[href^="tel"]:any-link) {
     color: white !important;
     text-decoration: none !important;
     -webkit-text-decoration: none !important;
+    -moz-text-decoration: none !important;
   }
 
   .mobile-menu__address {
@@ -384,7 +387,7 @@ img {
     font-size: 22px;
   }
 
-  .header__每一news {
+  .header__news {
     font-size: 24px;
   }
 }
