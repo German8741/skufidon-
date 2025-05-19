@@ -90,7 +90,7 @@ body {
 .zaly-card {
     flex: 0 0 413px;
     width: 413px;
-    height: 332.85px; /* 295.8px * (413/367) ≈ 332.85px */
+    height: 332.85px;
     position: relative;
     text-decoration: none;
     border-radius: 13px;
@@ -108,7 +108,7 @@ body {
 
 .zaly-image {
     width: 413px;
-    height: 239.72px; /* 212.86px * (413/367) ≈ 239.72px */
+    height: 239.72px;
     border-top-left-radius: 13px;
     border-top-right-radius: 13px;
     background-size: cover;
@@ -118,7 +118,7 @@ body {
 
 .zaly-info {
     width: 413px;
-    padding: 7.44px; /* 6.61px * (413/367) ≈ 7.44px */
+    padding: 7.44px;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -128,10 +128,10 @@ body {
 }
 
 .zaly-title {
-    font-size: 39.63px; /* 35.23px * (413/367) ≈ 39.63px */
+    font-size: 39.63px;
     color: black;
-    line-height: 39.37px; /* 35px * (413/367) ≈ 39.37px */
-    margin-bottom: 7.88px; /* 7px * (413/367) ≈ 7.88px */
+    line-height: 39.37px;
+    margin-bottom: 7.88px;
     font-family: 'Academy Condensed', sans-serif;
     font-weight: 500;
 }
@@ -139,8 +139,8 @@ body {
 .zaly-details {
     display: flex;
     align-items: center;
-    gap: 9.08px; /* 8.07px * (413/367) ≈ 9.08px */
-    font-size: 22.5px; /* 20px * (413/367) ≈ 22.5px */
+    gap: 9.08px;
+    font-size: 22.5px;
     color: black;
     opacity: 0.5;
     font-family: 'Academy Condensed', sans-serif;
@@ -150,11 +150,11 @@ body {
 .zaly-details .area {
     display: flex;
     align-items: center;
-    gap: 3.38px; /* 3px * (413/367) ≈ 3.38px */
+    gap: 3.38px;
 }
 
 .zaly-details .area .number {
-    font-size: 22.5px; /* 20px * (413/367) ≈ 22.5px */
+    font-size: 22.5px;
     font-family: 'Academy Condensed', sans-serif;
     font-weight: 500;
 }
@@ -165,19 +165,19 @@ body {
 }
 
 .zaly-details .area .unit .meter {
-    font-size: 19.13px; /* 17px * (413/367) ≈ 19.13px */
+    font-size: 19.13px;
     font-family: 'Myriad Pro', sans-serif;
     font-weight: 300;
 }
 
 .zaly-details .area .unit .square {
-    font-size: 19.13px; /* 17px * (413/367) ≈ 19.13px */
+    font-size: 19.13px;
     font-family: 'Onest', sans-serif;
     font-weight: 100;
 }
 
 .zaly-details-dot {
-    width: 4.13px; /* 3.67px * (413/367) ≈ 4.13px */
+    width: 4.13px;
     height: 4.13px;
     background: black;
     border-radius: 50%;
@@ -206,61 +206,61 @@ body {
     }
 
     .zaly-card {
-        flex: 0 0 206.5px; /* 413px / 2 = 206.5px */
-        width: 206.5px;
-        height: 166.42px; /* 332.85px / 2 ≈ 166.42px */
-        border-radius: 7px;
+        flex: 0 0 275.16px;
+        width: 275.16px;
+        height: 222px;
+        border-radius: 10.5px;
     }
 
     .zaly-cards .zaly-card:hover {
-        transform: translateY(-8px) scale(1.02);
-        -webkit-transform: translateY(-8px) scale(1.02);
+        transform: translateY(-12px) scale(1.02);
+        -webkit-transform: translateY(-12px) scale(1.02);
     }
 
     .zaly-image {
-        width: 206.5px;
-        height: 119.86px; /* 239.72px / 2 ≈ 119.86px */
-        border-top-left-radius: 7px;
-        border-top-right-radius: 7px;
+        width: 275.16px;
+        height: 159.59px;
+        border-top-left-radius: 10.5px;
+        border-top-right-radius: 10.5px;
     }
 
     .zaly-info {
-        width: 206.5px;
-        padding: 3.72px; /* 7.44px / 2 ≈ 3.72px */
-        border-bottom-left-radius: 7px;
-        border-bottom-right-radius: 7px;
+        width: 275.16px;
+        padding: 4.7px;
+        border-bottom-left-radius: 10.5px;
+        border-bottom-right-radius: 10.5px;
         background: transparent;
     }
 
     .zaly-title {
-        font-size: 20.25px; /* 39.63px / 2 ≈ 20.25px (adjusted for readability) */
-        line-height: 20px; /* 39.37px / 2 ≈ 20px (adjusted) */
-        margin-bottom: 3.94px; /* 7.88px / 2 ≈ 3.94px */
+        font-size: 27px;
+        line-height: 27px;
+        margin-bottom: 4.7px;
     }
 
     .zaly-details {
-        gap: 4.54px; /* 9.08px / 2 ≈ 4.54px */
-        font-size: 11.25px; /* 22.5px / 2 ≈ 11.25px */
+        gap: 6.06px;
+        font-size: 15px;
     }
 
     .zaly-details .area {
-        gap: 1.69px; /* 3.38px / 2 ≈ 1.69px */
+        gap: 2.25px;
     }
 
     .zaly-details .area .number {
-        font-size: 11.25px; /* 22.5px / 2 ≈ 11.25px */
+        font-size: 15px;
     }
 
     .zaly-details .area .unit .meter {
-        font-size: 9.56px; /* 19.13px / 2 ≈ 9.56px */
+        font-size: 12.75px;
     }
 
     .zaly-details .area .unit .square {
-        font-size: 9.56px; /* 19.13px / 2 ≈ 9.56px */
+        font-size: 12.75px;
     }
 
     .zaly-details-dot {
-        width: 2.06px; /* 4.13px / 2 ≈ 2.06px */
-        height: 2.06px;
+        width: 2.76px;
+        height: 2.76px;
     }
 }
