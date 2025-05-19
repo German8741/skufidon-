@@ -221,9 +221,9 @@
 
 @media (max-width: 767px) {
   .slider-container {
-    width: 375px;
-    height: 228px;
-    margin: 0 auto;
+    width: 100%;
+    height: 60.8vw; /* Пропорциональная высота (228px / 375px = 60.8%) */
+    margin: 0;
   }
   
   #slider {
@@ -233,57 +233,55 @@
   }
   
   .slide {
-    width: 375px;
-    height: 228px;
+    width: 100%;
+    height: 100%;
     border-radius: 0;
   }
   
   .event-info {
-    width: 161px;
-    left: 15px;
-    top: 164px;
-    gap: 1px;
+    width: 42.93%; /* 161px / 375px */
+    left: 4%; /* 15px / 375px */
+    top: 71.93%; /* 164px / 228px */
+    gap: 0.44vw; /* 1px / 375px * 100 */
   }
   
   .event-title {
-    font-size: 30px;
+    font-size: 8vw; /* 30px / 375px */
     text-align: left;
   }
   
   .event-details {
     justify-content: flex-start;
-    gap: 12px;
+    gap: 3.2vw; /* 12px / 375px */
   }
   
   .event-detail {
-    font-size: 16px;
-    text-align: center;
-    text-align: left; 
+    font-size: 4.27vw; /* 16px / 375px */
+    text-align: left;
   }
   
   .dot-separator {
-    width: 3px !important;
-    height: 3px !important;
+    width: 0.8vw !important; /* 3px / 375px */
+    height: 0.8vw !important;
     min-width: 3px;
     min-height: 3px;
     background: white !important;
     border-radius: 9999px;
-    transform: none;
   }
   
   .price-container {
-    left: 252px;
-    top: 183px;
-    gap: 6px;
+    left: 67.2%; /* 252px / 375px */
+    top: 80.26%; /* 183px / 228px */
+    gap: 1.6vw; /* 6px / 375px */
   }
   
   .price-icon {
-    width: 30px !important;
-    height: 30px !important;
-    min-width: 30px;
-    min-height: 30px;
+    width: 8vw !important; /* 30px / 375px */
+    height: 8vw !important;
+    min-width: 8vw;
+    min-height: 8vw;
     padding: 0;
-    border-radius: 8px;
+    border-radius: 2.13vw; /* 8px / 375px */
     background: white;
     display: flex;
     justify-content: center;
@@ -292,19 +290,21 @@
   }
   
   .price-icon img {
-    width: 18px;
-    height: 18px;
+    width: 4.8vw; /* 18px / 375px */
+    height: 4.8vw;
   }
   
   .price-box {
-    width: 72px;
-    height: 30px;
-    border-radius: 8px;
+    width: 19.2vw; /* 72px / 375px */
+    height: 8vw; /* 30px / 375px */
+    border-radius: 2.13vw; /* 8px / 375px */
   }
   
   .price-text {
-    font-size: 14px;
-    transform: translateX(-25px) translateY(-6px);
+    font-size: 3.73vw; /* 14px / 375px */
+    transform: translateX(-33.33%) translateY(10%); /* Адаптировано для центрирования */
+    left: 33.33%; /* 24px / 72px */
+    top: 20%; /* 6px / 30px */
     padding: 0;
     margin: 0;
     text-align: center;
@@ -316,15 +316,15 @@
   }
   
   .age-restriction {
-    width: 30px;
-    height: 30px;
-    left: 330px;
-    top: 15px;
-    border-radius: 8px;
+    width: 8vw; /* 30px / 375px */
+    height: 8vw;
+    left: 88%; /* 330px / 375px */
+    top: 6.58%; /* 15px / 228px */
+    border-radius: 2.13vw; /* 8px / 375px */
   }
   
   .age-text {
-    font-size: 14px !important;
+    font-size: 3.73vw !important; /* 14px / 375px */
     text-align: center;
     line-height: 1;
     margin: 0;
@@ -332,11 +332,14 @@
     justify-content: center;
     align-items: center;
     width: 100%;
+    transform: none; /* Убрано смещение, так как используется left/top */
+    left: 0;
+    top: 0;
   }
   
   #pagination {
     left: 50%;
-    top: 200px;
+    top: 87.72%; /* 200px / 228px */
     transform: translateX(-50%);
   }
   

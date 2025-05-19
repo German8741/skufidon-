@@ -7,7 +7,7 @@ function initSlider() {
   const pagination = document.getElementById('pagination');
   let slides = document.querySelectorAll('.slide');
   let currentIndex = 0;
-  let slideWidth = window.innerWidth <= 767 ? 375 : 1201 + 40;
+  let slideWidth = window.innerWidth <= 767 ? window.innerWidth : 1201 + 40;
   let totalSlides = slides.length;
   let autoSlideInterval;
   let isTransitioning = false;
@@ -42,9 +42,21 @@ function initSlider() {
     if (isTransitioning) return;
     isTransitioning = true;
 
-    slideWidth = window.innerWidth <= 767 ? 375 : 1201 + 40;
+    // Вычисляем ширину и высоту слайда
+    slideWidth = window.innerWidth <= 767 ? window.innerWidth : 1201 + 40;
+    const slideHeight = window.innerWidth <= 767 ? window.innerWidth * 0.608 : 547; // 60.8% от ширины для мобильных
+
+    // Устанавливаем размеры каждого слайда
+    slides = document.querySelectorAll('.slide');
+    slides.forEach(slide => {
+      slide.style.width = `${slideWidth}px`;
+      slide.style.height = `${slideHeight}px`;
+    });
+
+    // Перемещаем слайдер
     slider.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
     
+    // Обновляем пагинацию
     const dots = document.querySelectorAll('#pagination .dot');
     dots.forEach((dot, index) => {
       dot.classList.toggle('active', index === currentIndex);
@@ -59,6 +71,8 @@ function initSlider() {
     const newSlide = document.createElement('div');
     newSlide.className = 'slide';
     newSlide.style.backgroundImage = `url(${imageUrl})`;
+    newSlide.style.width = `${slideWidth}px`;
+    newSlide.style.height = `${window.innerWidth <= 767 ? window.innerWidth * 0.608 : 547}px`;
     newSlide.setAttribute('data-link', link);
 
     const priceIconClass = pushkinCard ? '' : 'hidden';
@@ -168,6 +182,13 @@ function initSlider() {
   }
 
   window.addEventListener('resize', () => {
+    slideWidth = window.innerWidth <= 767 ? window.innerWidth : 1201 + 40;
+    const slideHeight = window.innerWidth <= 767 ? window.innerWidth * 0.608 : 547;
+    slides = document.querySelectorAll('.slide');
+    slides.forEach(slide => {
+      slide.style.width = `${slideWidth}px`;
+      slide.style.height = `${slideHeight}px`;
+    });
     updateSlider();
   });
 }
