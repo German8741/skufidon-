@@ -1,4 +1,4 @@
-import events, { sortEventsByDate } from '../афиши/afisha.js';
+import { events, sortEventsByDate } from '../polnaya-afisha.js';
 
 function initSlider() {
   const slider = document.getElementById('slider');
@@ -11,6 +11,11 @@ function initSlider() {
   let totalSlides = slides.length;
   let autoSlideInterval;
   let isTransitioning = false;
+
+  if (!slider || !pagination) {
+    console.warn('Slider or pagination element not found');
+    return;
+  }
 
   function createPagination() {
     pagination.innerHTML = '';
@@ -104,21 +109,25 @@ function initSlider() {
   updateSlider();
   startAutoSlide();
 
-  prevButton.addEventListener('click', () => {
-    if (!isTransitioning) {
-      currentIndex = currentIndex > 0 ? currentIndex - 1 : totalSlides - 1;
-      updateSlider();
-      resetAutoSlide();
-    }
-  });
+  if (prevButton) {
+    prevButton.addEventListener('click', () => {
+      if (!isTransitioning) {
+        currentIndex = currentIndex > 0 ? currentIndex - 1 : totalSlides - 1;
+        updateSlider();
+        resetAutoSlide();
+      }
+    });
+  }
 
-  nextButton.addEventListener('click', () => {
-    if (!isTransitioning) {
-      currentIndex = currentIndex < totalSlides - 1 ? currentIndex + 1 : 0;
-      updateSlider();
-      resetAutoSlide();
-    }
-  });
+  if (nextButton) {
+    nextButton.addEventListener('click', () => {
+      if (!isTransitioning) {
+        currentIndex = currentIndex < totalSlides - 1 ? currentIndex + 1 : 0;
+        updateSlider();
+        resetAutoSlide();
+      }
+    });
+  }
 
   slides.forEach(slide => {
     slide.addEventListener('click', (e) => {

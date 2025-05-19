@@ -113,7 +113,7 @@ function renderAfishaCards() {
         <div class="price-badge">${slide.price}</div>
         ${slide.pushkinCard ? `
           <div class="pushkin-badge">
-            <img src="../assets/svg_icons/pushkin.png" class="pushkin-icon" alt="Pushkin Card">
+            <img src="assets/svg_icons/pushkin.png" class="pushkin-icon" alt="Pushkin Card">
           </div>
         ` : ''}
       </div>
@@ -270,3 +270,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initSlider();
   renderEventDetails();
 });
+
+export { events, sortEventsByDate };
