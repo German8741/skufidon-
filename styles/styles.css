@@ -199,7 +199,23 @@ img {
   font-family: 'Academy Condensed', sans-serif;
   font-weight: 500;
   text-decoration: none !important;
+  -webkit-text-decoration: none !important;
   cursor: pointer;
+}
+
+.mobile-menu__title:link,
+.mobile-menu__title:visited,
+.mobile-menu__title:active,
+.mobile-menu__title:any-link {
+  color: white !important;
+  text-decoration: none !important;
+  -webkit-text-decoration: none !important;
+}
+
+.mobile-menu__title:hover {
+  color: #C40005;
+  text-decoration: none !important;
+  -webkit-text-decoration: none !important;
 }
 
 .mobile-menu__close {
@@ -254,9 +270,50 @@ img {
 
 .mobile-menu__phone {
   font-size: clamp(18px, 4vw, 20px);
-  font-family: 'Myriad Pro Condensed', sans-serif;
+  font-family: 'Myriad Pro', sans-serif;
   font-style: italic;
+  font-weight: 400;
   color: white;
+  text-decoration: none !important;
+  -webkit-text-decoration: none !important;
+}
+
+.mobile-menu__phone * {
+  text-decoration: none !important;
+  -webkit-text-decoration: none !important;
+}
+
+.mobile-menu__phone .phone-number,
+.mobile-menu__phone .phone-number[role="text"] {
+  color: white !important;
+  text-decoration: none !important;
+  -webkit-text-decoration: none !important;
+}
+
+.mobile-menu__phone .phone-number:link,
+.mobile-menu__phone .phone-number:visited,
+.mobile-menu__phone .phone-number:active,
+.mobile-menu__phone .phone-number:any-link {
+  color: white !important;
+  text-decoration: none !important;
+  -webkit-text-decoration: none !important;
+}
+
+.mobile-menu__phone .phone-label {
+  color: #878787 !important;
+  font-family: 'Academy Condensed', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  text-decoration: none !important;
+  -webkit-text-decoration: none !important;
+}
+
+/* Suppress browser-generated tel links */
+.mobile-menu__phone :where(a[href^="tel"], a[href^="tel"]:link, a[href^="tel"]:visited, a[href^="tel"]:active, a[href^="tel"]:any-link) {
+  color: white !important;
+  text-decoration: none !important;
+  -webkit-text-decoration: none !important;
+  -moz-text-decoration: none !important;
 }
 
 .mobile-menu__address {
