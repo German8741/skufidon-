@@ -643,7 +643,7 @@ img {
   }
 
   .footer__copyright {
-    font-size: 19px !important;
+    font-size: 19px ;
     text-align: left;
     padding: 0 15px;
     margin-top: 20px;
