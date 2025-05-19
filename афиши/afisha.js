@@ -1,126 +1,73 @@
 const events = [
- 
-// 1. Арт-лекция «РЕПИН: единица мощности»
-{
-  id: 10,
-  imageUrl: 'https://i.postimg.cc/15XxbL3F/image.png',
-  imageAfisha: 'https://i.postimg.cc/VNQHDf0q/02.png',
-  title: 'РЕПИН: единица мощности',
-  date: '21 мая, 18:30',
-  venue: 'Малый зал',
-  price: '400 р',
-  age: '12+',
-  link: '/polnaya-afisha.html?id=10',
-  pushkinCard: false,
-  watchSlider: true,
-  kassyLink: 'https://ekb.kassy.ru/events/seminary/2-64555/sections/?t=1746348293',
-  odoLink: 'https://ekb.kassy.ru/events/seminary/2-64555/sections/?t=1746348293',
-  description: 'Илья Ефимович Репин (1844-1930) - это имя известно каждому в нашей стране. Знамениты картины прославленного живописца: "Бурлаки на Волге", "Крестный ход в Курской губернии", "Запорожцы пишут письмо турецкому султану", "Иван Грозный и сын его Иван", портреты Мусоргского, Толстого, Третьякова... Великое наследие русской живописи! "Ах, жизнь, жизнь... Что это художники так её обходят!" - писал он в 1881 году. Масштабы творческих задач "богатыря русского искусства" заставляют испытывать искреннее восхищение личностью художника, а глубина созданных Ильёй Ефимовичем Репиным живописных образов потрясает своей мощью.'
-},
-
-// 2. Душа
-{
-  id: 11,
-  imageUrl: 'https://i.postimg.cc/W1RBcxgf/image.png',
-  imageAfisha: 'https://i.postimg.cc/T2mjyQ66/image.png',
-  title: 'Душа',
-  date: '22 мая, 19:30',
-  venue: 'Малый зал',
-  price: 'от 800 р',
-  age: '16+',
-  link: '/polnaya-afisha.html?id=11',
-  pushkinCard: false,
-  watchSlider: false,
-  kassyLink: 'https://ekb.kassy.ru/events/koncerty-i-shou/2-64654/',
-  odoLink: 'https://ekb.kassy.ru/events/koncerty-i-shou/2-64654/',
-  description: '✨Живые инструменты: Виртуозная скрипка Александра Рассказова (лидер группы Красная скрипка) 🎻 и нежный рояль 🎹 Светланы Смирновой, художественное оформление в виде песочной анимации 🌪️от Елены Кадыровой, вокал Ольги Семенищевой (солистки УралОпераБалет) ✨и непременные приятные сюрпризы в программе.💥 Все это концертная программа под названием "Душа".🌺 Человеческая душа - самое нежное и хрупкое чудо на свете. Такая ранимая, но такая сильная. Полная загадок и секретов, а иногда очень чуткая и понятная.'
-},
-
-// 3. Ансамбль Толóка
-{
-  id: 12,
-  imageUrl: 'https://i.postimg.cc/HkMC0vTY/image.png',
-  imageAfisha: 'https://i.postimg.cc/HkMC0vTY/image.png',
-  title: 'Ансамбль Толока',
-  date: '27 мая, 19:00',
-  venue: 'Большой зал',
-  price: 'от 1200 р',
-  age: '6+',
-  link: '/polnaya-afisha.html?id=12',
-  pushkinCard: false,
-  watchSlider: false,
-  kassyLink: 'https://ns.show/artists/toloka',
-  odoLink: 'https://ns.show/artists/toloka',
-  description: 'Ансамбль Толóка — это молодые исследователи, исполнители настоящей русской народной музыки, которые ездят в экспедиции по всей России, расшифровывают архивные материалы и дают им новую жизнь. На сцене вы услышите родную музыку из разных областей России в живом исполнении ансамбля. Ту, что ещё недавно звучала в домах ваших бабушек и дедушек, на свадьбах и во время застолья. Не упустите возможность встретиться с родной культурой.'
-},
-
-// 4. О чем молчит женщина
-{
-  id: 13,
-  imageUrl: 'https://i.postimg.cc/j5BNtVrj/image.png',
-  imageAfisha: 'https://i.postimg.cc/fb1s7gvM/image.png',
-  title: 'О чем молчит женщина',
-  date: '19 июня, 19:00',
-  venue: 'Арт-Холл «Малый зал»',
-  price: 'от 500 р',
-  age: '18+',
-  link: '/polnaya-afisha.html?id=13',
-  pushkinCard: false,
-  watchSlider: true,
-  kassyLink: 'https://ekb.kassy.ru/events/koncerty-i-shou/2-64710/',
-  odoLink: 'https://ekb.kassy.ru/events/koncerty-i-shou/2-64710/',
-  description: 'СВЕТЛАНА КОТОВА в концерте за столиками "О чем молчит женщина". Поводов для молчания женщины ... достаточно. О любви и разлуке, о радости и неудаче, о мечтах и чаяниях... Женщина молчит. Нет! Женщина поёт! ✓ Любимые песни в новом прочтении; ✓ Разговоры о личном; ✓ Романтическая гитара РОМАНА ГУСЕВА. Приходите! Давайте вместе услышим, о чем молчит женщина.'
-}
-
+  // 1. Арт-лекция «РЕПИН: единица мощности»
+  {
+    id: 10,
+    imageUrl: 'https://i.postimg.cc/15XxbL3F/image.png',
+    imageAfisha: 'https://i.postimg.cc/VNQHDf0q/02.png',
+    title: 'РЕПИН: единица мощности',
+    date: '21 мая, 18:30',
+    venue: 'Малый зал',
+    price: '400 р',
+    age: '12+',
+    link: '/polnaya-afisha.html?id=10',
+    pushkinCard: false,
+    watchSlider: true,
+    kassyLink: 'https://ekb.kassy.ru/events/seminary/2-64555/sections/?t=1746348293',
+    odoLink: 'https://ekb.kassy.ru/events/seminary/2-64555/sections/?t=1746348293',
+    description: 'Илья Ефимович Репин (1844-1930) - это имя известно каждому в нашей стране. Знамениты картины прославленного живописца: "Бурлаки на Волге", "Крестный ход в Курской губернии", "Запорожцы пишут письмо турецкому султану", "Иван Грозный и сын его Иван", портреты Мусоргского, Толстого, Третьякова... Великое наследие русской живописи! "Ах, жизнь, жизнь... Что это художники так её обходят!" - писал он в 1881 году. Масштабы творческих задач "богатыря русского искусства" заставляют испытывать искреннее восхищение личностью художника, а глубина созданных Ильёй Ефимовичем Репиным живописных образов потрясает своей мощью.'
+  },
+  // 2. Душа
+  {
+    id: 11,
+    imageUrl: 'https://i.postimg.cc/W1RBcxgf/image.png',
+    imageAfisha: 'https://i.postimg.cc/T2mjyQ66/image.png',
+    title: 'Душа',
+    date: '22 мая, 19:30',
+    venue: 'Малый зал',
+    price: 'от 800 р',
+    age: '16+',
+    link: '/polnaya-afisha.html?id=11',
+    pushkinCard: false,
+    watchSlider: false,
+    kassyLink: 'https://ekb.kassy.ru/events/koncerty-i-shou/2-64654/',
+    odoLink: 'https://ekb.kassy.ru/events/koncerty-i-shou/2-64654/',
+    description: '✨Живые инструменты: Виртуозная скрипка Александра Рассказова (лидер группы Красная скрипка) 🎻 и нежный рояль 🎹 Светланы Смирновой, художественное оформление в виде песочной анимации 🌪️от Елены Кадыровой, вокал Ольги Семенищевой (солистки УралОпераБалет) ✨и непременные приятные сюрпризы в программе.💥 Все это концертная программа под названием "Душа".🌺 Человеческая душа - самое нежное и хрупкое чудо на свете. Такая ранимая, но такая сильная. Полная загадок и секретов, а иногда очень чуткая и понятная.'
+  },
+  // 3. Ансамбль Толóка
+  {
+    id: 12,
+    imageUrl: 'https://i.postimg.cc/HkMC0vTY/image.png',
+    imageAfisha: 'https://i.postimg.cc/HkMC0vTY/image.png',
+    title: 'Ансамбль Толока',
+    date: '27 мая, 19:00',
+    venue: 'Большой зал',
+    price: 'от 1200 р',
+    age: '6+',
+    link: '/polnaya-afisha.html?id=12',
+    pushkinCard: false,
+    watchSlider: false,
+    kassyLink: 'https://ns.show/artists/toloka',
+    odoLink: 'https://ns.show/artists/toloka',
+    description: 'Ансамбль Толóка — это молодые исследователи, исполнители настоящей русской народной музыки, которые ездят в экспедиции по всей России, расшифровывают архивные материалы и дают им новую жизнь. На сцене вы услышите родную музыку из разных областей России в живом исполнении ансамбля. Ту, что ещё недавно звучала в домах ваших бабушек и дедушек, на свадьбах и во время застолья. Не упустите возможность встретиться с родной культурой.'
+  },
+  // 4. О чем молчит женщина
+  {
+    id: 13,
+    imageUrl: 'https://i.postimg.cc/j5BNtVrj/image.png',
+    imageAfisha: 'https://i.postimg.cc/fb1s7gvM/image.png',
+    title: 'О чем молчит женщина',
+    date: '19 июня, 19:00',
+    venue: 'Арт-Холл «Малый зал»',
+    price: 'от 500 р',
+    age: '18+',
+    link: '/polnaya-afisha.html?id=13',
+    pushkinCard: false,
+    watchSlider: true,
+    kassyLink: 'https://ekb.kassy.ru/events/koncerty-i-shou/2-64710/',
+    odoLink: 'https://ekb.kassy.ru/events/koncerty-i-shou/2-64710/',
+    description: 'СВЕТЛАНА КОТОВА в концерте за столиками "О чем молчит женщина". Поводов для молчания женщины ... достаточно. О любви и разлуке, о радости и неудаче, о мечтах и чаяниях... Женщина молчит. Нет! Женщина поёт! ✓ Любимые песни в новом прочтении; ✓ Разговоры о личном; ✓ Романтическая гитара РОМАНА ГУСЕВА. Приходите! Давайте вместе услышим, о чем молчит женщина.'
+  }
 ];
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // Функция для преобразования строки даты в объект Date
 function parseDate(dateStr) {
@@ -153,7 +100,10 @@ export function sortEventsByDate(eventsArray) {
 
 function renderAfishaCards() {
   const cardsContainer = document.getElementById('cards');
-  if (!cardsContainer) return;
+  if (!cardsContainer) {
+    console.warn('Cards container not found');
+    return;
+  }
 
   const sortedEvents = sortEventsByDate(events);
   
@@ -170,7 +120,7 @@ function renderAfishaCards() {
         <div class="price-badge">${slide.price}</div>
         ${slide.pushkinCard ? `
           <div class="pushkin-badge">
-            <img src="assets/svg_icons/pushkin.png" class="pushkin-icon" alt="Pushkin Card">
+            <img src="../assets/svg_icons/pushkin.png" class="pushkin-icon" alt="Pushkin Card">
           </div>
         ` : ''}
       </div>
@@ -193,8 +143,14 @@ function renderAfishaCards() {
 
 function initSlider() {
   const cardsContainer = document.querySelector('.cards');
+  if (!cardsContainer) {
+    console.warn('Cards container not found for slider');
+    return;
+  }
+
   let isDragging = false;
-  let startPos = 0;
+  let startPosX = 0;
+  let startPosY = 0;
   let currentTranslate = 0;
   let prevTranslate = 0;
   let animationID = 0;
@@ -214,14 +170,15 @@ function initSlider() {
 
   function startDragging(event) {
     isDragging = true;
-    startPos = getPositionX(event);
-    touchStartX = startPos;
+    startPosX = getPositionX(event);
+    startPosY = getPositionY(event);
+    touchStartX = startPosX;
     touchStartTime = new Date().getTime();
     animationID = requestAnimationFrame(animation);
     cardsContainer.style.cursor = 'grabbing';
     cardsContainer.style.scrollBehavior = 'auto';
   }
-  
+
   function touchStart(event) {
     startDragging(event);
   }
@@ -249,16 +206,23 @@ function initSlider() {
     if (isDragging) {
       const currentPosition = getPositionX(event);
       touchEndX = currentPosition;
-      currentTranslate = prevTranslate + currentPosition - startPos;
+      currentTranslate = prevTranslate + currentPosition - startPosX;
     }
   }
-  
+
   function touchMove(event) {
     if (isDragging) {
-      const currentPosition = getPositionX(event);
-      touchEndX = currentPosition;
-      currentTranslate = prevTranslate + currentPosition - startPos;
-      event.preventDefault();
+      const currentX = getPositionX(event);
+      const currentY = getPositionY(event);
+      const deltaX = currentX - startPosX;
+      const deltaY = currentY - startPosY;
+
+      // Prevent default only for horizontal swipes
+      if (Math.abs(deltaX) > Math.abs(deltaY)) {
+        event.preventDefault();
+        touchEndX = currentX;
+        currentTranslate = prevTranslate + deltaX;
+      }
     }
   }
 
@@ -268,6 +232,10 @@ function initSlider() {
 
   function getPositionX(event) {
     return event.type.includes('mouse') ? event.pageX : event.touches[0].clientX;
+  }
+
+  function getPositionY(event) {
+    return event.type.includes('mouse') ? event.pageY : event.touches[0].clientY;
   }
 
   function animation() {
