@@ -1,4 +1,4 @@
-@font-face {
+ @font-face {
   font-family: 'Academy Condensed';
   src: url('../../assets/fonts/AcademyCondensed.woff2') format('woff2');
   font-weight: normal;
@@ -243,9 +243,14 @@ body {
     transform: none; /* Предотвращаем сдвиг */
     filter: none; /* Предотвращаем изменение цвета */
   }
-  .cards {
+ .cards {
+    display: flex;
     gap: 20px;
     padding: 15px 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
   }
   .card {
     flex: 0 0 170px;
