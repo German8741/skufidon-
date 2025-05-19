@@ -544,7 +544,22 @@ img {
   }
 }
 
-/* Футер */
+
+
+
+
+
+
+
+
+
+
+
+
+/* футер  */
+
+
+
 .footer {
   width: 100%;
   display: flex;
@@ -552,6 +567,7 @@ img {
   margin: 0 auto;
   padding: 20px 0;
   border-radius: 20px;
+  background: white;
 }
 
 @media (max-width: 768px) {
@@ -560,6 +576,7 @@ img {
     height: auto !important;
     padding: 20px 0;
     position: relative !important;
+    box-sizing: border-box;
   }
 
   .footer__group,
@@ -576,6 +593,7 @@ img {
     display: block !important;
     padding: 0 15px;
     margin-bottom: 20px;
+    box-sizing: border-box;
   }
 
   .footer__group--1,
@@ -587,6 +605,9 @@ img {
 
   .footer__section {
     margin-bottom: 20px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
   }
 
   .footer__group--logo {
@@ -595,9 +616,15 @@ img {
     padding-left: 15px;
   }
 
-  .footer__logo img {
-    width: 180px !important; 
+  .footer__logo {
+    width: 180px !important;
     height: 101px !important;
+  }
+
+  .footer__logo img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain;
   }
 
   .footer__group--contacts {
@@ -607,9 +634,12 @@ img {
 
   .footer__social {
     display: flex !important;
-    justify-content: flex-start;
-    gap: 25px !important;
+    justify-content: flex-start !important; /* Выравнивание по левому краю */
+    gap: 20px !important;
     margin-top: 20px;
+    padding: 0 15px 0 15px !important; /* Увеличенный отступ слева */
+    flex-wrap: wrap;
+    width: 100% !important;
   }
 
   .footer__copyright {
@@ -643,11 +673,23 @@ img {
     width: 40px !important;
     height: 40px !important;
     flex-shrink: 0;
+    overflow: hidden;
     position: relative;
   }
 
   .footer__social a {
     width: 40px !important;
     height: 40px !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    position: static !important;
+  }
+
+  .footer__social img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    display: block !important;
   }
 }
