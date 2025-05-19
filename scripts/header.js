@@ -1,85 +1,78 @@
-// Открытие меню
-document.querySelector('.header__burger').addEventListener('click', function() {
-    document.querySelector('.header__mobile-page').classList.add('active');
-    document.body.style.overflow = 'hidden'; // Блокируем скролл страницы
-  });
-  
-  // Закрытие меню
-  document.querySelector('.mobile-menu__close').addEventListener('click', function() {
-    document.querySelector('.header__mobile-page').classList.remove('active');
-    document.body.style.overflow = '';
-  });
+document.addEventListener('DOMContentLoaded', () => {
+  // Mobile Menu
+  const burger = document.querySelector('.header__burger');
+  const close = document.querySelector('.mobile-menu__close');
+  const mobilePage = document.querySelector('.header__mobile-page');
+  const overlay = document.querySelector('.menu-overlay');
 
-  document.addEventListener('DOMContentLoaded', function() {
-    const slider = document.querySelector('.slider');
-    const prevButton = document.querySelector('.prev');
-    const nextButton = document.querySelector('.next');
-    const slides = document.querySelectorAll('.slide');
+  if (burger && close && mobilePage && overlay) {
+    burger.addEventListener('click', () => {
+      mobilePage.classList.add('active');
+      overlay.classList.add('active');
+      document.body.style.overflow = 'hidden'; // Блокировка прокрутки страницы
+    });
+
+    close.addEventListener('click', () => {
+      mobilePage.classList.remove('active');
+      overlay.classList.remove('active');
+      document.body.style.overflow = ''; // Разрешение прокрутки
+    });
+
+    overlay.addEventListener('click', () => {
+      mobilePage.classList.remove('active');
+      overlay.classList.remove('active');
+      document.body.style.overflow = '';
+    });
+
+    document.querySelectorAll('.header__mobile-nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobilePage.classList.remove('active');
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+      });
+    });
+  } else {
+    console.warn('One or more menu elements not found');
+  }
+
+  // Slider
+  const slider = document.querySelector('.slides-container');
+  const slides = document.querySelectorAll('.slide');
+  const dots = document.querySelectorAll('.dot');
+  const prevBtn = document.querySelector('.prev');
+  const nextBtn = document.querySelector('.next');
+
+  if (slider && slides.length && dots.length && prevBtn && nextBtn) {
     let currentIndex = 0;
-    let isDragging = false;
-    let startPos = 0;
-    let currentTranslate = 0;
-    let prevTranslate = 0;
-  
+    const slideWidth = slides[0].offsetWidth + 40;
+
     function updateSlider() {
-      slider.style.transform = `translateX(-${currentIndex * 100}%)`;
-      prevTranslate = -currentIndex * 100;
+      slider.style.transform = `translateX(${-currentIndex * slideWidth}px)`;
+      dots.forEach(dot => dot.classList.remove('active'));
+      dots[currentIndex].classList.add('active');
     }
-  
-    function goToSlide(index) {
-      currentIndex = index;
-      if (currentIndex < 0) {
-        currentIndex = slides.length - 1;
-      } else if (currentIndex >= slides.length) {
-        currentIndex = 0;
-      }
-      updateSlider();
-    }
-  
-    prevButton.addEventListener('click', () => {
-      goToSlide(currentIndex - 1);
+
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        currentIndex = index;
+        updateSlider();
+      });
     });
-  
-    nextButton.addEventListener('click', () => {
-      goToSlide(currentIndex + 1);
-    });
-  
-    // Touch events
-    slider.addEventListener('touchstart', (e) => {
-      isDragging = true;
-      startPos = e.touches[0].clientX;
-      slider.style.transition = 'none';
-    });
-  
-    slider.addEventListener('touchmove', (e) => {
-      if (!isDragging) return;
-      const currentPosition = e.touches[0].clientX;
-      currentTranslate = prevTranslate + ((currentPosition - startPos) / slider.offsetWidth) * 100;
-      slider.style.transform = `translateX(${currentTranslate}%)`;
-    });
-  
-    slider.addEventListener('touchend', () => {
-      isDragging = false;
-      slider.style.transition = 'transform 0.5s ease-in-out';
-      const movedBy = currentTranslate - prevTranslate;
-      
-      if (movedBy < -20) {
-        goToSlide(currentIndex + 1);
-      } else if (movedBy > 20) {
-        goToSlide(currentIndex - 1);
-      } else {
+
+    nextBtn.addEventListener('click', () => {
+      if (currentIndex < slides.length - 1) {
+        currentIndex++;
         updateSlider();
       }
     });
-  
-    // Prevent image dragging
-    slides.forEach(slide => {
-      slide.querySelector('img').addEventListener('dragstart', (e) => e.preventDefault());
+
+    prevBtn.addEventListener('click', () => {
+      if (currentIndex > 0) {
+        currentIndex--;
+        updateSlider();
+      }
     });
-  
-    // Lazy load images
-    slides.forEach(slide => {
-      const img = slide.querySelector('img');
-      img.setAttribute('loading', 'lazy');
-    });
-  });
+  } else {
+    console.warn('One or more slider elements not found');
+  }
+});

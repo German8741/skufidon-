@@ -1,23 +1,38 @@
-/* Existing @font-face rules remain unchanged */
 @font-face {
   font-family: 'Academy Condensed';
-   src: url('../assets/fonts/AcademyCondensed.woff2') format('woff2');
+  src: url('../assets/fonts/AcademyCondensed.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'Myriad Pro';
-  src: url('assets/fonts/MYRIADPRO-CONDIT.woff2') format('woff2');
+  src: url('../assets/fonts/MYRIADPRO-REGULAR.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'Onest';
-  src: url('assets/fonts/Onest-Regular.ttf') format('truetype');
+  src: url('../assets/fonts/Onest-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
+}
+
+html, body {
+    height: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.events-detail-section {
+    height: auto;
+    min-height: 100vh;
+    padding: 40px 0;
+    overflow: visible;
 }
 
 body {

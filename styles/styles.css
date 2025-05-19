@@ -1,23 +1,22 @@
-/* Font Imports */
 @font-face {
   font-family: 'Academy Condensed';
- src: url('/skufidon-/assets/fonts/AcademyCondensed.woff2') format('woff2');
+  src: url('../assets/fonts/AcademyCondensed.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
-  font-display: swap; /* Улучшает загрузку шрифта */
-}
-
-@font-face {
-  font-family: 'Myriad Pro Condensed';
-  src: url('../assets/fonts/MYRIADPRO-CONDIT.woff2') format('woff2');
-  font-weight: normal;
-  font-style: italic;
   font-display: swap;
 }
 
 @font-face {
   font-family: 'Myriad Pro';
   src: url('../assets/fonts/MYRIADPRO-REGULAR.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Onest';
+  src: url('../assets/fonts/Onest-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -31,14 +30,13 @@
 }
 
 body {
-  font-family: 'Academy Condensed', Arial, sans-serif !important; /* Усиленная специфичность */
+  font-family: 'Academy Condensed', Arial, sans-serif;
   color: #000;
   background-color: #F9F9F9;
 }
 
 /* Header Styles */
 .header {
-  font-family: 'Academy Condensed', Arial, sans-serif !important; /* Явно задаём шрифт */
   background: #ffffff;
   box-shadow: 0 4px 44px rgba(0, 0, 0, 0.1);
   border-bottom: 1px solid #4C4C4C;
@@ -74,7 +72,6 @@ body {
 }
 
 .header__nav-link {
-  font-family: 'Academy Condensed', Arial, sans-serif !important; /* Явно задаём шрифт */
   color: #000;
   font-size: 26px;
   text-decoration: none;
@@ -92,7 +89,6 @@ body {
 }
 
 .header__news {
-  font-family: 'Academy Condensed', Arial, sans-serif !important; /* Явно задаём шрифт */
   color: #000;
   font-size: 28px;
   text-decoration: underline;
@@ -110,7 +106,7 @@ body {
   display: none;
 }
 
-.burger-icon, .close-icon {
+.burger-icon {
   width: 24px;
   height: 24px;
 }
@@ -137,9 +133,12 @@ body {
   display: none;
 }
 
-/* Мобильное меню - только для мобильных устройств */
+/* Mobile Menu Styles */
 @media (max-width: 768px) {
-  /* Стили для выезжающего меню справа */
+  .header__mobile {
+    display: block;
+  }
+
   .header__mobile-page {
     position: fixed;
     top: 0;
@@ -150,15 +149,17 @@ body {
     z-index: 1001;
     transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
     overflow-y: auto;
+    overflow-x: hidden;
     padding: 20px;
     box-sizing: border-box;
+    touch-action: pan-y;
+    -webkit-overflow-scrolling: touch;
   }
 
   .header__mobile-page.active {
     transform: translateX(-100%);
   }
 
-  /* Все содержимое меню выровнено по левому краю */
   .mobile-menu__top {
     display: flex;
     justify-content: space-between;
@@ -168,36 +169,176 @@ body {
   }
 
   .mobile-menu__title {
-    font-family: 'Academy Condensed', Arial, sans-serif !important; /* Явно задаём шрифт */
     color: white;
-    font-size: clamp(24px, 6vw, 28px);
+    font-size: 31px;
+    font-family: 'Academy Condensed', sans-serif;
+    font-weight: 500;
     text-align: left;
-    padding-left: 0;
+  }
+
+  .mobile-menu__close {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .mobile-menu__close img {
+    width: 32px;
+    height: 32px;
+  }
+
+  .header__mobile-nav {
+    margin-top: 20px;
   }
 
   .header__mobile-nav-list {
     list-style: none;
-    padding: 20px 0;
-    margin-top: 20px;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 20px;
+    padding: 0;
   }
 
   .header__mobile-nav-link {
-    font-family: 'Academy Condensed', Arial, sans-serif !important; /* Явно задаём шрифт */
     color: #878787;
-    font-size: clamp  clamp(18px, 5vw, 22px);
+    font-size: 28px;
+    font-family: 'Academy Condensed', sans-serif;
+    font-weight: 500;
     text-decoration: none;
-    transition: color 0.3s ease;
     display: block;
-    text-align: left;
-    padding: 12px 0;
+    transition: color 0.3s ease;
   }
 
   .header__mobile-nav-link:hover {
     color: #C40005;
   }
+
+  .mobile-menu__footer {
+    margin-top: 40px;
+    padding-bottom: 20px;
+  }
+
+  .mobile-menu__contact-line {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    margin-bottom: 14px;
+  }
+
+  .mobile-menu__phone {
+    color: white;
+    font-size: 21px;
+    font-family: 'Myriad Pro Condensed', sans-serif;
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  .mobile-menu__phone span {
+    color: #878787;
+    font-family: 'Academy Condensed', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+  }
+
+  .mobile-menu__address {
+    color: #878787;
+    font-size: 21px;
+    font-family: 'Academy Condensed', sans-serif;
+    font-weight: 500;
+  }
+
+  .mobile-menu__social {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 14px;
+  }
+
+  .mobile-menu__social-icons {
+    display: flex;
+    gap: 26px;
+  }
+
+  .social-icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .mobile-menu__footer-logo img {
+    width: 96px;
+    height: 54px;
+  }
+
+  .mobile-menu__org {
+    color: #878787;
+    font-size: 21px;
+    font-family: 'Academy Condensed', sans-serif;
+    font-weight: 500;
+    margin-top: 14px;
+    line-height: 1.4;
+  }
+
+  .header__nav {
+    display: none;
+  }
+
+  .header__right .header__news {
+    display: none;
+  }
+
+  .header__burger {
+    display: block;
+  }
+
+  .header__container {
+    padding: 10px 20px;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .header__logo {
+    width: 160px;
+    height: 56px;
+  }
+}
+
+/* Responsive Header */
+@media (max-width: 1024px) {
+  .header__container {
+    padding: 15px 30px;
+    gap: 40px;
+  }
+
+  .header__logo {
+    width: 200px;
+    height: 70px;
+  }
+
+  .header__nav-list {
+    gap: 30px;
+  }
+
+  .header__nav-link {
+    font-size: 22px;
+  }
+
+  .header__news {
+    font-size: 24px;
+  }
+}
+
+/* Main Content Padding */
+.main {
+  padding-top: 145px;
+  min-height: auto;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .main {
+    padding-top: 86px;
+  }
+}
 
   /* Футер меню */
   .mobile-menu__footer {

@@ -1,20 +1,25 @@
 @font-face {
-    font-family: 'Myriad Pro';
-    src: url('https://fonts.cdnfonts.com/css/myriad-pro') format('truetype');
-    font-style: italic;
-    font-weight: 400;
+  font-family: 'Academy Condensed';
+  src: url('../assets/fonts/AcademyCondensed.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: 'Myriad Pro';
-    src: url('https://fonts.cdnfonts.com/css/myriad-pro') format('truetype');
-    font-weight: 700;
+  font-family: 'Myriad Pro';
+  src: url('../assets/fonts/MYRIADPRO-REGULAR.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: 'Academy Condensed';
-    src: url('https://db.onlinewebfonts.com/c/0b51833ff62e4af8acb5fd3e2bf59e97?family=Academy+Engraved+LET+Plain:1.0') format('truetype');
-    font-weight: 500;
+  font-family: 'Onest';
+  src: url('../assets/fonts/Onest-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 
 .kontakts-contacts-container {
