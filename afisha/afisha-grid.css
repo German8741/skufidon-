@@ -30,8 +30,8 @@ html, body {
 
 .events-detail-section {
   height: auto;
-  min-height: auto; /* Изменено с 100vh, чтобы избежать лишнего пространства */
-  padding:_system: 10px 0; /* Уменьшено с 20px до 10px */
+  min-height: auto;
+  padding: 10px 0;
   overflow: visible;
 }
 
@@ -47,7 +47,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  padding: 20px 60px 10px; /* Уменьшено padding-bottom с 20px до 10px */
+  padding: 20px 60px 10px;
   box-sizing: border-box;
 }
 
@@ -92,7 +92,7 @@ body {
 .cards {
   display: grid;
   gap: 40px;
-  margin-bottom: 0; /* Убрано margin-bottom: 10px */
+  margin-bottom: 0;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   justify-content: center;
 }
@@ -227,7 +227,7 @@ body {
   justify-content: center;
   align-items: center;
   gap: 20px;
-  padding: 10px 0; /* Уменьшено с 20px до 10px */
+  padding: 10px 0;
 }
 
 .pagination button {
@@ -286,83 +286,83 @@ body {
   
   .cards {
     grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-    margin-top: -20px; /* Сохранено */
-    margin-bottom: 0; /* Убрано margin-bottom: 10px */
+    gap: 16.5px;
+    margin-top: -20px;
+    margin-bottom: 0;
   }
   
   .card {
-    max-width: 170px;
-    height: 344px;
-    border-radius: 12.47px;
-    transition: none; /* Сохранено */
+    max-width: 187px;
+    height: 378.4px;
+    border-radius: 13.717px;
+    transition: none;
   }
   
   .card:hover {
-    transform: none; /* Сохранено */
+    transform: none;
   }
   
   .card-image {
-    height: 240.83px;
-    border-radius: 12.47px 12.47px 0 0;
+    height: 264.893px;
+    border-radius: 13.717px 13.717px 0 0;
   }
   
   .age-badge {
-    width: 26.07px;
-    height: 26.07px;
-    border-radius: 7.37px;
-    top: 7.37px;
-    right: 7.37px;
-    font-size: 11.9px;
+    width: 28.677px;
+    height: 28.677px;
+    border-radius: 8.107px;
+    top: 8.107px;
+    right: 8.107px;
+    font-size: 13.09px;
   }
   
   .price-badge {
-    height: 24.93px;
-    width: 63.34px;
-    border-radius: 7.43px;
-    bottom: 7.37px;
-    left: 7.37px;
-    font-size: 13.03px;
+    height: 27.423px;
+    width: 69.674px;
+    border-radius: 8.173px;
+    bottom: 8.107px;
+    left: 8.107px;
+    font-size: 14.333px;
   }
   
   .pushkin-badge {
-    width: 26.07px;
-    height: 26.07px;
-    bottom: 7.37px;
-    left: 75.37px;
-    border-radius: 7.04px;
+    width: 28.677px;
+    height: 28.677px;
+    bottom: 8.107px;
+    left: 82.907px;
+    border-radius: 7.744px;
   }
   
   .pushkin-icon {
-    width: 15.87px;
-    height: 15.87px;
+    width: 17.457px;
+    height: 17.457px;
   }
   
   .card-info {
-    height: 103.7px;
-    padding: 6.8px;
+    height: 114.07px;
+    padding: 7.48px;
   }
   
   .card-title {
-    font-size: 22.1px;
-    line-height: 23px;
-    height: 46.47px;
-    margin-bottom: 7.37px;
+    font-size: 24.31px;
+    line-height: 25.3px;
+    height: 51.117px;
+    margin-bottom: 8.107px;
   }
   
   .card-date {
-    font-size: 17px;
-    gap: 5.1px;
-    margin-bottom: 2.83px;
+    font-size: 18.7px;
+    gap: 5.61px;
+    margin-bottom: 3.113px;
   }
   
   .date-dot {
-    width: 1.7px;
-    height: 1.7px;
+    width: 1.87px;
+    height: 1.87px;
   }
   
   .card-venue {
-    font-size: 15.3px;
+    font-size: 16.83px;
   }
   
   .pagination {
@@ -378,76 +378,76 @@ body {
   
   .cards {
     grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
+    gap: 11px;
     margin-bottom: 0;
   }
   
   .card {
-    max-width: 150px;
-    height: 300px;
-    border-radius: 10px;
+    max-width: 165px;
+    height: 330px;
+    border-radius: 11px;
   }
   
   .card-image {
-    height: 210px;
-    border-radius: 10px 10px 0 0;
+    height: 231px;
+    border-radius: 11px 11px 0 0;
   }
   
   .age-badge {
-    width: 22px;
-    height: 22px;
-    border-radius: 6px;
-    top: 6px;
-    right: 6px;
-    font-size: 10px;
-  }
-  
-  .price-badge {
-    height: 22px;
-    width: 55px;
-    border-radius: 6px;
-    bottom: 6px;
-    left: 6px;
+    width: 24.2px;
+    height: 24.2px;
+    border-radius: 6.6px;
+    top: 6.6px;
+    right: 6.6px;
     font-size: 11px;
   }
   
+  .price-badge {
+    height: 24.2px;
+    width: 60.5px;
+    border-radius: 6.6px;
+    bottom: 6.6px;
+    left: 6.6px;
+    font-size: 12.1px;
+  }
+  
   .pushkin-badge {
-    width: 22px;
-    height: 22px;
-    bottom: 6px;
-    left: 65px;
-    border-radius: 6px;
+    width: 24.2px;
+    height: 24.2px;
+    bottom: 6.6px;
+    left: 71.5px;
+    border-radius: 6.6px;
   }
   
   .pushkin-icon {
-    width: 13px;
-    height: 13px;
+    width: 14.3px;
+    height: 14.3px;
   }
   
   .card-info {
-    height: 90px;
-    padding: 6px;
+    height: 99px;
+    padding: 6.6px;
   }
   
   .card-title {
-    font-size: 18px;
-    line-height: 20px;
-    height: 40px;
-    margin-bottom: 6px;
+    font-size: 19.8px;
+    line-height: 22px;
+    height: 44px;
+    margin-bottom: 6.6px;
   }
   
   .card-date {
-    font-size: 14px;
-    gap: 4px;
-    margin-bottom: 2px;
+    font-size: 15.4px;
+    gap: 4.4px;
+    margin-bottom: 2.2px;
   }
   
   .date-dot {
-    width: 1.5px;
-    height: 1.5px;
+    width: 1.65px;
+    height: 1.65px;
   }
   
   .card-venue {
-    font-size: 13px;
+    font-size: 14.3px;
   }
 }
