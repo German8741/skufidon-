@@ -11,8 +11,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const close = document.querySelector('.mobile-menu__close');
   const mobilePage = document.querySelector('.header__mobile-page');
   const overlay = document.querySelector('.menu-overlay');
+  const titleLink = document.querySelector('.mobile-menu__title');
 
-  if (burger && close && mobilePage && overlay) {
+  if (burger && close && mobilePage && overlay && titleLink) {
     burger.addEventListener('click', () => {
       mobilePage.classList.add('active');
       overlay.classList.add('active');
@@ -26,6 +27,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     overlay.addEventListener('click', () => {
+      mobilePage.classList.remove('active');
+      overlay.classList.remove('active');
+      document.body.style.overflow = '';
+    });
+
+    titleLink.addEventListener('click', () => {
       mobilePage.classList.remove('active');
       overlay.classList.remove('active');
       document.body.style.overflow = '';

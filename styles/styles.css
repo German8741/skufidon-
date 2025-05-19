@@ -33,7 +33,7 @@ body {
   font-family: 'Academy Condensed', Arial, sans-serif;
   color: #000;
   background-color: #F9F9F9;
-  -webkit-font-smoothing: antialiased; /* Улучшение рендеринга шрифтов */
+  -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
@@ -114,14 +114,14 @@ img {
   border: none;
   cursor: pointer;
   display: none;
-  outline: none; /* Убираем системную обводку */
-  -webkit-tap-highlight-color: transparent; /* Убираем подсветку при нажатии */
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .burger-icon {
   width: 24px;
   height: 24px;
-  fill: none; /* Убираем возможную заливку SVG */
+  fill: none;
 }
 
 .menu-overlay {
@@ -187,6 +187,12 @@ img {
     font-family: 'Academy Condensed', sans-serif;
     font-weight: 500;
     text-align: left;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .mobile-menu__title:hover {
+    color: #C40005;
   }
 
   .mobile-menu__close {
@@ -241,11 +247,13 @@ img {
   }
 
   .mobile-menu__phone {
-    color: white;
+    color: white !important;
     font-size: clamp(18px, 4vw, 20px);
-    font-family: 'Myriad Pro Condensed', sansOrdinary;
+    font-family: 'Myriad Pro Condensed', sans-serif;
     font-style: italic;
     font-weight: 400;
+    text-decoration: none !important;
+    -webkit-text-decoration-skip: none;
   }
 
   .mobile-menu__phone span {
@@ -253,6 +261,7 @@ img {
     font-family: 'Academy Condensed', sans-serif;
     font-style: normal;
     font-weight: 500;
+    text-decoration: none;
   }
 
   .mobile-menu__address {
@@ -352,7 +361,7 @@ img {
   .social-icon,
   .burger-icon,
   .mobile-menu__close img {
-    image-rendering: -webkit-optimize-contrast; /* Улучшение рендеринга изображений */
+    image-rendering: -webkit-optimize-contrast;
   }
 }
 
