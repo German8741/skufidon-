@@ -187,12 +187,21 @@ img {
     font-family: 'Academy Condensed', sans-serif;
     font-weight: 500;
     text-align: left;
-    text-decoration: none;
+    text-decoration: none !important;
+    -webkit-text-decoration: none;
     cursor: pointer;
+  }
+
+  .mobile-menu__title:link,
+  .mobile-menu__title:visited,
+  .mobile-menu__title:active {
+    color: white;
+    text-decoration: none;
   }
 
   .mobile-menu__title:hover {
     color: #C40005;
+    text-decoration: none;
   }
 
   .mobile-menu__close {
@@ -247,21 +256,33 @@ img {
   }
 
   .mobile-menu__phone {
-    color: white !important;
     font-size: clamp(18px, 4vw, 20px);
     font-family: 'Myriad Pro Condensed', sans-serif;
     font-style: italic;
     font-weight: 400;
     text-decoration: none !important;
-    -webkit-text-decoration-skip: none;
+    -webkit-text-decoration: none;
   }
 
-  .mobile-menu__phone span {
+  .mobile-menu__phone .phone-number {
+    color: white !important;
+    text-decoration: none !important;
+    -webkit-text-decoration: none;
+  }
+
+  .mobile-menu__phone .phone-label {
     color: #878787;
     font-family: 'Academy Condensed', sans-serif;
     font-style: normal;
     font-weight: 500;
     text-decoration: none;
+  }
+
+  /* Suppress browser-generated tel links */
+  .mobile-menu__phone a[href^="tel"] {
+    color: white !important;
+    text-decoration: none !important;
+    -webkit-text-decoration: none;
   }
 
   .mobile-menu__address {
