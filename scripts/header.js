@@ -1,4 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
+  // Force reload styles to avoid caching issues
+  const styleSheets = document.querySelectorAll('link[rel="stylesheet"]');
+  styleSheets.forEach(sheet => {
+    const href = sheet.href;
+    sheet.href = `${href}?v=${Date.now()}`;
+  });
+
   // Mobile Menu
   const burger = document.querySelector('.header__burger');
   const close = document.querySelector('.mobile-menu__close');
@@ -9,13 +16,13 @@ document.addEventListener('DOMContentLoaded', () => {
     burger.addEventListener('click', () => {
       mobilePage.classList.add('active');
       overlay.classList.add('active');
-      document.body.style.overflow = 'hidden'; // Блокировка прокрутки страницы
+      document.body.style.overflow = 'hidden';
     });
 
     close.addEventListener('click', () => {
       mobilePage.classList.remove('active');
       overlay.classList.remove('active');
-      document.body.style.overflow = ''; // Разрешение прокрутки
+      document.body.style.overflow = '';
     });
 
     overlay.addEventListener('click', () => {

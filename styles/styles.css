@@ -33,6 +33,15 @@ body {
   font-family: 'Academy Condensed', Arial, sans-serif;
   color: #000;
   background-color: #F9F9F9;
+  -webkit-font-smoothing: antialiased; /* Улучшение рендеринга шрифтов */
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Ensure images don't overflow */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 /* Header Styles */
@@ -59,6 +68,7 @@ body {
 .header__logo {
   width: 270px;
   height: 95px;
+  object-fit: contain;
 }
 
 .header__nav {
@@ -104,11 +114,14 @@ body {
   border: none;
   cursor: pointer;
   display: none;
+  outline: none; /* Убираем системную обводку */
+  -webkit-tap-highlight-color: transparent; /* Убираем подсветку при нажатии */
 }
 
 .burger-icon {
   width: 24px;
   height: 24px;
+  fill: none; /* Убираем возможную заливку SVG */
 }
 
 .menu-overlay {
@@ -147,7 +160,7 @@ body {
     height: 100vh;
     background: #000;
     z-index: 1001;
-    transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    transition: transform 0.4s ease-in-out;
     overflow-y: auto;
     overflow-x: hidden;
     padding: 20px;
@@ -170,7 +183,7 @@ body {
 
   .mobile-menu__title {
     color: white;
-    font-size: 31px;
+    font-size: clamp(24px, 6vw, 28px);
     font-family: 'Academy Condensed', sans-serif;
     font-weight: 500;
     text-align: left;
@@ -180,6 +193,8 @@ body {
     background: none;
     border: none;
     cursor: pointer;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
   }
 
   .mobile-menu__close img {
@@ -201,7 +216,7 @@ body {
 
   .header__mobile-nav-link {
     color: #878787;
-    font-size: 28px;
+    font-size: clamp(22px, 5vw, 26px);
     font-family: 'Academy Condensed', sans-serif;
     font-weight: 500;
     text-decoration: none;
@@ -227,8 +242,8 @@ body {
 
   .mobile-menu__phone {
     color: white;
-    font-size: 21px;
-    font-family: 'Myriad Pro Condensed', sans-serif;
+    font-size: clamp(18px, 4vw, 20px);
+    font-family: 'Myriad Pro Condensed', sansOrdinary;
     font-style: italic;
     font-weight: 400;
   }
@@ -242,7 +257,7 @@ body {
 
   .mobile-menu__address {
     color: #878787;
-    font-size: 21px;
+    font-size: clamp(16px, 4vw, 18px);
     font-family: 'Academy Condensed', sans-serif;
     font-weight: 500;
   }
@@ -262,16 +277,19 @@ body {
   .social-icon {
     width: 30px;
     height: 30px;
+    object-fit: contain;
   }
 
   .mobile-menu__footer-logo img {
     width: 96px;
     height: 54px;
+    max-width: 100%;
+    object-fit: contain;
   }
 
   .mobile-menu__org {
     color: #878787;
-    font-size: 21px;
+    font-size: clamp(16px, 4vw, 18px);
     font-family: 'Academy Condensed', sans-serif;
     font-weight: 500;
     margin-top: 14px;
@@ -324,6 +342,17 @@ body {
 
   .header__news {
     font-size: 24px;
+  }
+}
+
+/* High-density displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .header__logo,
+  .mobile-menu__footer-logo img,
+  .social-icon,
+  .burger-icon,
+  .mobile-menu__close img {
+    image-rendering: -webkit-optimize-contrast; /* Улучшение рендеринга изображений */
   }
 }
 
