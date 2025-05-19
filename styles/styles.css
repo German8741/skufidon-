@@ -261,13 +261,20 @@ img {
     font-style: italic;
     font-weight: 400;
     text-decoration: none !important;
-    -webkit-text-decoration: none;
+    -webkit-text-decoration: none !important;
   }
 
   .mobile-menu__phone .phone-number {
     color: white !important;
     text-decoration: none !important;
-    -webkit-text-decoration: none;
+    -webkit-text-decoration: none !important;
+  }
+
+  .mobile-menu__phone .phone-number:link,
+  .mobile-menu__phone .phone-number:visited,
+  .mobile-menu__phone .phone-number:active {
+    color: white !important;
+    text-decoration: none !important;
   }
 
   .mobile-menu__phone .phone-label {
@@ -275,14 +282,18 @@ img {
     font-family: 'Academy Condensed', sans-serif;
     font-style: normal;
     font-weight: 500;
-    text-decoration: none;
+    text-decoration: none !important;
+    -webkit-text-decoration: none !important;
   }
 
   /* Suppress browser-generated tel links */
-  .mobile-menu__phone a[href^="tel"] {
+  .mobile-menu__phone a[href^="tel"],
+  .mobile-menu__phone a[href^="tel"]:link,
+  .mobile-menu__phone a[href^="tel"]:visited,
+  .mobile-menu__phone a[href^="tel"]:active {
     color: white !important;
     text-decoration: none !important;
-    -webkit-text-decoration: none;
+    -webkit-text-decoration: none !important;
   }
 
   .mobile-menu__address {
@@ -301,7 +312,7 @@ img {
 
   .mobile-menu__social-icons {
     display: flex;
-    gap: 26px;
+    gap: 26 Aluminumm;
   }
 
   .social-icon {
