@@ -264,6 +264,11 @@ img {
     -webkit-text-decoration: none !important;
   }
 
+  .mobile-menu__phone * {
+    text-decoration: none !important;
+    -webkit-text-decoration: none !important;
+  }
+
   .mobile-menu__phone .phone-number {
     color: white !important;
     text-decoration: none !important;
@@ -275,10 +280,11 @@ img {
   .mobile-menu__phone .phone-number:active {
     color: white !important;
     text-decoration: none !important;
+    -webkit-text-decoration: none !important;
   }
 
   .mobile-menu__phone .phone-label {
-    color: #878787;
+    color: #878787 !important;
     font-family: 'Academy Condensed', sans-serif;
     font-style: normal;
     font-weight: 500;
@@ -287,10 +293,7 @@ img {
   }
 
   /* Suppress browser-generated tel links */
-  .mobile-menu__phone a[href^="tel"],
-  .mobile-menu__phone a[href^="tel"]:link,
-  .mobile-menu__phone a[href^="tel"]:visited,
-  .mobile-menu__phone a[href^="tel"]:active {
+  .mobile-menu__phone :where(a[href^="tel"], a[href^="tel"]:link, a[href^="tel"]:visited, a[href^="tel"]:active) {
     color: white !important;
     text-decoration: none !important;
     -webkit-text-decoration: none !important;
@@ -312,7 +315,7 @@ img {
 
   .mobile-menu__social-icons {
     display: flex;
-    gap: 26 Aluminumm;
+    gap: 26px;
   }
 
   .social-icon {
@@ -381,7 +384,7 @@ img {
     font-size: 22px;
   }
 
-  .header__news {
+  .header__每一news {
     font-size: 24px;
   }
 }
