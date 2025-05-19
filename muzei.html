@@ -7,250 +7,101 @@
   <link rel="stylesheet" href="styles/styles.css">
   <link rel="stylesheet" href="styles/muzei.css">
   <style>
-/* Стили для музея */
-.museum-hero {
-    margin: 0 -40px 30px;
-    text-align: center;
+/* Добавляем новые стили для статьи */
+.article-content {
+    margin-top: 30px;
+    line-height: 1.6;
 }
 
-.museum-hero img {
-    width: 100%;
-    max-height: 500px;
-    object-fit: cover;
-    border-radius: 0;
-}
-
-.timeline {
-    position: relative;
-    max-width: 800px;
-    margin: 30px auto;
-    padding-left: 50px;
-}
-
-.timeline::before {
-    content: '';
-    position: absolute;
-    left: 20px;
-    top: 0;
-    bottom: 0;
-    width: 4px;
-    background: #C40005;
-}
-
-.timeline-item {
-    position: relative;
-    margin-bottom: 30px;
-}
-
-.timeline-year {
-    position: absolute;
-    left: -50px;
-    top: 0;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: #C40005;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Academy Condensed', sans-serif;
-    font-size: 18px;
-}
-
-.timeline-content {
-    background: #f5f5f5;
-    padding: 15px 20px;
-    border-radius: 8px;
-    position: relative;
-    font-family: 'Myriad Pro', sans-serif;
-}
-
-.timeline-content::before {
-    content: '';
-    position: absolute;
-    left: -10px;
-    top: 15px;
-    width: 0;
-    height: 0;
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
-    border-right: 10px solid #f5f5f5;
-}
-
-.floor-card {
-    display: flex;
-    margin-bottom: 30px;
-    border: 1px solid #e0e0e0;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.floor-number {
-    background: #C40005;
-    color: white;
-    padding: 20px;
-    font-size: 28px;
-    font-family: 'Academy Condensed', sans-serif;
-    display: flex;
-    align-items: center;
-    min-width: 100px;
-    justify-content: center;
-}
-
-.floor-content {
-    padding: 20px;
-    flex-grow: 1;
-}
-
-.floor-content h3 {
-    margin-top: 0;
-    color: #C40005;
-    font-family: 'Academy Condensed', sans-serif;
-    font-size: 24px;
-}
-
-.exhibit-list {
-    margin: 15px 0 0 20px;
-    padding: 0;
-    list-style-type: none;
-}
-
-.exhibit-list li {
-    position: relative;
-    padding-left: 25px;
-    margin-bottom: 10px;
-    font-family: 'Myriad Pro', sans-serif;
-    font-size: 18px;
-}
-
-.exhibit-list li::before {
-    content: '•';
-    position: absolute;
-    left: 0;
-    color: #C40005;
-    font-size: 24px;
-    line-height: 1;
-}
-
-.highlights-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    margin: 30px 0;
-}
-
-.highlight-item {
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    overflow: hidden;
-    transition: transform 0.3s;
-}
-
-.highlight-item:hover {
-    transform: translateY(-5px);
-}
-
-.highlight-item img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-}
-
-.highlight-item p {
-    padding: 15px;
-    margin: 0;
-    text-align: center;
-    font-family: 'Academy Condensed', sans-serif;
-    font-size: 20px;
-    background: #f9f9f9;
-}
-
-.visit-info {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    margin: 30px 0;
-}
-
-.visit-card {
-    background: #f9f9f9;
-    padding: 20px;
-    border-radius: 8px;
-    text-align: center;
-}
-
-.visit-card h3 {
-    color: #C40005;
-    font-family: 'Academy Condensed', sans-serif;
-    margin-top: 0;
+.article-paragraph {
     font-size: 22px;
-}
-
-.visit-card p {
-    margin: 10px 0 0;
+    margin-bottom: 25px;
     font-family: 'Myriad Pro', sans-serif;
+    color: #333;
+    line-height: 1.6;
 }
 
-.museum-button {
-    display: block;
-    width: 100%;
-    max-width: 300px;
-    margin: 40px auto 0;
-    padding: 15px;
-    background: #C40005;
-    color: white;
-    text-align: center;
-    border-radius: 8px;
+.highlight {
+    color: #C40005;
+    font-weight: 600;
+}
+
+.article-subtitle {
+    font-size: 32px;
     font-family: 'Academy Condensed', sans-serif;
-    font-size: 20px;
-    text-decoration: none;
-    transition: background 0.3s;
+    margin: 40px 0 20px;
+    color: #000;
+    font-weight: 600;
+    line-height: 1.3;
 }
 
-.museum-button:hover {
-    background: #a30004;
+.article-image {
+    margin: 30px 0;
+    text-align: center;
+}
+
+.article-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.article-image figcaption {
+    font-size: 16px;
+    color: #666;
+    margin-top: 10px;
+    font-family: 'Myriad Pro', sans-serif;
+    font-style: italic;
+}
+
+.article-link {
+    color: #C40005;
+    text-decoration: none;
+    border-bottom: 1px solid #C40005;
+    transition: all 0.2s ease;
+}
+
+.article-link:hover {
+    color: #a30004;
+    border-bottom-color: #a30004;
 }
 
 /* Адаптивные стили */
-@media (max-width: 1024px) {
-    .highlights-grid {
-        grid-template-columns: repeat(2, 1fr);
+@media (max-width: 768px) {
+    .article-paragraph {
+        font-size: 18px;
+        margin-bottom: 20px;
     }
     
-    .visit-info {
-        grid-template-columns: 1fr;
+    .article-subtitle {
+        font-size: 26px;
+        margin: 30px 0 15px;
+    }
+    
+    .article-image {
+        margin: 20px 0;
+    }
+    
+    .article-image figcaption {
+        font-size: 14px;
     }
 }
 
-@media (max-width: 768px) {
-    .museum-hero {
-        margin: 0 -20px 20px;
+@media (max-width: 480px) {
+    .article-paragraph {
+        font-size: 16px;
     }
     
-    .floor-card {
-        flex-direction: column;
-    }
-    
-    .floor-number {
-        min-width: auto;
-        padding: 10px;
-        justify-content: flex-start;
-    }
-    
-    .highlights-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .visit-card {
-        padding: 15px;
+    .article-subtitle {
+        font-size: 22px;
     }
 }
   </style>
 </head>
 <body>
   <!-- хедер -->
-  <header class="header">
+<header class="header">
     <div class="header__container">
       <a href="index.html">
         <img src="assets/images/logo_dom_oficerov.png" alt="Логотип Дома Офицеров" class="header__logo">
@@ -267,7 +118,7 @@
         </ul>
       </nav>
       <div class="header__right">
-        <a href="новости.html" class="header__news" target="_blank">новости</a>
+        <a href="новости.html" class="header__news" >новости</a>
         <button class="header__burger">
           <img src="assets/svg_icons/burger_icon.svg" alt="Menu" class="burger-icon">
         </button>
@@ -316,7 +167,7 @@
             </a>
           </div>
           <div class="mobile-menu__org">
-            ФГБУ "Дом офицеров Центрального военного округа"<br>Министерства обороны Российской Федерации
+            © 2025 ФГБУ “Дом офицеров Центрального военного округа„ "<br>Министерства обороны России
           </div>
         </div>
       </div>
@@ -326,10 +177,10 @@
   <!-- хедер -->
   <main class="main">
     <!-- инфа -->
- <div class="container">
+   <div class="container">
     <div class="left-column">
         <div class="left-sidebar">
-            <div class="schedule-title">Режим работы музея</div>
+            <div class="schedule-title">Режим работы</div>
             <div class="schedule-items">
                 <div class="schedule-item monday">
                     <span class="day">Понедельник</span>
@@ -368,126 +219,99 @@
 
     <div class="content">
         <div class="article-header">
+            
             <h1 class="article-title">
-                Военно-исторический музей:<br>
-                хранитель боевой славы<br>
-                Уральского региона
+                Дом офицеров Центрального<br>
+                военного округа: архитектурная<br>
+                жемчужина и символ воинской славы<br>
+                Екатеринбурга
             </h1>
         </div>
+
         <div class="article-content">
-            <figure class="museum-hero">
-                <img src="https://sun1-89.userapi.com/impg/yenW68pCuCj9KMZ13UyUpIgcI3DseRDNHfe39Q/BFGWlFpfzSc.jpg" alt="Экспозиция музея">
-                <figcaption>Главный зал Военно-исторического музея</figcaption>
+            <figure class="article-image">
+                <img src="https://avatars.mds.yandex.net/get-altay/2056672/2a0000016c85c9efc0149228cc8ce673b316/XXXL" alt="Здание ОДО">
+                <figcaption>Здание Дома офицеров ЦВО на Первомайской, 27</figcaption>
             </figure>
 
-            <div class="museum-history">
-                <h2 class="article-subtitle">История создания</h2>
-                <p class="article-paragraph">
-                    Музей Боевой славы Урала был создан <span class="highlight">15 июля 1959 года</span> как народный музей. В 1987 году было построено трёхэтажное здание, пристроенное к Дому офицеров, где <span class="highlight">30 сентября 1988 года</span> открылась новая экспозиция <span class="highlight">Военно-исторического музея</span>.
-                </p>
-                
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-year">1959</div>
-                        <div class="timeline-content">Создание народного музея Боевой славы Урала</div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-year">1987</div>
-                        <div class="timeline-content">Построено новое трёхэтажное здание музея</div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-year">1988</div>
-                        <div class="timeline-content">Открытие обновлённой экспозиции</div>
-                    </div>
-                </div>
-            </div>
+            <p class="article-paragraph highlight">
+                Дом офицеров Центрального военного округа (ОДО ЦВО) расположен в центре Екатеринбурга по адресу ул. Первомайская, 27. Это здание с колоннами, башней и архитектурой сталинского ампира — символ культурной и военной истории города.
+            </p>
 
-            <div class="museum-floors">
-                <h2 class="article-subtitle">Экспозиция музея</h2>
-                
-                <div class="floor-card">
-                    <div class="floor-number">1 этаж</div>
-                    <div class="floor-content">
-                        <h3>История вооружений</h3>
-                        <ul class="exhibit-list">
-                            <li>Образцы оружия с XVII века</li>
-                            <li>Коллекция наград и обмундирования</li>
-                            <li>Интерактивный стол с биографиями военных конструкторов</li>
-                            <li>Уникальные архивные документы</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="floor-card">
-                    <div class="floor-number">2 этаж</div>
-                    <div class="floor-content">
-                        <h3>Урал в годы Великой Отечественной войны</h3>
-                        <ul class="exhibit-list">
-                            <li>11 мультимедийных инсталляций</li>
-                            <li>Диорама «Форсирование Днепра» с эффектом присутствия</li>
-                            <li>Исторические таблички и документы</li>
-                            <li>Зеркало времени с интерактивными мониторами</li>
-                            <li>Цифровые подшивки газет военных лет</li>
-                            <li>Материалы о «Бессмертном полке»</li>
-                            <li>Раздел по локальным боевым операциям</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="floor-card">
-                    <div class="floor-number">3 этаж</div>
-                    <div class="floor-content">
-                        <h3>Послевоенная история</h3>
-                        <ul class="exhibit-list">
-                            <li>Развитие вооружённых сил с 1945 по 2015 год</li>
-                            <li>Более 250 фондовых единиц</li>
-                            <li>Экспонаты, посвящённые послевоенному развитию округа</li>
-                            <li>Современные интерактивные стенды</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+            <h2 class="article-subtitle">Исторические корни</h2>
+            
+            <p class="article-paragraph">
+                История учреждения начинается в <span class="highlight">1919 году</span> с основания Дома просвещения Красной Армии. Он находился в кинотеатре «Колизей». В 1929 году по приказу Реввоенсовета СССР учреждение стало <span class="highlight">Свердловским окружным Домом Красной Армии</span>.
+            </p>
 
-            <div class="museum-highlights">
-                <h2 class="article-subtitle">Жемчужины коллекции</h2>
-                <div class="highlights-grid">
-                    <div class="highlight-item">
-                        <img src="https://i.postimg.cc/9MgH60z8/1.jpg" alt="Экспонат музея">
-                        <p>Охотничье ружьё маршала Жукова</p>
-                    </div>
-                    <div class="highlight-item">
-                        <img src="https://static.wixstatic.com/media/a53ecc_f590ad5cc343400ebd86e2bec60bb7c2~mv2.jpg" alt="Экспонат музея">
-                        <p>Обломки подлодки «Курск»</p>
-                    </div>
-                    <div class="highlight-item">
-                        <img src="https://pastvu.com/_p/a/6/w/7/6w7a0cojvu27lsvp6j.jpg" alt="Экспонат музея">
-                        <p>Диорама «Форсирование Днепра»</p>
-                    </div>
-                </div>
-            </div>
+            <figure class="article-image">
+                <img src="https://i.postimg.cc/9MgH60z8/1.jpg" alt="Дом Красной Армии">
+                <figcaption>Дом Красной Армии в 1930-е годы</figcaption>
+            </figure>
 
-            <div class="museum-visit">
-                <h2 class="article-subtitle">Посетителям</h2>
-                <div class="visit-info">
-                    <div class="visit-card">
-                        <h3>Адрес</h3>
-                        <p>г. Екатеринбург, ул. Первомайская, 27</p>
-                    </div>
-                    <div class="visit-card">
-                        <h3>Контакты</h3>
-                        <p>+7 (343) 350-15-88</p>
-                        <p>museum@odo-cvo.ru</p>
-                    </div>
-                    <div class="visit-card">
-                        <h3>Экскурсии</h3>
-                        <p>Групповые и индивидуальные</p>
-                        <p>Запись за 3 дня</p>
-                    </div>
-                </div>
-                <a href="pokupka.html" class="museum-button">
-                    Забронировать экскурсию
-                </a>
-            </div>
+            <p class="article-paragraph">
+                До 1941 года Дом менял адреса: здание Городского собрания, Ново-Тихвинский монастырь. В 1937 году началось строительство нынешнего здания, завершённое в <span class="highlight">1941 году</span> по проекту архитектора Владимира Емельянова.
+            </p>
+
+            <figure class="article-image">
+                <img src="https://pastvu.com/_p/a/6/w/7/6w7a0cojvu27lsvp6j.jpg" alt="Строительство Дома офицеров">
+                <figcaption>Строительство здания Дома офицеров, 1940 год</figcaption>
+            </figure>
+
+            <h2 class="article-subtitle">Архитектура и символика</h2>
+            
+            <p class="article-paragraph">
+                Здание выполнено в стиле <span class="highlight">советской неоклассики и сталинского ампира</span>. Прямоугольная башня венчает фасад. В 1953 году с неё сняли барельеф Сталина, но в 2021 году он был возвращён в рамках восстановления исторического облика.
+            </p>
+
+            <figure class="article-image">
+                <img src="https://perm.veved.ru/uploads/posts/2022-05/thumbs/1652626217_04-sravnenie-barelefov-stalinu-vv.jpg" alt="Барельеф Сталина">
+                <figcaption>Барельеф Сталина на фасаде здания</figcaption>
+            </figure>
+
+            <h2 class="article-subtitle">Военная история и роль в годы войны</h2>
+            
+            <p class="article-paragraph">
+                В годы Великой Отечественной войны здесь проводились лекции, концерты и патриотические мероприятия. Учреждение стало центром духовного воспитания бойцов. После войны — переименование в <span class="highlight">Свердловский окружной Дом офицеров</span>.
+            </p>
+
+            <figure class="article-image">
+                <img src="https://i.postimg.cc/GtTV6jWt/image.jpg" alt="ОДО в послевоенные годы">
+                <figcaption>Дом офицеров в послевоенные годы</figcaption>
+            </figure>
+
+            <h2 class="article-subtitle">Музей и культурное наследие</h2>
+            
+            <p class="article-paragraph">
+                В 1980-х было достроено крыло для <a href="https://xn----8sbk4albpx.xn--p1ai/museum/" target="_blank" class="article-link">военно-исторического музея</a>. В нём представлено более 16 000 экспонатов: личные вещи, документы, обломки подлодки «Курск», U-2, охотничье ружьё Жукова и др.
+            </p>
+
+            <figure class="article-image">
+                <img src="https://sun1-89.userapi.com/impg/yenW68pCuCj9KMZ13UyUpIgcI3DseRDNHfe39Q/BFGWlFpfzSc.jpg?quality=96&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1200x800&sign=33fad47fe1b1a4e94451ac8c2f2d183e&from=bu&u=1ulN-huvnxhYRneDpRE1Y00mcvti1Wamc_ppWQf-AcQ&cs=807x538" alt="Экспозиция музея">
+                <figcaption>Экспозиция военно-исторического музея</figcaption>
+            </figure>
+
+            <h2 class="article-subtitle">Современная жизнь ОДО</h2>
+            
+            <p class="article-paragraph">
+                Сегодня здесь проходят концерты, театры, выставки, чтения и образовательные программы. В здании — большой концертный зал на более чем 800 мест, малые залы, библиотека, творческие студии, культурный отдел, секции для детей и молодёжи.
+            </p>
+
+            <figure class="article-image">
+                <img src="https://i.postimg.cc/Fs705BCD/image.jpg" alt="Современное использование здания">
+                <figcaption>Концерт в большом зале Дома офицеров</figcaption>
+            </figure>
+
+            <h2 class="article-subtitle">Памятник архитектуры</h2>
+            
+            <p class="article-paragraph highlight">
+                Дом офицеров — <span class="highlight">памятник архитектуры федерального значения</span>, сохраняющий традиции и объединяющий поколения. Это живой символ армейской чести и культурного наследия Урала.
+            </p>
+
+            <figure class="article-image">
+                <img src="https://static.wixstatic.com/media/a53ecc_f590ad5cc343400ebd86e2bec60bb7c2~mv2.jpg" alt="Дом офицеров сегодня">
+                <figcaption>Современный вид Дома офицеров ЦВО</figcaption>
+            </figure>
         </div>
     </div>
 </div>
