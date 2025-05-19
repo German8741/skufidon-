@@ -23,16 +23,16 @@
 }
 
 html, body {
-    height: auto;
-    overflow-x: hidden;
-    overflow-y: auto;
+  height: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .events-detail-section {
-    height: auto;
-    min-height: 100vh;
-    padding: 40px 0;
-    overflow: visible;
+  height: auto;
+  min-height: 100vh;
+  padding: 20px 0;
+  overflow: visible;
 }
 
 body {
@@ -46,8 +46,8 @@ body {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 40px;
-  padding: 40px 60px; /* Default 60px side padding for desktop */
+  gap: 20px;
+  padding: 20px 60px;
   box-sizing: border-box;
 }
 
@@ -56,8 +56,8 @@ body {
   display: flex;
   align-items: center;
   gap: 11px;
-  /* Remove padding here as it's handled by .container */
   text-decoration: none;
+  margin: 0; /* Убрано margin: -10px 0 для равных отступов */
 }
 
 .afisha-header-title {
@@ -87,18 +87,12 @@ body {
 
 /* Cards grid */
 .cards-wrapper {
-  /* Remove padding here as it's handled by .container */
 }
 
-/* Rest of the existing styles remain unchanged */
 .cards {
   display: grid;
   gap: 40px;
-  margin-bottom: 30px;
-}
-
-/* Desktop (4+ cards in row) */
-.cards {
+  margin-bottom: 10px; /* Уменьшено с 30px до 10px для равного отступа перед футером */
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   justify-content: center;
 }
@@ -233,7 +227,7 @@ body {
   justify-content: center;
   align-items: center;
   gap: 20px;
-  padding: 20px 0;
+  padding: 20px 0; /* Установлено 20px сверху и снизу для равенства с хедером */
 }
 
 .pagination button {
@@ -266,28 +260,24 @@ body {
 /* Tablet (3 cards in row, adaptive padding) */
 @media (max-width: 1023px) {
   .container {
-    padding: 40px clamp(30px, 6vw, 60px); /* Adaptive padding: 30px min, 60px max, scales with viewport */
+    padding: 20px clamp(30px, 6vw, 60px);
   }
   
   .cards {
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
   }
-  
-  .cards-wrapper {
-    /* Padding removed as it's handled by .container */
-  }
 }
 
 /* Mobile (2 cards in row, adaptive padding) */
 @media (max-width: 767px) {
   .container {
-    padding: 40px clamp(15px, 6vw, 60px); /* Adaptive padding: 15px min, 60px max, scales with viewport */
-    gap: 20px;
+    padding: 20px clamp(15px, 6vw, 60px);
+    gap: 10px;
   }
   
   .afisha-header {
-    /* Padding removed as it's handled by .container */
+    margin: 0; /* Убрано margin: -5px 0 для равных отступов */
   }
   
   .afisha-header-title {
@@ -297,16 +287,19 @@ body {
   .cards {
     grid-template-columns: repeat(2, 1fr);
     gap: 15px;
-  }
-  
-  .cards-wrapper {
-    /* Padding removed as it's handled by .container */
+    margin-top: -20px; /* Сохранено: карточки вверх на 20px */
+    margin-bottom: 10px; /* Уменьшено с 30px до 10px */
   }
   
   .card {
     max-width: 170px;
     height: 344px;
     border-radius: 12.47px;
+    transition: none; /* Сохранено: удаление анимаций */
+  }
+  
+  .card:hover {
+    transform: none; /* Сохранено: отключение эффекта ховера */
   }
   
   .card-image {
@@ -373,19 +366,20 @@ body {
   }
   
   .pagination {
-    padding: 15px 0;
+    padding: 10px 0; /* Установлено 10px для мобильной версии, чтобы соответствовать уменьшенному gap */
   }
 }
 
 /* Small mobile (2 smaller cards in row, adaptive padding) */
 @media (max-width: 480px) {
   .container {
-    padding: 40px clamp(10px, 6vw, 60px); /* Adaptive padding: 10px min, 60px max, scales with viewport */
+    padding: 20px clamp(10px, 6vw, 60px);
   }
   
   .cards {
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
+    margin-bottom: 10px; /* Уменьшено с 30px до 10px */
   }
   
   .card {
@@ -442,7 +436,7 @@ body {
     margin-bottom: 6px;
   }
   
-  .card-date {
+ b .card-date {
     font-size: 14px;
     gap: 4px;
     margin-bottom: 2px;
@@ -455,9 +449,5 @@ body {
   
   .card-venue {
     font-size: 13px;
-  }
-  
-  .cards-wrapper {
-    /* Padding removed as it's handled by .container */
   }
 }

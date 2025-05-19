@@ -1,414 +1,276 @@
-@font-face {
-  font-family: 'Academy Condensed';
-  src: url('../assets/fonts/AcademyCondensed.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Myriad Pro';
-  src: url('../assets/fonts/MYRIADPRO-REGULAR.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Onest';
-  src: url('../assets/fonts/Onest-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-html, body {
-  height: auto;
-  margin: 0;
-  overflow-x: hidden;
-  overflow-y: auto;
-}
-
-body {
-  font-family: 'Academy Condensed', sans-serif;
-  background: #F9F9F9;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
 .events-detail-section {
-  height: auto;
-  min-height: 100vh;
-  padding: 40px 0;
-  overflow: visible;
+    background-color: #f5f5f5;
+    padding: 40px 0;
 }
 
-.container {
-  max-width: 1440px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  padding: 40px 60px;
-  box-sizing: border-box;
+.events-detail-section * {
+    box-sizing: border-box;
 }
 
-/* Header styles */
-.afisha-header {
-  display: flex;
-  align-items: center;
-  gap: 11px;
-  text-decoration: none;
+.events-detail-section .container {
+    width: 1320px;
+    margin: 0 auto;
 }
 
-.afisha-header-title {
-  font-family: 'Myriad Pro', sans-serif;
-  font-size: 38px;
-  font-style: italic;
-  color: black;
-  transition: color 0.3s ease;
+.events-detail-section .event-content {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
 }
 
-.afisha-header-icon {
-  width: 12px;
-  height: 22px;
-  background: url('../assets/svg_icons/Vector.png') no-repeat center;
-  background-size: contain;
-  transition: transform 0.3s ease, filter 0.3s ease;
+.events-detail-section .event-image-wrapper {
+    position: relative;
 }
 
-.afisha-header:hover .afisha-header-title {
-  color: #C40005;
+.events-detail-section .event-image {
+    width: 398px;
+    height: 560px;
+    border-radius: 20px;
+    object-fit: cover;
 }
 
-.afisha-header:hover .afisha-header-icon {
-  transform: translateX(8px);
-  filter: invert(22%) sepia(84%) saturate(3616%) hue-rotate(349deg) brightness(88%) contrast(88%);
+.events-detail-section .age-badge {
+    width: 52px;
+    height: 52px;
+    background: white;
+    border-radius: 14.7px;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 23.7px;
+    color: black;
+    font-family: 'Academy Condensed', sans-serif;
+    font-weight: 500;
 }
 
-/* Cards grid */
-.cards-wrapper {
-  width: 100%;
+.events-detail-section .event-info {
+    width: 612px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
 }
 
-.cards {
-  display: grid;
-  gap: 40px;
-  margin-bottom: 30px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  touch-action: pan-x;
-  -webkit-overflow-scrolling: touch;
-  scroll-behavior: smooth;
-  padding-bottom: 10px; /* Prevent content clipping */
+.events-detail-section .event-header {
+    background: white;
+    border-radius: 24px;
+    padding: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Desktop (4+ cards in row) */
-.cards {
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  justify-content: center;
+.events-detail-section .event-title {
+    font-size: 39px;
+    font-family: 'Academy Condensed', sans-serif;
+    font-weight: 500;
+    color: black;
 }
 
-/* Card styles */
-.card {
-  width: 100%;
-  max-width: 220px;
-  height: 445px;
-  margin: 0 auto;
-  position: relative;
-  text-decoration: none;
-  border-radius: 16.13px;
-  overflow: hidden;
-  transition: transform 0.3s ease;
-  scroll-snap-align: start;
+.events-detail-section .event-button {
+    width: 214px;
+    background: #C40005;
+    color: white;
+    padding: 15px 64.25px;
+    border-radius: 9.98px;
+    font-size: 16.68px;
+    font-family: 'Myriad Pro', sans-serif;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
 }
 
-.card:hover {
-  transform: translateY(-10px) scale(1.02);
+.events-detail-section .event-details {
+    display: flex;
+    gap: 24px;
 }
 
-.card-image {
-  width: 100%;
-  height: 311.67px;
-  border-radius: 16.13px 16.13px 0 0;
-  background-size: cover;
-  background-position: center;
-  background-color: white;
-  position: relative;
+.events-detail-section .details-card {
+    width: 241px;
+    background: white;
+    border-radius: 24px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 13.65px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.age-badge {
-  width: 33.73px;
-  height: 33.73px;
-  background: white;
-  border-radius: 9.53px;
-  position: absolute;
-  top: 9.53px;
-  right: 9.53px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 15.4px;
-  color: black;
-  font-weight: 500;
+.events-detail-section .details-item {
+    font-size: 25.7px;
+    font-family: 'Academy Condensed', sans-serif;
+    font-weight: 500;
+    color: black;
 }
 
-.price-badge {
-  background: #C40005;
-  border-radius: 9.61px;
-  height: 32px;
-  width: 82px;
-  position: absolute;
-  bottom: 9.53px;
-  left: 9.53px;
-  color: white;
-  font-size: 16.87px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 500;
+.events-detail-section .details-label {
+    font-weight: 700;
 }
 
-.pushkin-badge {
-  width: 33.73px;
-  height: 33.73px;
-  background: white;
-  border-radius: 9.11px;
-  position: absolute;
-  bottom: 9.53px;
-  left: 97.53px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.events-detail-section .details-link {
+    color: #C40005;
+    text-decoration: underline;
 }
 
-.pushkin-icon {
-  width: 20.53px;
-  height: 20.53px;
+.events-detail-section .ticket-card {
+    width: 347px;
+    background: white;
+    border-radius: 24px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 36px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.card-info {
-  width: 100%;
-  height: 134.2px;
-  padding: 8.8px;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  background: transparent;
+.events-detail-section .ticket-text {
+    font-size: 33px;
+    font-family: 'Academy Condensed', sans-serif;
+    font-weight: 500;
+    color: black;
+    text-align: center;
 }
 
-.card-title {
-  font-size: 28.6px;
-  color: black;
-  line-height: 30px;
-  margin-bottom: 9.53px;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  font-weight: 500;
-  height: 60.13px;
+.events-detail-section .ticket-button {
+    width: 100%;
+    background: #BC2A8F;
+    color: white;
+    padding: 15px 83px;
+    border-radius: 9.98px;
+    font-size: 16.68px;
+    font-family: 'Myriad Pro', sans-serif;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
 }
 
-.card-date {
-  display: flex;
-  align-items: center;
-  gap: 6.6px;
-  font-size: 22px;
-  color: black;
-  margin-bottom: 3.67px;
-  font-weight: 500;
+.events-detail-section .event-description {
+    background: white;
+    border-radius: 24px;
+    padding: 32px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.date-dot {
-  width: 2.2px;
-  height: 2.2px;
-  background: black;
-  border-radius: 50%;
+.events-detail-section .event-description p {
+    font-size: 24px;
+    font-family: 'Academy Condensed', sans-serif;
+    font-weight: 500;
+    color: black;
+    line-height: 38.49px;
 }
 
-.card-venue {
-  font-size: 19.8px;
-  color: #4C4C4C;
-  font-weight: 500;
-}
-
-/* Tablet (3 cards in row, adaptive padding) */
-@media (max-width: 1023px) {
-  .container {
-    padding: 40px clamp(30px, 6vw, 60px);
-  }
-
-  .cards {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-  }
-}
-
-/* Mobile (2 cards in row, adaptive padding) */
 @media (max-width: 767px) {
-  .container {
-    padding: 40px clamp(15px, 6vw, 60px);
-    gap: 20px;
-  }
+    .events-detail-section {
+        padding: 20px 0;
+    }
 
-  .afisha-header-title {
-    font-size: 28px;
-  }
+    .events-detail-section .container {
+        width: 100%;
+        padding: 0 20px;
+    }
 
-  .cards {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-  }
+    .events-detail-section .event-content {
+        flex-direction: column;
+        gap: 12px;
+        justify-content: center;
+    }
 
-  .card {
-    max-width: 170px;
-    height: 344px;
-    border-radius: 12.47px;
-  }
+    .events-detail-section .event-image {
+        width: 100%;
+        height: 440px;
+        border-radius: 15.76px;
+    }
 
-  .card-image {
-    height: 240.83px;
-    border-radius: 12.47px 12.47px 0 0;
-  }
+    .events-detail-section .age-badge {
+        width: 40.2px;
+        height: 40.2px;
+        border-radius: 11.4px;
+        top: 12.4px;
+        right: 12.4px;
+        font-size: 18.3px;
+    }
 
-  .age-badge {
-    width: 26.07px;
-    height: 26.07px;
-    border-radius: 7.37px;
-    top: 7.37px;
-    right: 7.37px;
-    font-size: 11.9px;
-  }
+    .events-detail-section .event-info {
+        width: 100%;
+        gap: 12px;
+    }
 
-  .price-badge {
-    height: 24.93px;
-    width: 63.34px;
-    border-radius: 7.43px;
-    bottom: 7.37px;
-    left: 7.37px;
-    font-size: 13.03px;
-  }
+    .events-detail-section .event-header {
+        padding: 16px;
+        border-radius: 12px;
+        box-shadow: none;
+    }
 
-  .pushkin-badge {
-    width: 26.07px;
-    height: 26.07px;
-    bottom: 7.37px;
-    left: 75.37px;
-    border-radius: 7.04px;
-  }
+    .events-detail-section .event-title {
+        font-size: 19.98px;
+    }
 
-  .pushkin-icon {
-    width: 15.87px;
-    height: 15.87px;
-  }
+    .events-detail-section .event-button {
+        width: 109.63px;
+        padding: 7.68px 32.91px;
+        border-radius: 5.11px;
+        font-size: 8.54px;
+    }
 
-  .card-info {
-    height: 103.7px;
-    padding: 6.8px;
-  }
+    .events-detail-section .event-details {
+        gap: 12px;
+    }
 
-  .card-title {
-    font-size: 22.1px;
-    line-height: 23px;
-    height: 46.47px;
-    margin-bottom: 7.37px;
-  }
+    .events-detail-section .details-card {
+        width: 100%;
+        height: auto;
+        padding: 16px;
+        border-radius: 12px;
+        gap: 6.99px;
+        box-shadow: none;
+    }
 
-  .card-date {
-    font-size: 17px;
-    gap: 5.1px;
-    margin-bottom: 2.83px;
-  }
+    .events-detail-section .details-item {
+        font-size: 13.17px;
+    }
 
-  .date-dot {
-    width: 1.7px;
-    height: 1.7px;
-  }
+    .events-detail-section .ticket-card {
+        width: 100%;
+        height: auto;
+        padding: 16px;
+        border-radius: 12px;
+        gap: 18px;
+        box-shadow: none;
+    }
 
-  .card-venue {
-    font-size: 15.3px;
-  }
+    .events-detail-section .ticket-text {
+        font-size: 16.70px;
+    }
+
+    .events-detail-section .ticket-button {
+        width: 100%;
+        padding: 7.68px 42.52px;
+        border-radius: 5.11px;
+        font-size: 8.54px;
+    }
+
+    .events-detail-section .event-description {
+        padding: 16px;
+        border-radius: 12px;
+        box-shadow: none;
+    }
+
+    .events-detail-section .event-description p {
+        font-size: 12.30px;
+        line-height: 19.72px;
+    }
 }
 
-/* Small mobile (2 smaller cards in row, adaptive padding) */
-@media (max-width: 480px) {
-  .container {
-    padding: 40px clamp(10px, 6vw, 60px);
-  }
+@media (max-width: 374px) {
+    .events-detail-section .container {
+        padding: 0 15px;
+    }
 
-  .cards {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-  }
-
-  .card {
-    max-width: 150px;
-    height: 300px;
-    border-radius: 10px;
-  }
-
-  .card-image {
-    height: 210px;
-    border-radius: 10px 10px 0 0;
-  }
-
-  .age-badge {
-    width: 22px;
-    height: 22px;
-    border-radius: 6px;
-    top: 6px;
-    right: 6px;
-    font-size: 10px;
-  }
-
-  .price-badge {
-    height: 22px;
-    width: 55px;
-    border-radius: 6px;
-    bottom: 6px;
-    left: 6px;
-    font-size: 11px;
-  }
-
-  .pushkin-badge {
-    width: 22px;
-    height: 22px;
-    bottom: 6px;
-    left: 65px;
-    border-radius: 6px;
-  }
-
-  .pushkin-icon {
-    width: 13px;
-    height: 13px;
-  }
-
-  .card-info {
-    height: 90px;
-    padding: 6px;
-  }
-
-  .card-title {
-    font-size: 18px;
-    line-height: 20px;
-    height: 40px;
-    margin-bottom: 6px;
-  }
-
-  .card-date {
-    font-size: 14px;
-    gap: 4px;
-    margin-bottom: 2px;
-  }
-
-  .date-dot {
-    width: 1.5px;
-    height: 1.5px;
-  }
-
-  .card-venue {
-    font-size: 13px;
-  }
+    .events-detail-section .event-image {
+        height: 350px;
+    }
 }
