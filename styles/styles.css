@@ -102,7 +102,9 @@ img {
 /* Стили для ссылки "Новости" */
 .header__news {
   color: #000;
-  font-size: 28px;
+  font-size: 28px !important;
+   top: -3px;
+   left: -5px;
   text-decoration: underline;
   transition: color 0.3s ease;
   font-family: 'Academy Condensed', sans-serif;
@@ -211,7 +213,7 @@ img {
   }
   
   .header__news {
-    font-size: 18px;
+    font-size: 20px;
     margin-right: 0;
     order: 1; /* Ссылка перед бургером */
   }
@@ -348,7 +350,7 @@ img {
   }
 
   .header__news {
-    font-size: 24px;
+    font-size: 28px;
   }
 }
 
