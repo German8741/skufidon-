@@ -1,6 +1,6 @@
- @font-face {
+@font-face {
   font-family: 'Academy Condensed';
-  src: url('../../assets/fonts/AcademyCondensed.woff2') format('woff2');
+  src: url('../assets/fonts/AcademyCondensed.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -8,7 +8,7 @@
 
 @font-face {
   font-family: 'Myriad Pro';
-  src: url('../../assets/fonts/MYRIADPRO-REGULAR.woff2') format('woff2');
+  src: url('../assets/fonts/MYRIADPRO-REGULAR.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -16,7 +16,7 @@
 
 @font-face {
   font-family: 'Onest';
-  src: url('../../assets/fonts/Onest-Regular.ttf') format('truetype');
+  src: url('../assets/fonts/Onest-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -57,7 +57,7 @@ body {
 .afisha-header-icon {
   width: 12px;
   height: 22px;
-  background: url('../../assets/svg_icons/Vector.png') no-repeat center;
+  background: url('assets/svg_icons/Vector.png') no-repeat center;
   background-size: contain;
   transition: transform 0.3s ease, filter 0.3s ease;
 }
@@ -74,9 +74,9 @@ body {
 .cards {
   display: flex;
   gap: 40px;
-  padding: 30px 60px;
   overflow-x: auto;
   scroll-behavior: smooth;
+  padding: 30px 60px;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
 }
@@ -94,14 +94,10 @@ body {
   border-radius: 16.13px;
   overflow: hidden;
   transition: transform 0.3s ease;
-  -webkit-transition: transform 0.3s ease;
-  pointer-events: auto;
-  z-index: 1;
 }
 
-.cards .card:hover {
+.card:hover {
   transform: translateY(-10px) scale(1.02);
-  -webkit-transform: translateY(-10px) scale(1.02);
 }
 
 .card-image {
@@ -229,28 +225,10 @@ body {
   }
   .afisha-header-title {
     font-size: 28px;
-    transition: none; /* Отключаем анимацию цвета */
   }
-  .afisha-header-icon {
-    transition: none; /* Отключаем анимацию сдвига и фильтра */
-  }
-  .afisha-header:hover .afisha-header-title,
-  .afisha-header:active .afisha-header-title {
-    color: black; /* Предотвращаем изменение цвета */
-  }
-  .afisha-header:hover .afisha-header-icon,
-  .afisha-header:active .afisha-header-icon {
-    transform: none; /* Предотвращаем сдвиг */
-    filter: none; /* Предотвращаем изменение цвета */
-  }
- .cards {
-    display: flex;
+  .cards {
     gap: 20px;
     padding: 15px 20px;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
   }
   .card {
     flex: 0 0 170px;
@@ -258,9 +236,8 @@ body {
     height: 344px;
     border-radius: 12.47px;
   }
-  .cards .card:hover {
+  .card:hover {
     transform: translateY(-8px) scale(1.02);
-    -webkit-transform: translateY(-8px) scale(1.02);
   }
   .card-image {
     width: 170px;
@@ -284,7 +261,6 @@ body {
     left: 7.37px;
     font-size: 13.03px;
     border-radius: 7.43px;
-    padding: 0 6px;
   }
   .pushkin-badge {
     width: 26.07px;
