@@ -7,13 +7,17 @@
   <title>тестик</title>
   <style>
 /* Общие стили */
-    body {
-         font-family: 'Academy Condensed';
-  src: url('../assets/fonts/Academy-Condensed.woff2') format('woff2');
+   @font-face {
+  font-family: 'Academy Condensed';
+  src: url('../assets/fonts/AcademyCondensed.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
-    }
+}
+
+body {
+  font-family: 'Academy Condensed', sans-serif;
+}
     .container {
         max-width: 1200px;
         margin: 0 auto;
