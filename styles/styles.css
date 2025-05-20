@@ -14,14 +14,14 @@
   font-style: normal;
   font-display: swap;
 }
-
+/* 
 @font-face {
   font-family: 'Onest';
   src: url('../assets/fonts/Onest-Regular.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
-}
+} */
 
 /* Base Styles */
 * {
@@ -317,9 +317,9 @@ img {
 }
 
 .mobile-menu__address {
+  font-family: Arial, sans-serif; /* Временно убираем Onest */
   color: #878787;
   font-size: clamp(16px, 4vw, 18px);
-  font-family: 'Academy Condensed', sans-serif;
   font-weight: 500;
 }
 
