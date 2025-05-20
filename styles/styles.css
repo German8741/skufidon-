@@ -170,7 +170,7 @@ img {
   top: 0;
   right: -100%;
   width: 100%;
-  max-width: 400px;
+  max-width: 400px; /* Ограничение для узких экранов */
   height: 100vh;
   background: #000;
   z-index: 1001;
@@ -455,6 +455,18 @@ img {
   padding: 20px 0;
   border-radius: 20px;
   background: white;
+}
+
+@media (min-width: 401px) and (max-width: 768px) {
+  .header__mobile-page {
+    max-width: none; /* Убираем ограничение ширины */
+    width: 100%; /* Полная ширина экрана */
+  }
+}
+
+/* Активное состояние меню */
+.header__mobile-page.active {
+  transform: translateX(-100%);
 }
 
 @media (max-width: 768px) {

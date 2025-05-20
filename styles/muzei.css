@@ -349,7 +349,7 @@ img {
 }
 
 .mobile-menu__org {
-    color: #ыз    color: #878787;
+    color: #878787;
     font-size: clamp(16px, 4vw, 18px);
     font-family: 'Academy Condensed', sans-serif;
     font-weight: 500;
@@ -430,6 +430,14 @@ img {
     
     .header__mobile {
         display: block;
+    }
+}
+
+/* Для планшетов (экраны шире 400px, но уже 768px) */
+@media (min-width: 401px) and (max-width: 768px) {
+    .header__mobile-page {
+        max-width: none; /* Убираем ограничение ширины */
+        width: 100%; /* Полная ширина экрана */
     }
 }
 
