@@ -97,67 +97,46 @@
   <!-- Блок новостей на главной странице -->
   <section class="py-12">
     <div class="container mx-auto px-4">
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Карточка новости -->
-        <a href="news-detail.html" class="news-card bg-white rounded-lg shadow-md overflow-hidden">
-          <img src="https://images.a-a-ah.ru/uploads/items/150621/311122/large_7.jpg" alt="Новость 1" class="w-full h-48 object-cover">
-          <div class="p-4">
-            <h3 class="text-xl font-semibold mb-2">Заголовок новости 1</h3>
-            <p class="text-gray-600 mb-2">Краткое описание новости, чтобы заинтересовать читателя...</p>
-            <p class="text-sm text-gray-500">20 мая 2025</p>
-          </div>
-        </a>
-        <a href="news-detail.html" class="news-card bg-white rounded-lg shadow-md overflow-hidden">
-          <img src="https://images.a-a-ah.ru/uploads/items/150621/311122/large_7.jpg" alt="Новость 2" class="w-full h-48 object-cover">
-          <div class="p-4">
-            <h3 class="text-xl font-semibold mb-2">Заголовок новости 2</h3>
-            <p class="text-gray-600 mb-2">Краткое описание новости для привлечения внимания...</p>
-            <p class="text-sm text-gray-500">19 мая 2025</p>
-          </div>
-        </a>
-        <a href="news-detail.html" class="news-card bg-white rounded-lg shadow-md overflow-hidden">
-          <img src="https://via.placeholder.com/400x200" alt="Новость 3" class="w-full h-48 object-cover">
-          <div class="p-4">
-            <h3 class="text-xl font-semibold mb-2">Заголовок новости 3</h3>
-            <p class="text-gray-600 mb-2">Краткое описание новости, чтобы заинтересовать...</p>
-            <p class="text-sm text-gray-500">18 мая 2025</p>
-          </div>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Шаблон страницы полной новости -->
-  <section class="py-12 hidden" id="news-detail-template">
-    <div class="container mx-auto px-4">
-      <a href="/" class="text-blue-600 hover:underline mb-4 inline-block">&larr; Назад к новостям</a>
-      <article class="bg-white rounded-lg shadow-md p-6">
-        <img src="https://via.placeholder.com/800x400" alt="Новость" class="w-full h-96 object-cover rounded-lg mb-6">
-        <h1 class="text-3xl font-bold mb-4">Заголовок полной новости</h1>
-        <p class="text-sm text-gray-500 mb-4">20 мая 2025</p>
-        <div class="prose max-w-none">
-          <p>Полный текст новости. Здесь вы можете подробно описать событие, добавить абзацы, списки или изображения.</p>
-          <p>Например, это может быть второй абзац с дополнительной информацией. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          <ul>
-            <li>Пункт 1</li>
-            <li>Пункт 2</li>
-            <li>Пункт 3</li>
-          </ul>
-        </div>
-      </article>
+      <h2 class="text-3xl font-bold text-center mb-8">Последние новости</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="news-container"></div>
     </div>
   </section>
 
   <script>
-    // Пример динамической загрузки новостей (можно заменить на ваш бэкенд)
+    // Массив новостей для быстрого редактирования
     const newsData = [
-      { title: "Заголовок новости 1", summary: "Краткое описание новости...", date: "20 мая 2025", image: "https://images.a-a-ah.ru/uploads/items/150621/311122/large_7.jpg", link: "news-detail.html" },
-      { title: "Заголовок новости 2", summary: "Краткое описание новости...", date: "19 мая 2025", image: "https://images.a-a-ah.ru/uploads/items/150621/311122/large_7.jpg", link: "news-detail.html" },
-      { title: "Заголовок новости 3", summary: "Краткое описание новости...", date: "18 мая 2025", image: "https://images.a-a-ah.ru/uploads/items/150621/311122/large_7.jpg", link: "news-detail.html" },
+      {
+        title: "Заголовок новости 1",
+        summary: "Краткое описание новости, чтобы заинтересовать читателя...",
+        date: "20 мая 2025",
+        image: "https://images.a-a-ah.ru/uploads/items/150621/311122/large_7.jpg",
+        link: "news1.html" // Ссылка на отдельный файл новости
+      },
+      {
+        title: "Заголовок новости 2",
+        summary: "Краткое описание новости для привлечения внимания...",
+        date: "19 мая 2025",
+        image: "https://images.a-a-ah.ru/uploads/items/150621/311122/large_7.jpg",
+        link: "news2.html"
+      },
+       {
+        title: "Заголовок новости 2",
+        summary: "Краткое описание новости для привлечения внимания...",
+        date: "19 мая 2025",
+        image: "https://images.a-a-ah.ru/uploads/items/150621/311122/large_7.jpg",
+        link: "news2.html"
+      },
+      {
+        title: "Заголовок новости 3",
+        summary: "Краткое описание новости, чтобы заинтересовать...",
+        date: "18 мая 2025",
+        image: "https://images.a-a-ah.ru/uploads/items/150621/311122/large_7.jpg",
+        link: "news3.html"
+      }
     ];
 
     function renderNews() {
-      const newsContainer = document.querySelector('.grid');
+      const newsContainer = document.getElementById('news-container');
       newsContainer.innerHTML = '';
       newsData.forEach(news => {
         const newsCard = `
