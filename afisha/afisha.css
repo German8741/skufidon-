@@ -16,11 +16,11 @@
 
 @font-face {
   font-family: 'Onest';
-  src: url('../assets/fonts/Onest-Regular.ttf') format('truetype');
+  src: url('../assets/fonts/Onest-Regular.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
-}
+} 
 
 body {
   margin: 0;
