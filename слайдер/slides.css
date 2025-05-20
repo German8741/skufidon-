@@ -130,7 +130,7 @@
 .event-title {
   color: white;
   font-size: 58px;
-  font-family: 'Academy Condensed', Arial, sans-serif;
+  font-family: 'Academy Condensed', sans-serif;
   font-weight: 500;
   line-height: 1;
   white-space: nowrap;
@@ -145,7 +145,7 @@
 .event-detail {
   color: white;
   font-size: 32px;
-  font-family: 'Academy Condensed', Arial, sans-serif;
+  font-family: 'Academy Condensed', sans-serif;
   font-weight: 500;
   white-space: nowrap;
 }
@@ -176,7 +176,7 @@
 .slider-container .age-text {
   color: black;
   font-size: 28px;
-  font-family: 'Academy Condensed', Arial, sans-serif;
+  font-family: 'Academy Condensed', sans-serif;
   font-weight: 500;
   text-align: center;
   line-height: 1;
