@@ -87,7 +87,7 @@ img {
   font-size: 26px;
   text-decoration: none;
   transition: color 0.3s ease;
-  font-family: 'Academy Condensed', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 .header__nav-link:hover {
@@ -271,7 +271,7 @@ img {
 
 .mobile-menu__phone {
   font-size: clamp(18px, 4vw, 20px);
-  font-family: 'Myriad Pro', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-style: italic;
   font-weight: 400;
   color: white;
