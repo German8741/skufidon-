@@ -141,99 +141,19 @@ function initSlider() {
     return;
   }
 
-  let isDragging = false;
-  let startPosX = 0;
-  let startPosY = 0;
-  let currentTranslate = 0;
-  let prevTranslate = 0;
-  let animationID = 0;
-  let touchStartTime = 0;
-  let touchStartX = 0;
-  let touchEndX = 0;
-  const minSwipeDistance = 10;
-
-  cardsContainer.addEventListener('mousedown', startDragging);
-  cardsContainer.addEventListener('mouseup', stopDragging);
-  cardsContainer.addEventListener('mouseleave', stopDragging);
-  cardsContainer.addEventListener('mousemove', drag);
-  
-  cardsContainer.addEventListener('touchstart', touchStart, { passive: false });
-  cardsContainer.addEventListener('touchend', touchEnd, { passive: true });
-  cardsContainer.addEventListener('touchmove', touchMove, { passive: false });
-
-  function startDragging(event) {
-    isDragging = true;
-    startPosX = getPositionX(event);
-    startPosY = getPositionY(event);
-    touchStartX = startPosX;
-    touchStartTime = new Date().getTime();
-    animationID = requestAnimationFrame(animation);
-    cardsContainer.style.cursor = 'grabbing';
-    cardsContainer.style.scrollBehavior = 'auto';
-  }
-
-  function touchStart(event) {
-    startDragging(event);
-  }
-
-  function stopDragging(event) {
-    isDragging = false;
-    prevTranslate = currentTranslate;
-    cancelAnimationFrame(animationID);
-    cardsContainer.style.cursor = 'grab';
-    cardsContainer.style.scrollBehavior = 'smooth';
-
-    const touchEndTime = new Date().getTime();
-    const touchDuration = touchEndTime - touchStartTime;
-    const swipeDistance = Math.abs(touchEndX - touchStartX);
-
-    if (touchDuration < 300 && swipeDistance < minSwipeDistance) {
-      const card = event.target.closest('.card');
-      if (card && card.href) {
-        window.location.href = card.href;
-      }
+  // Обрабатываем только клики, чтобы избежать свайпов как кликов
+  cardsContainer.addEventListener('click', (event) => {
+    const card = event.target.closest('.card');
+    if (card && card.href) {
+      event.preventDefault(); // Предотвращаем стандартный клик
+      window.location.href = card.href; // Переходим по ссылке
     }
-  }
+  });
 
-  function drag(event) {
-    if (isDragging) {
-      const currentPosition = getPositionX(event);
-      touchEndX = currentPosition;
-      currentTranslate = prevTranslate + currentPosition - startPosX;
-    }
-  }
-
-  function touchMove(event) {
-    if (isDragging) {
-      const currentX = getPositionX(event);
-      const currentY = getPositionY(event);
-      const deltaX = currentX - startPosX;
-      const deltaY = currentY - startPosY;
-
-      if (Math.abs(deltaX) > Math.abs(deltaY)) {
-        event.preventDefault();
-        touchEndX = currentX;
-        currentTranslate = prevTranslate + deltaX;
-      }
-    }
-  }
-
-  function touchEnd(event) {
-    stopDragging(event);
-  }
-
-  function getPositionX(event) {
-    return event.type.includes('mouse') ? event.pageX : event.touches[0].clientX;
-  }
-
-  function getPositionY(event) {
-    return event.type.includes('mouse') ? event.pageY : event.touches[0].clientY;
-  }
-
-  function animation() {
-    cardsContainer.scrollLeft = -currentTranslate;
-    if (isDragging) requestAnimationFrame(animation);
-  }
+  // Отключаем контекстное меню для предотвращения конфликтов
+  cardsContainer.addEventListener('contextmenu', (event) => {
+    event.preventDefault();
+  });
 }
 
 function getEventById(id) {

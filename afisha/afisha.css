@@ -79,6 +79,7 @@ body {
   padding: 30px 60px;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
+  overscroll-behavior-x: auto; /* Добавлено для естественной инерции */
 }
 
 .cards::-webkit-scrollbar {
@@ -235,7 +236,7 @@ body {
     width: 170px;
     height: 344px;
     border-radius: 12.47px;
-    transition: none !important; /* Отключаем анимацию */
+    transition: none; /* Отключаем анимацию */
   }
   .card:hover {
     transform: none; /* Убираем эффект hover */
