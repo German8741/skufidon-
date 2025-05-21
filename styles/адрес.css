@@ -315,7 +315,7 @@
     
     .kontakts-left-column, .kontakts-right-column {
         width: 375px;
-        height: 347.22px;
+        height: 363.11px;
     }
     
     .kontakts-card-1, .kontakts-card-2, .kontakts-card-3, .kontakts-card-4 {
@@ -361,7 +361,7 @@
     }
     
     .kontakts-card-3 {
-        height: 71.18px;
+        height: 85px;
         top: 137.15px;
     }
     
@@ -374,6 +374,7 @@
     .kontakts-card-3-text {
         left: 11.57px;
         top: 32.99px;
+        padding-bottom: 21.42px;
     }
     
     .kontakts-card-3-text span {
@@ -383,7 +384,7 @@
     
     .kontakts-card-4 {
         height: 125px;
-        top: 222.22px;
+        top: 236.11px;
     }
     
     .kontakts-card-4-title {
