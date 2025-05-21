@@ -235,9 +235,10 @@ body {
     width: 170px;
     height: 344px;
     border-radius: 12.47px;
+    transition: none !important; /* Отключаем анимацию */
   }
   .card:hover {
-    transform: translateY(-8px) scale(1.02);
+    transform: none; /* Убираем эффект hover */
   }
   .card-image {
     width: 170px;
