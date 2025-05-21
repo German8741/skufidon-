@@ -551,7 +551,7 @@
 
     .kontakts-staff-card {
         width: 180px;
-        height: 323.18px;
+        height: 335px;
         padding: 10.11px;
         border-radius: 14.85px;
         gap: 10.11px;
@@ -574,12 +574,12 @@
     }
 
     .kontakts-staff-name {
-        font-size: 18px;
+        font-size: 20px;
         line-height: 1;
     }
 
     .kontakts-staff-position {
-        font-size: 14.24px;
+        font-size: 16px;
     }
 
     .kontakts-staff-contacts {
@@ -592,16 +592,17 @@
     }
 
     .kontakts-staff-email {
-        padding: 7.72px 50.78px;
+       padding: 7.72px 50.78px;
         border-radius: 14.99px;
+        margin-bottom: 10.11px;
     }
 
     .kontakts-contact-text {
-        font-size: 10.68px;
+        font-size: 12px;
         white-space: nowrap;
     }
 
     .kontakts-email-text {
-        font-size: 12.47px;
+        font-size: 14px;
     }
 }
