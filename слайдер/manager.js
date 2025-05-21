@@ -7,8 +7,8 @@ function initSlider() {
   const pagination = document.getElementById('pagination');
   let slides = document.querySelectorAll('.slide');
   let currentIndex = 0;
-  let slideWidth = window.innerWidth <= 767 ? window.innerWidth : 1201 + 40;
-  let totalSlides = slides.length;
+  let slideWidth = window.innerWidth <= 767 ? window.innerWidth : 1018 + 34;
+  let totalSlides = 0;
   let autoSlideInterval;
   let isTransitioning = false;
 
@@ -19,7 +19,7 @@ function initSlider() {
 
   function createPagination() {
     pagination.innerHTML = '';
-    slides = document.querySelectorAll('.slide');
+    slides = document.querySelectorAll('.slide:not(.clone)');
     totalSlides = slides.length;
     for (let i = 0; i < totalSlides; i++) {
       const dot = document.createElement('div');
@@ -30,7 +30,7 @@ function initSlider() {
       dot.addEventListener('click', () => {
         if (!isTransitioning) {
           currentIndex = i;
-          updateSlider();
+          updateSlider(true);
           resetAutoSlide();
         }
       });
@@ -38,41 +38,23 @@ function initSlider() {
     }
   }
 
-  function updateSlider() {
-    if (isTransitioning) return;
-    isTransitioning = true;
-
-    // Вычисляем ширину и высоту слайда
-    slideWidth = window.innerWidth <= 767 ? window.innerWidth : 1201 + 40;
-    const slideHeight = window.innerWidth <= 767 ? window.innerWidth * 0.608 : 547; // 60.8% от ширины для мобильных
-
-    // Устанавливаем размеры каждого слайда
-    slides = document.querySelectorAll('.slide');
-    slides.forEach(slide => {
-      slide.style.width = `${slideWidth}px`;
-      slide.style.height = `${slideHeight}px`;
-    });
-
-    // Перемещаем слайдер
-    slider.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
-    
-    // Обновляем пагинацию
-    const dots = document.querySelectorAll('#pagination .dot');
-    dots.forEach((dot, index) => {
-      dot.classList.toggle('active', index === currentIndex);
-    });
-
-    setTimeout(() => {
-      isTransitioning = false;
-    }, 500);
-  }
-
-  function addSlide({ imageUrl, title, date, venue, price, age, link, pushkinCard }) {
+  function addSlide({ imageUrl, title, date, venue, price, age, link, pushkinCard }, isClone = false) {
     const newSlide = document.createElement('div');
     newSlide.className = 'slide';
-    newSlide.style.backgroundImage = `url(${imageUrl})`;
-    newSlide.style.width = `${slideWidth}px`;
-    newSlide.style.height = `${window.innerWidth <= 767 ? window.innerWidth * 0.608 : 547}px`;
+    if (isClone) {
+      newSlide.classList.add('clone');
+    }
+    
+    if (!imageUrl) {
+      console.warn('Missing imageUrl for slide:', title);
+      newSlide.style.backgroundColor = '#ccc';
+    } else {
+      console.log('Setting background image:', imageUrl);
+      newSlide.style.backgroundImage = `url(${imageUrl})`;
+    }
+    
+    newSlide.style.width = window.innerWidth <= 767 ? `${window.innerWidth}px` : `1018px`;
+    newSlide.style.height = `${window.innerWidth <= 767 ? window.innerWidth * 0.608 : 464}px`;
     newSlide.setAttribute('data-link', link);
 
     const priceIconClass = pushkinCard ? '' : 'hidden';
@@ -93,14 +75,77 @@ function initSlider() {
       <div class="age-restriction"><div class="age-text">${age}</div></div>
     `;
     slider.appendChild(newSlide);
+
+    if (!newSlide.querySelector('.event-info') || !newSlide.querySelector('.price-container') || !newSlide.querySelector('.age-restriction')) {
+      console.warn('Failed to add inner elements to slide:', title);
+    }
+  }
+
+  function setupInfiniteSlides() {
+    slider.innerHTML = '';
+    const filteredSlides = events.filter(slide => slide.watchSlider === true);
+    const sortedSlides = sortEventsByDate(filteredSlides);
+    totalSlides = sortedSlides.length;
+
+    if (totalSlides === 0) {
+      console.warn('No slides to display');
+      return;
+    }
+
+    addSlide(sortedSlides[totalSlides - 1], true);
+    sortedSlides.forEach(slide => addSlide(slide));
+    addSlide(sortedSlides[0], true);
+
+    slides = document.querySelectorAll('.slide:not(.clone)');
+    totalSlides = slides.length;
+  }
+
+  function updateSlider(withTransition = true) {
+    if (isTransitioning) return;
+    isTransitioning = true;
+
+    slideWidth = window.innerWidth <= 767 ? window.innerWidth : 1018 + 34;
+    const slideHeight = window.innerWidth <= 767 ? window.innerWidth * 0.608 : 464;
+
+    const allSlides = document.querySelectorAll('.slide');
+    allSlides.forEach(slide => {
+      slide.style.width = window.innerWidth <= 767 ? `${window.innerWidth}px` : `1018px`;
+      slide.style.height = `${slideHeight}px`;
+      if (!slide.style.backgroundImage) {
+        console.warn('Slide missing background image:', slide);
+        slide.style.backgroundColor = '#ccc';
+      }
+    });
+
+    const displayIndex = currentIndex + 1;
+    slider.style.transition = withTransition ? 'transform 0.5s ease-in-out' : 'none';
+    slider.style.transform = `translateX(-${displayIndex * slideWidth}px)`;
+
+    const dots = document.querySelectorAll('#pagination .dot');
+    dots.forEach((dot, index) => {
+      dot.classList.toggle('active', index === currentIndex);
+    });
+
+    setTimeout(() => {
+      if (displayIndex === 0) {
+        currentIndex = totalSlides - 1;
+        slider.style.transition = 'none';
+        slider.style.transform = `translateX(-${(currentIndex + 1) * slideWidth}px)`;
+      } else if (displayIndex === totalSlides + 1) {
+        currentIndex = 0;
+        slider.style.transition = 'none';
+        slider.style.transform = `translateX(-${(currentIndex + 1) * slideWidth}px)`;
+      }
+      isTransitioning = false;
+    }, withTransition ? 500 : 0);
   }
 
   function startAutoSlide() {
     if (autoSlideInterval) clearInterval(autoSlideInterval);
     autoSlideInterval = setInterval(() => {
       if (!isTransitioning) {
-        currentIndex = currentIndex < totalSlides - 1 ? currentIndex + 1 : 0;
-        updateSlider();
+        currentIndex = (currentIndex + 1) % totalSlides;
+        updateSlider(true);
       }
     }, 7000);
   }
@@ -110,24 +155,16 @@ function initSlider() {
     startAutoSlide();
   }
 
-  // Очищаем слайдер перед добавлением новых слайдов
-  slider.innerHTML = '';
-
-  // Фильтруем и сортируем события для слайдера
-  const filteredSlides = events.filter(slide => slide.watchSlider === true);
-  const sortedSlides = sortEventsByDate(filteredSlides);
-  console.log('Sorted slides:', sortedSlides);
-  sortedSlides.forEach(slide => addSlide(slide));
-
+  setupInfiniteSlides();
   createPagination();
-  updateSlider();
+  updateSlider(false);
   startAutoSlide();
 
   if (prevButton) {
     prevButton.addEventListener('click', () => {
       if (!isTransitioning) {
-        currentIndex = currentIndex > 0 ? currentIndex - 1 : totalSlides - 1;
-        updateSlider();
+        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+        updateSlider(true);
         resetAutoSlide();
       }
     });
@@ -136,8 +173,8 @@ function initSlider() {
   if (nextButton) {
     nextButton.addEventListener('click', () => {
       if (!isTransitioning) {
-        currentIndex = currentIndex < totalSlides - 1 ? currentIndex + 1 : 0;
-        updateSlider();
+        currentIndex = (currentIndex + 1) % totalSlides;
+        updateSlider(true);
         resetAutoSlide();
       }
     });
@@ -173,28 +210,59 @@ function initSlider() {
     const minSwipeDistance = 50;
 
     if (swipeDistance > minSwipeDistance) {
-      currentIndex = currentIndex > 0 ? currentIndex - 1 : totalSlides - 1;
-      updateSlider();
+      currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+      updateSlider(true);
     } else if (swipeDistance < -minSwipeDistance) {
-      currentIndex = currentIndex < totalSlides - 1 ? currentIndex + 1 : 0;
-      updateSlider();
+      currentIndex = (currentIndex + 1) % totalSlides;
+      updateSlider(true);
     }
   }
 
   window.addEventListener('resize', () => {
-    slideWidth = window.innerWidth <= 767 ? window.innerWidth : 1201 + 40;
-    const slideHeight = window.innerWidth <= 767 ? window.innerWidth * 0.608 : 547;
-    slides = document.querySelectorAll('.slide');
-    slides.forEach(slide => {
-      slide.style.width = `${slideWidth}px`;
+    slideWidth = window.innerWidth <= 767 ? window.innerWidth : 1018 + 34;
+    const slideHeight = window.innerWidth <= 767 ? window.innerWidth * 0.608 : 464;
+    const allSlides = document.querySelectorAll('.slide');
+    allSlides.forEach(slide => {
+      slide.style.width = window.innerWidth <= 767 ? `${window.innerWidth}px` : `1018px`;
       slide.style.height = `${slideHeight}px`;
     });
-    updateSlider();
+    updateSlider(false);
   });
 }
 
 function initPosters() {
   console.log('Инициализация афиш...');
+  const postersContainer = document.querySelector('.posters-container');
+  if (!postersContainer) {
+    console.warn('Posters container not found');
+    return;
+  }
+
+  postersContainer.innerHTML = '';
+
+  const sortedEvents = sortEventsByDate(events);
+  sortedEvents.forEach(event => {
+    const poster = document.createElement('div');
+    poster.className = 'poster';
+    poster.setAttribute('data-link', event.link);
+    poster.innerHTML = `
+      <div class="poster-image" style="background-image: url(${event.imageUrl});"></div>
+      <div class="poster-info">
+        <h3 class="poster-title">${event.title}</h3>
+        <p class="poster-date">${event.date}</p>
+        <p class="poster-venue">${event.venue}</p>
+        <p class="poster-price">${event.price}</p>
+        <span class="poster-age">${event.age}</span>
+      </div>
+    `;
+    postersContainer.appendChild(poster);
+
+    poster.addEventListener('click', () => {
+      if (event.link) {
+        window.location.href = event.link;
+      }
+    });
+  });
 }
 
 const manager = {
@@ -204,4 +272,5 @@ const manager = {
 
 document.addEventListener('DOMContentLoaded', () => {
   manager.initSlider();
+  manager.initPosters();
 });

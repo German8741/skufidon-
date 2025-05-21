@@ -20,15 +20,23 @@
   font-weight: normal;
   font-style: normal;
   font-display: swap;
-} 
+}
+
+.slider-outer-container {
+  width: 1384px;
+  height: 500px;
+  position: relative;
+  margin: 0 auto;
+}
 
 .slider-container {
-  width: 1440px;
-  height: 590px;
-  position: relative;
+  width: 1320px;
+  height: 500px;
+  position: absolute;
+  left: 32px;
+  top: 0;
   background: #F9F9F9;
   overflow: hidden;
-  margin: 0 auto;
 }
 
 .slider-wrapper {
@@ -40,20 +48,20 @@
 
 #slider {
   position: absolute;
-  left: 119px;
-  top: 1px;
+  left: 0;
+  top: 0;
   display: flex;
-  gap: 40px;
+  gap: 34px;
   transition: transform 0.5s ease-in-out;
   touch-action: pan-y;
 }
 
 .slide {
-  width: 1201px;
-  height: 547px;
+  width: 1018px;
+  height: 464px;
   position: relative;
   overflow: hidden;
-  border-radius: 34px;
+  border-radius: 29px;
   flex-shrink: 0;
   background-size: cover;
   background-position: center;
@@ -61,20 +69,20 @@
 }
 
 .price-container {
-  left: 950px;
-  top: 453px;
+  left: 805px;
+  top: 384px;
   position: absolute;
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
 }
 
 .price-icon {
-  width: 60px;
-  height: 60px;
+  width: 51px;
+  height: 51px;
   padding: 0;
   background: white;
-  border-radius: 16px;
+  border-radius: 14px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -82,16 +90,16 @@
 }
 
 .price-icon img {
-  width: 37px;
-  height: 37px;
+  width: 31px;
+  height: 31px;
 }
 
 .price-box {
-  width: 145px;
-  height: 60px;
+  width: 123px;
+  height: 51px;
   position: relative;
   background: #C40005;
-  border-radius: 16px;
+  border-radius: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -99,8 +107,8 @@
 
 .price-text {
   color: white;
-  font-size: 28px;
-  transform: translateX(-25px);
+  font-size: 24px;
+  transform: translateX(-21px);
   font-family: 'Academy Condensed', sans-serif;
   font-weight: 500;
   white-space: nowrap;
@@ -113,14 +121,14 @@
   align-items: center;
   width: 100%;
   position: absolute;
-  left: 25.57px;
-  top: 15.25px;
+  left: 22px;
+  top: 13px;
 }
 
 .event-info {
-  width: 311px;
-  left: 34px;
-  top: 418px;
+  width: 264px;
+  left: 29px;
+  top: 355px;
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -129,7 +137,7 @@
 
 .event-title {
   color: white;
-  font-size: 58px;
+  font-size: 49px;
   font-family: 'Academy Condensed', sans-serif;
   font-weight: 500;
   line-height: 1;
@@ -139,35 +147,35 @@
 .event-details {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
 }
 
 .event-detail {
   color: white;
-  font-size: 32px;
+  font-size: 27px;
   font-family: 'Academy Condensed', sans-serif;
   font-weight: 500;
   white-space: nowrap;
 }
 
 .dot-separator {
-  width: 6px !important;
-  height: 6px !important;
-  min-width: 6px;
-  min-height: 6px;
+  width: 5px !important;
+  height: 5px !important;
+  min-width: 5px;
+  min-height: 5px;
   background: white !important;
   border-radius: 9999px;
   transform: none;
 }
 
 .age-restriction {
-  width: 60px;
-  height: 60px;
-  left: 1107px;
-  top: 34px;
+  width: 51px;
+  height: 51px;
+  left: 938px;
+  top: 29px;
   position: absolute;
   background: white;
-  border-radius: 16px;
+  border-radius: 14px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -175,7 +183,7 @@
 
 .slider-container .age-text {
   color: black;
-  font-size: 28px;
+  font-size: 24px;
   font-family: 'Academy Condensed', sans-serif;
   font-weight: 500;
   text-align: center;
@@ -187,19 +195,19 @@
   align-items: center;
   width: 100%;
   height: 100%;
-  transform: translateX(-13px) translateY(-15px);
+  transform: translateX(-11px) translateY(-13px);
   position: absolute;
-  left: 13.06px;
-  top: 17.66px;
+  left: 11px;
+  top: 15px;
 }
 
 #pagination {
-  left: 703px;
-  top: 573px;
+  left: 645.5px;
+  top: 486px;
   position: absolute;
   display: flex;
   align-items: center;
-  gap: 7px;
+  gap: 6px;
 }
 
 .dot {
@@ -208,103 +216,140 @@
 }
 
 .dot.active {
-  width: 8px;
-  height: 8px;
+  width: 7px;
+  height: 7px;
   background: #C40005;
 }
 
 .dot:not(.active) {
-  width: 6px;
-  height: 6px;
+  width: 5px;
+  height: 5px;
   background: #4C4C4C;
 }
 
+#prev, #next {
+  width: 62px;
+  height: 62px;
+  position: absolute;
+  top: 201px; /* Центрировано по вертикали относительно слайда: (464 - 62) / 2 = 201px */
+  border-radius: 80px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+#prev {
+  left: 0;
+}
+
+#next {
+  left: 1322px;
+}
+
 @media (max-width: 767px) {
+  .slider-outer-container {
+    width: 100%;
+  }
+
   .slider-container {
     width: 100%;
-    height: 60.8vw; /* Пропорциональная высота (228px / 375px = 60.8%) */
+    height: 60.8vw;
+    left: 0;
     margin: 0;
+    position: relative;
+    overflow: hidden;
   }
-  
+
   #slider {
     left: 0;
     top: 0;
     gap: 0;
-  }
-  
-  .slide {
     width: 100%;
     height: 100%;
-    border-radius: 0;
   }
-  
+
+  .slide {
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 0 !important;
+    background-size: cover !important;
+    background-position: center !important;
+    position: relative;
+    overflow: visible;
+  }
+
   .event-info {
-    width: 42.93%; /* 161px / 375px */
-    left: 4%; /* 15px / 375px */
-    top: 71.93%; /* 164px / 228px */
-    gap: 0.44vw; /* 1px / 375px * 100 */
+    width: 42.93%;
+    left: 4%;
+    top: 71.93%;
+    gap: 0.44vw;
+    position: absolute;
+    display: flex !important;
   }
-  
+
   .event-title {
-    font-size: 8vw; /* 30px / 375px */
+    font-size: 8vw;
     text-align: left;
+    color: white;
   }
-  
+
   .event-details {
     justify-content: flex-start;
-    gap: 3.2vw; /* 12px / 375px */
+    gap: 3.2vw;
   }
-  
+
   .event-detail {
-    font-size: 4.27vw; /* 16px / 375px */
+    font-size: 4.27vw;
     text-align: left;
+    color: white;
   }
-  
+
   .dot-separator {
-    width: 0.8vw !important; /* 3px / 375px */
+    width: 0.8vw !important;
     height: 0.8vw !important;
     min-width: 3px;
     min-height: 3px;
     background: white !important;
     border-radius: 9999px;
   }
-  
+
   .price-container {
-    left: 67.2%; /* 252px / 375px */
-    top: 80.26%; /* 183px / 228px */
-    gap: 1.6vw; /* 6px / 375px */
+    left: 67.2%;
+    top: 80.26%;
+    gap: 1.6vw;
+    position: absolute;
+    display: flex !important;
   }
-  
+
   .price-icon {
-    width: 8vw !important; /* 30px / 375px */
+    width: 8vw !important;
     height: 8vw !important;
     min-width: 8vw;
     min-height: 8vw;
     padding: 0;
-    border-radius: 2.13vw; /* 8px / 375px */
+    border-radius: 2.13vw;
     background: white;
     display: flex;
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
   }
-  
+
   .price-icon img {
-    width: 4.8vw; /* 18px / 375px */
+    width: 4.8vw;
     height: 4.8vw;
   }
-  
+
   .price-box {
-    width: 19.2vw; /* 72px / 375px */
-    height: 8vw; /* 30px / 375px */
-    border-radius: 2.13vw; /* 8px / 375px */
+    width: 19.2vw;
+    height: 8vw;
+    border-radius: 2.13vw;
   }
-  
+
   .price-text {
-    font-size: 3.73vw; /* 14px / 375px */
-    transform: translateX(-33.33%) translateY(10%); /* Адаптировано для центрирования */
-    left: 33.33%; /* 24px / 72px */
-    top: 20%; /* 6px / 30px */
+    font-size: 3.73vw;
+    transform: translateX(-33.33%) translateY(10%);
+    left: 33.33%;
+    top: 20%;
     padding: 0;
     margin: 0;
     text-align: center;
@@ -313,18 +358,21 @@
     justify-content: center;
     align-items: center;
     width: 100%;
+    color: white;
   }
-  
+
   .age-restriction {
-    width: 8vw; /* 30px / 375px */
+    width: 8vw;
     height: 8vw;
-    left: 88%; /* 330px / 375px */
-    top: 6.58%; /* 15px / 228px */
-    border-radius: 2.13vw; /* 8px / 375px */
+    left: 88%;
+    top: 6.58%;
+    border-radius: 2.13vw;
+    position: absolute;
+    display: flex !important;
   }
-  
+
   .age-text {
-    font-size: 3.73vw !important; /* 14px / 375px */
+    font-size: 3.73vw !important;
     text-align: center;
     line-height: 1;
     margin: 0;
@@ -332,17 +380,16 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    transform: none; /* Убрано смещение, так как используется left/top */
+    transform: none;
     left: 0;
     top: 0;
+    color: black;
   }
-  
+
   #pagination {
-    left: 50%;
-    top: 87.72%; /* 200px / 228px */
-    transform: translateX(-50%);
+    display: none;
   }
-  
+
   #prev, #next {
     display: none;
   }
@@ -350,4 +397,57 @@
 
 .hidden {
   visibility: hidden;
+}
+
+.posters-container {
+  width: 1440px;
+  margin: 20px auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.poster {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.poster-image {
+  width: 100%;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+}
+
+.poster-info {
+  padding: 15px;
+}
+
+.poster-title {
+  font-family: 'Academy Condensed', sans-serif;
+  font-size: 24px;
+  margin: 0 0 10px;
+}
+
+.poster-date, .poster-venue, .poster-price {
+  font-family: 'Onest', sans-serif;
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+.poster-age {
+  font-family: 'Academy Condensed', sans-serif;
+  font-size: 16px;
+  color: #C40005;
+}
+
+@media (max-width: 767px) {
+  .posters-container {
+    width: 100%;
+    padding: 0 15px;
+    box-sizing: border-box;
+  }
 }
