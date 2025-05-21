@@ -330,7 +330,7 @@
     .kontakts-card-1-text {
         left: 11.57px;
         top: 11.57px;
-        font-size: 13.89px;
+        font-size: 16px;
     }
     
     .kontakts-card-2 {
@@ -339,13 +339,13 @@
     }
     
     .kontakts-card-2-content {
-        left: 11.57px;
-        top: 11.57px;
+        left: 11px;
+        top: 11px;
         gap: 5.79px;
     }
     
     .kontakts-card-2-title, .kontakts-card-2-text {
-        font-size: 12.73px;
+        font-size: 16px;
     }
     
     .kontakts-card-2-button {
@@ -357,7 +357,7 @@
     }
     
     .kontakts-card-2-button-text {
-        font-size: 10.42px;
+        font-size: 12px;
     }
     
     .kontakts-card-3 {
@@ -378,7 +378,7 @@
     }
     
     .kontakts-card-3-text span {
-        font-size: 12.73px;
+        font-size: 14px;
         line-height: 13.27px;
     }
     
@@ -390,7 +390,7 @@
     .kontakts-card-4-title {
         left: 11.57px;
         top: 11.57px;
-        font-size: 12.73px;
+        font-size: 14px;
     }
     
     .kontakts-card-4-content {
