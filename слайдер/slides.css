@@ -248,6 +248,7 @@
 @media (max-width: 767px) {
   .slider-outer-container {
     width: 100%;
+    height: auto
   }
 
   .slider-container {
@@ -387,11 +388,7 @@
   }
 
   #pagination {
-    left: 50%;
-    top: 87.72%;
-    transform: translateX(-50%);
-    position: absolute;
-    display: flex;
+ display: none;
   }
 
   #prev, #next {
@@ -454,4 +451,4 @@
     padding: 0 15px;
     box-sizing: border-box;
   }
-} 
+}
