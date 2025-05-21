@@ -185,10 +185,10 @@ function renderEventDetails() {
   document.querySelector('.age-badge').textContent = event.age;
   document.querySelector('.event-title').textContent = event.title;
   document.querySelector('.event-button').href = event.odoLink;
-  document.querySelector('.details-item:nth-child(1)').innerHTML = `<span class="details-label">Дата:</span> ${event.date.split(', ')[0]}`;
-  document.querySelector('.details-item:nth-child(2)').innerHTML = `<span class="details-label">Время:</span> ${event.date.split(', ')[1]}`;
-  document.querySelector('.details-item:nth-child(3) .details-link').textContent = event.venue;
-  document.querySelector('.details-item:nth-child(4)').innerHTML = `<span class="details-label">Цена:</span> ${event.price}`;
+ document.querySelector('.details-item:nth-child(1)').innerHTML = `<span class="details-label">Дата:</span> <span class="details-value">${event.date.split(', ')[0]}</span>`;
+document.querySelector('.details-item:nth-child(2)').innerHTML = `<span class="details-label">Время:</span> <span class="details-value">${event.date.split(', ')[1]}</span>`;
+document.querySelector('.details-item:nth-child(3)').innerHTML = `<span class="details-label">Место:</span> <span class="details-value">${event.venue}</span>`;
+document.querySelector('.details-item:nth-child(4)').innerHTML = `<span class="details-label">Цена:</span> <span class="details-value">${event.price}</span>`;
   document.querySelector('.ticket-button').href = event.kassyLink;
   document.querySelector('.event-description p').textContent = event.description;
 }
