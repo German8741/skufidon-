@@ -387,7 +387,11 @@
   }
 
   #pagination {
-    display: none;
+    left: 50%;
+    top: 87.72%;
+    transform: translateX(-50%);
+    position: absolute;
+    display: flex;
   }
 
   #prev, #next {
@@ -450,4 +454,4 @@
     padding: 0 15px;
     box-sizing: border-box;
   }
-}
+} 
