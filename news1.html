@@ -4,8 +4,134 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Заголовок новости 1</title>
-  <script src="https://cdn.tailwindcss.com"></script>
    <link rel="stylesheet" href="styles/styles.css">
+   <style>
+        @font-face {
+            font-family: 'Academy Condensed';
+            src: url('../assets/fonts/Academy-Condensed.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Myriad Pro';
+            src: url('../assets/fonts/MYRIADPRO-REGULAR.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Onest';
+            src: url('../assets/fonts/Onest-Regular.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Academy Condensed', sans-serif;
+            background: #F9F9F9;
+        }
+
+        .article-container {
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 180px 20px 20px; /* Указанные отступы на ПК */
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .article-header {
+            text-decoration: none;
+        }
+
+        .article-header-title {
+            font-family: 'Myriad Pro', sans-serif;
+            font-size: 48px;
+            font-style: italic;
+            color: black;
+            line-height: 1.2;
+            text-transform: uppercase;
+            margin: 0;
+        }
+
+        .article-content {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .article-text {
+            font-family: 'Onest', sans-serif;
+            font-size: 18px;
+            line-height: 28px;
+            color: black;
+            opacity: 0.8;
+        }
+
+        .article-video {
+            text-align: center;
+        }
+
+        .article-video h2 {
+            font-family: 'Academy Condensed', sans-serif;
+            text-align: center;
+            color: #4a4a4a;
+            margin: 0 0 15px 0;
+            font-weight: 600;
+            font-size: 1.4rem;
+        }
+
+        .article-video div {
+            position: relative;
+            padding-bottom: 56.25%;
+            border-radius: 13px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            background: #f8f8f8;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .article-video div:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .article-video iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Mobile optimization */
+        @media (max-width: 767px) {
+            .article-container {
+                padding: 80px 20px 20px; /* 60px (хедер) + 20px (отступ) */
+            }
+
+            .article-header-title {
+                font-size: 36px;
+            }
+
+            .article-text {
+                font-size: 16px;
+                line-height: 24px;
+            }
+
+            .article-video div {
+                border-radius: 10px;
+            }
+        }
+    </style>
 </head>
  <header class="header">
     <div class="header__container">
@@ -80,26 +206,27 @@
     </div>
     <div class="menu-overlay"></div>
   </header>
-<body class="bg-gray-100 font-sans">
-  <section class="py-12">
-    <div class="container mx-auto px-4">
-      <a href="новости.html" class="text-blue-600 hover:underline mb-4 inline-block">← Назад к новостям</a>
-      <article class="bg-white rounded-lg shadow-md p-6">
-        <img src="https://images.a-a-ah.ru/uploads/items/150621/311122/large_7.jpg" alt="Новость 1" class="w-full h-96 object-cover rounded-lg mb-6">
-        <h1 class="text-3xl font-bold mb-4">Заголовок новости 1</h1>
-        <p class="text-sm text-gray-500 mb-4">20 мая 2025</p>
-        <div class="prose max-w-none">
-          <p>Полный текст новости. Здесь вы можете подробно описать событие.</p>
-          <p>Дополнительный абзац с информацией. Lorem ipsum dolor sit amet...</p>
-          <ul>
-            <li>Пункт 1</li>
-            <li>Пункт 2</li>
-            <li>Пункт 3</li>
-          </ul>
+<body>
+   <section class="article-container">
+        <a href="news.html" class="article-header">
+            <span class="article-header-title">Вальс Победы в Доме офицеров ЦВО</span>
+        </a>
+        <div class="article-content">
+            <div class="article-text">
+                В преддверии 9 мая 2025 года, 7 мая, в Доме офицеров Центрального военного округа (ЦВО) в Екатеринбурге прошла традиционная акция "Вальс Победы". Мероприятие, посвященное 80-летию Победы в Великой Отечественной войне, собрало ветеранов, военнослужащих, студентов и школьников. Участники исполнили вальс под мелодии военных лет, создавая атмосферу единства поколений и благодарности за подвиг героев.
+            </div>
+            <div class="article-text">
+                Акция "Вальс Победы" в Доме офицеров ЦВО стала символом памяти и уважения к истории. Музыка и танцы объединили всех присутствующих, напоминая о значении мира и свободы, завоеванных нашими предками.
+            </div>
+            <div class="article-video">
+                <h2>Вальс Победы</h2>
+                <div>
+                    <iframe src="https://rutube.ru/play/embed/e4743a6155e92142137623452de865af/" allowfullscreen="allowfullscreen"></iframe>
+                </div>
+            </div>
         </div>
-      </article>
-    </div>
-  </section>
+    </section>
+
   <div class="footer" style="width: 1440px; height: 785px; position: relative; background: white">
       <!-- Группа 1 -->
       <div class="footer__group footer__group--1">
@@ -111,7 +238,7 @@
         </div>
     
         <!-- Залы -->
-       <div class="footer__section" style="width: 180px; left: 445px; top: 60px; position: absolute; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 11px; display: inline-flex">
+<div class="footer__section" style="width: 180px; left: 445px; top: 60px; position: absolute; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 11px; display: inline-flex">
   <div style="align-self: stretch; justify-content: flex-start; align-items: center; gap: 10.91px; display: inline-flex">
     <div style="justify-content: center; display: flex; flex-direction: column; color: black; font-size: 26px; font-family: Academy Condensed; font-weight: 500; word-wrap: break-word">
       <a href="zaly.html" style="text-decoration: none; color: black;">Залы</a>
