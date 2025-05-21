@@ -20,7 +20,7 @@
   font-weight: normal;
   font-style: normal;
   font-display: swap;
-} 
+}
 
 .kontakts-contacts-container {
     width: 100%;
@@ -312,11 +312,10 @@
     padding: 17px;
     background: white;
     border-radius: 25px;
+    display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    gap: 17px;
-    display: flex;
     box-sizing: border-box;
 }
 
@@ -327,6 +326,8 @@
     gap: 17px;
     display: flex;
     width: 100%;
+    height: 100%;
+    box-sizing: border-box;
 }
 
 .kontakts-staff-photo {
@@ -339,9 +340,9 @@
 .kontakts-staff-info {
     width: 100%;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
-    gap: 26px;
+    flex-grow: 1;
     display: flex;
 }
 
@@ -373,6 +374,7 @@
     gap: 17px;
     display: flex;
     width: 100%;
+    margin-bottom: 0;
 }
 
 .kontakts-staff-phone {
@@ -401,6 +403,7 @@
     display: flex;
     cursor: pointer;
     transition: background 0.2s;
+    margin-bottom: 0;
 }
 
 .kontakts-staff-email:hover {
@@ -559,6 +562,7 @@
 
     .kontakts-staff-card-content {
         gap: 10.11px;
+        height: 100%;
     }
 
     .kontakts-staff-photo {
@@ -571,6 +575,8 @@
         width: 158.02px;
         height: 134.79px;
         gap: 15.44px;
+        justify-content: space-between;
+        flex-grow: 1;
     }
 
     .kontakts-staff-name {
@@ -584,6 +590,7 @@
 
     .kontakts-staff-contacts {
         gap: 10.11px;
+        margin-bottom: 0;
     }
 
     .kontakts-staff-phone {
@@ -592,9 +599,9 @@
     }
 
     .kontakts-staff-email {
-       padding: 7.72px 50.78px;
+        padding: 7.72px 0;
         border-radius: 14.99px;
-        margin-bottom: 10.11px;
+        margin-bottom: 0;
     }
 
     .kontakts-contact-text {
