@@ -54,19 +54,24 @@
   gap: 34px;
   transition: transform 0.5s ease-in-out;
   touch-action: pan-x; /* Разрешить горизонтальные свайпы */
-  user-select: none;
+  user-select: none; /* Запретить выделение текста */
+  will-change: transform; /* Оптимизация анимаций */
 }
 
 .slide {
   width: 1018px;
   height: 464px;
   position: relative;
-  overflow: hidden;
+  overflow: hidden; /* Предотвращает выход дочерних элементов */
   border-radius: 29px;
   flex-shrink: 0;
   background-size: cover;
   background-position: center;
   cursor: pointer;
+}
+
+.slide > * {
+  pointer-events: none; /* Отключаем перехват касаний дочерними элементами */
 }
 
 .price-container {
@@ -232,7 +237,7 @@
   width: 62px;
   height: 62px;
   position: absolute;
-  top: 201px; /* Центрировано по вертикали относительно слайда: (464 - 62) / 2 = 201px */
+  top: 201px;
   border-radius: 80px;
   cursor: pointer;
   z-index: 10;
@@ -249,7 +254,7 @@
 @media (max-width: 767px) {
   .slider-outer-container {
     width: 100%;
-    height: auto
+    height: auto;
   }
 
   .slider-container {
@@ -276,7 +281,7 @@
     background-size: cover !important;
     background-position: center !important;
     position: relative;
-    overflow: visible;
+    overflow: hidden;
   }
 
   .event-info {
@@ -375,7 +380,7 @@
 
   .age-text {
     font-size: 3.73vw !important;
-    text-align: center ;
+    text-align: center;
     line-height: 1;
     margin: 0;
     display: flex;
@@ -389,7 +394,7 @@
   }
 
   #pagination {
- display: none;
+    display: none;
   }
 
   #prev, #next {

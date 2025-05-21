@@ -7,7 +7,7 @@ function initSlider() {
   const pagination = document.getElementById('pagination');
   let slides = document.querySelectorAll('.slide');
   let currentIndex = 0;
-  let slideWidth = window.innerWidth <= 767 ? window.innerWidth : 1018 + 34;
+  let slideWidth = window.innerWidth <= 767 ? document.querySelector('.slider-container').offsetWidth : 1018 + 34;
   let totalSlides = 0;
   let autoSlideInterval;
   let isTransitioning = false;
@@ -17,6 +17,7 @@ function initSlider() {
     return;
   }
 
+  // Создание пагинации
   function createPagination() {
     pagination.innerHTML = '';
     slides = document.querySelectorAll('.slide:not(.clone)');
@@ -38,6 +39,7 @@ function initSlider() {
     }
   }
 
+  // Добавление слайда
   function addSlide({ imageUrl, title, date, venue, price, age, link, pushkinCard }, isClone = false) {
     const newSlide = document.createElement('div');
     newSlide.className = 'slide';
@@ -53,8 +55,8 @@ function initSlider() {
       newSlide.style.backgroundImage = `url(${imageUrl})`;
     }
     
-    newSlide.style.width = window.innerWidth <= 767 ? `${window.innerWidth}px` : `1018px`;
-    newSlide.style.height = `${window.innerWidth <= 767 ? window.innerWidth * 0.608 : 464}px`;
+    newSlide.style.width = window.innerWidth <= 767 ? `${document.querySelector('.slider-container').offsetWidth}px` : `1018px`;
+    newSlide.style.height = `${window.innerWidth <= 767 ? document.querySelector('.slider-container').offsetWidth * 0.608 : 464}px`;
     newSlide.setAttribute('data-link', link);
 
     const priceIconClass = pushkinCard ? '' : 'hidden';
@@ -81,6 +83,7 @@ function initSlider() {
     }
   }
 
+  // Настройка бесконечных слайдов
   function setupInfiniteSlides() {
     slider.innerHTML = '';
     const filteredSlides = events.filter(slide => slide.watchSlider === true);
@@ -100,16 +103,17 @@ function initSlider() {
     totalSlides = slides.length;
   }
 
+  // Обновление слайдера
   function updateSlider(withTransition = true) {
     if (isTransitioning) return;
     isTransitioning = true;
 
-    slideWidth = window.innerWidth <= 767 ? window.innerWidth : 1018 + 34;
-    const slideHeight = window.innerWidth <= 767 ? window.innerWidth * 0.608 : 464;
+    slideWidth = window.innerWidth <= 767 ? document.querySelector('.slider-container').offsetWidth : 1018 + 34;
+    const slideHeight = window.innerWidth <= 767 ? slideWidth * 0.608 : 464;
 
     const allSlides = document.querySelectorAll('.slide');
     allSlides.forEach(slide => {
-      slide.style.width = window.innerWidth <= 767 ? `${window.innerWidth}px` : `1018px`;
+      slide.style.width = window.innerWidth <= 767 ? `${slideWidth}px` : `1018px`;
       slide.style.height = `${slideHeight}px`;
       if (!slide.style.backgroundImage) {
         console.warn('Slide missing background image:', slide);
@@ -140,6 +144,7 @@ function initSlider() {
     }, withTransition ? 500 : 0);
   }
 
+  // Автоматическое перелистывание
   function startAutoSlide() {
     if (autoSlideInterval) clearInterval(autoSlideInterval);
     autoSlideInterval = setInterval(() => {
@@ -150,16 +155,19 @@ function initSlider() {
     }, 7000);
   }
 
+  // Сброс автопрокрутки
   function resetAutoSlide() {
     clearInterval(autoSlideInterval);
     startAutoSlide();
   }
 
+  // Инициализация
   setupInfiniteSlides();
   createPagination();
   updateSlider(false);
   startAutoSlide();
 
+  // Обработчики кнопок
   if (prevButton) {
     prevButton.addEventListener('click', () => {
       if (!isTransitioning) {
@@ -180,6 +188,7 @@ function initSlider() {
     });
   }
 
+  // Обработчик клика по слайду
   slides.forEach(slide => {
     slide.addEventListener('click', (e) => {
       if (!e.target.closest('#prev') && !e.target.closest('#next') && !e.target.closest('.dot')) {
@@ -191,39 +200,52 @@ function initSlider() {
     });
   });
 
+  // Обработка касаний
   let touchStartX = 0;
   let touchEndX = 0;
 
   slider.addEventListener('touchstart', (e) => {
     touchStartX = e.changedTouches[0].screenX;
+    if (Math.abs(touchEndX - touchStartX) > 10) {
+      e.preventDefault(); // Предотвращаем прокрутку страницы
+    }
+  });
+
+  slider.addEventListener('touchmove', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    clearInterval(autoSlideInterval); // Останавливаем автопрокрутку
   });
 
   slider.addEventListener('touchend', (e) => {
     touchEndX = e.changedTouches[0].screenX;
-    handleSwipe();
+    handleSwipe(e);
     resetAutoSlide();
   });
 
-  function handleSwipe() {
+  function handleSwipe(e) {
     if (isTransitioning) return;
     const swipeDistance = touchEndX - touchStartX;
-    const minSwipeDistance = 50;
+    const minSwipeDistance = 30; // Увеличена чувствительность
 
-    if (swipeDistance > minSwipeDistance) {
-      currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-      updateSlider(true);
-    } else if (swipeDistance < -minSwipeDistance) {
-      currentIndex = (currentIndex + 1) % totalSlides;
-      updateSlider(true);
+    if (Math.abs(swipeDistance) > minSwipeDistance) {
+      e.preventDefault();
+      if (swipeDistance > 0) {
+        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+        updateSlider(true);
+      } else {
+        currentIndex = (currentIndex + 1) % totalSlides;
+        updateSlider(true);
+      }
     }
   }
 
+  // Обработка изменения размера окна
   window.addEventListener('resize', () => {
-    slideWidth = window.innerWidth <= 767 ? window.innerWidth : 1018 + 34;
-    const slideHeight = window.innerWidth <= 767 ? window.innerWidth * 0.608 : 464;
+    slideWidth = window.innerWidth <= 767 ? document.querySelector('.slider-container').offsetWidth : 1018 + 34;
+    const slideHeight = window.innerWidth <= 767 ? slideWidth * 0.608 : 464;
     const allSlides = document.querySelectorAll('.slide');
     allSlides.forEach(slide => {
-      slide.style.width = window.innerWidth <= 767 ? `${window.innerWidth}px` : `1018px`;
+      slide.style.width = window.innerWidth <= 767 ? `${slideWidth}px` : `1018px`;
       slide.style.height = `${slideHeight}px`;
     });
     updateSlider(false);
