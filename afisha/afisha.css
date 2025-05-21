@@ -275,6 +275,13 @@ body {
     width: 15.87px;
     height: 15.87px;
   }
+  .afisha-header-icon {
+  width: 8px;
+  height: 15px;
+  background: url('assets/svg_icons/Vector.png') no-repeat center;
+  background-size: contain;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
   .card-info {
     width: 170px;
     height: 103.7px;

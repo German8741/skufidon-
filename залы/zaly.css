@@ -190,6 +190,13 @@ body {
     .zaly-header {
         padding-left: 20px;
     }
+    .zaly-header-icon {
+    width: 8px;
+    height: 15px;
+    background: url('assets/svg_icons/Vector.png') no-repeat center; 
+    background-size: contain;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
     .zaly-header-title {
         font-size: 28px;
     }
