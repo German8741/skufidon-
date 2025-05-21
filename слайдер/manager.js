@@ -225,7 +225,7 @@ function initSlider() {
   function handleSwipe(e) {
     if (isTransitioning) return;
     const swipeDistance = touchEndX - touchStartX;
-    const minSwipeDistance = 30; // Увеличена чувствительность
+    const minSwipeDistance = 3; // Увеличена чувствительность
 
     if (Math.abs(swipeDistance) > minSwipeDistance) {
       e.preventDefault();
