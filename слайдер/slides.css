@@ -53,7 +53,8 @@
   display: flex;
   gap: 34px;
   transition: transform 0.5s ease-in-out;
-  touch-action: pan-y;
+  touch-action: pan-x; /* Разрешить горизонтальные свайпы */
+  user-select: none;
 }
 
 .slide {
