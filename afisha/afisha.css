@@ -34,7 +34,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 5px;
-  padding-top: 5px;
+  padding-top: 50px;
 }
 
 .afisha-header {
@@ -219,7 +219,7 @@ body {
 /* Mobile optimization */
 @media (max-width: 767px) {
   .container {
-    padding-top: 40px;
+    padding-top: 30px;
   }
   .afisha-header {
     padding-left: 20px;

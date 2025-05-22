@@ -34,7 +34,7 @@
   height: 500px;
   position: absolute;
   left: 32px;
-  top: 0;
+  top: 40px;
   background: #F9F9F9;
   overflow: hidden;
 }
@@ -264,6 +264,7 @@
     margin: 0;
     position: relative;
     overflow: hidden;
+    top: 0;
   }
 
   #slider {

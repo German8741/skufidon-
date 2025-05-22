@@ -47,7 +47,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  padding: 20px 60px 10px;
+  padding: 40px 60px 40px;
   box-sizing: border-box;
 }
 
@@ -272,7 +272,7 @@ body {
 /* Mobile (2 cards in row, adaptive padding) */
 @media (max-width: 767px) {
   .container {
-    padding: 20px clamp(15px, 6vw, 60px) 10px;
+    padding: 20px clamp(15px, 6vw, 60px) 20px; /* Ув
     gap: 10px;
   }
   
